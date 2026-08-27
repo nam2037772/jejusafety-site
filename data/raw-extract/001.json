@@ -1,0 +1,218 @@
+{
+  "caseNo": "001",
+  "sourceRef": "Raw/04. 안전시설/안전시설-001.md",
+  "extractedAt": "2026-08-27",
+  "frontmatter": {
+    "tags": [
+      "안전시설",
+      "시공기술사례",
+      "차선규제봉"
+    ],
+    "aliases": [
+      "시선유도봉 설치 (서귀포 치유의숲)"
+    ],
+    "created": "2026-08-18",
+    "type": "시공사례",
+    "category": "안전시설",
+    "project": "치유의 숲 앞 로터리 차선규제봉 설치",
+    "location": "서귀포시 치유의 숲 입구 로터리",
+    "client": "서귀포시청",
+    "work_type": "차선규제봉(시선유도봉) 설치",
+    "materials": "국내산 표준 차선규제봉(고탄성 TPU/우레탄), 스테인리스 앵커",
+    "source": "아인산업안전",
+    "related": [
+      "[[Wiki/건설현장/노출콘크리트 면보수 — 콘채 시방서]]"
+    ]
+  },
+  "dateHints": [
+    "2026-07-16",
+    "2026-07-17",
+    "2026-07-18"
+  ],
+  "imageCount": 22,
+  "roleCounts": {
+    "before": 8,
+    "process": 2,
+    "after": 12
+  },
+  "images": [
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNjA3MjFfMTM4/MDAxNzg0NTk4NjIxNzEx.ok-zvFTRIBNXis3XBREExL47TWO554p_yxgAaql0wvMg.jYJ25-4W-O62x4ph0BsxSeU2sAxW5-sc8W4ZfV1T-Y4g.JPEG/900_20260716_175302.jpg?type=w773",
+      "origName": "900_20260716_175302.jpg",
+      "role": "before",
+      "dateHint": "2026-07-16",
+      "ext": ".jpg",
+      "index": 1
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNjA3MjFfMjIx/MDAxNzg0NTk4NjI1NzMw.8vFzUquNtzh9Mz5qQ_286VQOPQwGO3oxaj42RcGtG5wg.3AoQ37edhg26vpfoAI7HwNN9HNnQcfUKoiiczVadQNcg.JPEG/900_20260716_175305.jpg?type=w773",
+      "origName": "900_20260716_175305.jpg",
+      "role": "before",
+      "dateHint": "2026-07-16",
+      "ext": ".jpg",
+      "index": 2
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNjA3MjFfMjE4/MDAxNzg0NTk4NjI1MDgz.pWrn18fTDo7lIMKMhOAbV43l04aRjyOR1OvdJ0iNg08g.r77SRhY4awe0oHYwSJMUsRgTgBLuYc5XWIn1bZIeoqMg.JPEG/900_20260716_175340.jpg?type=w773",
+      "origName": "900_20260716_175340.jpg",
+      "role": "before",
+      "dateHint": "2026-07-16",
+      "ext": ".jpg",
+      "index": 3
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNjA3MjFfODIg/MDAxNzg0NTk4NjIzNzky.tqO2RF6APkURl2bnaMt8IZChxCJwgfcqTR2JAQXFc_Ig.w8Z_ZaHPrFHId5edMztcTDVkzzbRdAbPlRI0RkQi7iQg.JPEG/900_20260716_175428.jpg?type=w773",
+      "origName": "900_20260716_175428.jpg",
+      "role": "before",
+      "dateHint": "2026-07-16",
+      "ext": ".jpg",
+      "index": 4
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNjA3MjFfNzcg/MDAxNzg0NTk4NjIxNzEx.YZ92psSUCuEaSfkfeG6XkQXSuvnASDkbPgtyUee0Ew0g.9TgpYJVZjS7R1acNyuP89ZB6D_Jv6t5ZQ1shsQnhAn0g.JPEG/900_20260716_175436.jpg?type=w773",
+      "origName": "900_20260716_175436.jpg",
+      "role": "before",
+      "dateHint": "2026-07-16",
+      "ext": ".jpg",
+      "index": 5
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNjA3MjFfMTkx/MDAxNzg0NTk4NjIzNzk4.R4l8nqpTmhNASOzSB1DdXX9hQHXIC_TSYxma0GbKPPIg.s3s1V9dkLymb8ACq4VwzMsOxKftxnswb0lSA8Zs-Orsg.JPEG/900_20260716_175452.jpg?type=w773",
+      "origName": "900_20260716_175452.jpg",
+      "role": "before",
+      "dateHint": "2026-07-16",
+      "ext": ".jpg",
+      "index": 6
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNjA3MjFfMiAg/MDAxNzg0NTk4NjIwODQ5.QlibX-1gqSEA53sFODAWniXQGJIEZKvA762KMuKjIiAg.Zg0T2jmRf6mJhO29Nr7I3dWmCOO_tB1jOtkFwdxL-4Yg.JPEG/900_20260716_175517.jpg?type=w773",
+      "origName": "900_20260716_175517.jpg",
+      "role": "before",
+      "dateHint": "2026-07-16",
+      "ext": ".jpg",
+      "index": 7
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNjA3MjFfMTA1/MDAxNzg0NTk4NjIwODQ4._WYjrPN_uBy4-pC9ow2fJQSeQ4mJ8Pbh8_4F0Bp8Vv8g.NYwNeUEEaUzfhLEvk34LvlbEWxIlUE8BBj_XiUm1AzMg.JPEG/900_20260717_181217.jpg?type=w773",
+      "origName": "900_20260717_181217.jpg",
+      "role": "before",
+      "dateHint": "2026-07-17",
+      "ext": ".jpg",
+      "index": 8
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNjA3MjFfMzUg/MDAxNzg0NTk4NjIzMjUy.t4vbage6hF6L1lN31HztrFJfGbvAkWV5LeVKSWTJUhcg.i6YHMkPHUj-PMlSGyEuiBclHil-g7C4HGRa5RDywVmog.JPEG/900_20260718_165710.jpg?type=w773",
+      "origName": "900_20260718_165710.jpg",
+      "role": "process",
+      "dateHint": "2026-07-18",
+      "ext": ".jpg",
+      "index": 9
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNjA3MjFfMTIx/MDAxNzg0NTk4NjI1MTQy.AvBbQWNv7oiX7Iq5m8--yqvMRpCy-PUb5FEg9Dwsyqgg.9kOA4THA8zXBCt_jmSmcgkLtq0CxRXXkX44-FHUVLB8g.JPEG/900_20260718_170133.jpg?type=w773",
+      "origName": "900_20260718_170133.jpg",
+      "role": "process",
+      "dateHint": "2026-07-18",
+      "ext": ".jpg",
+      "index": 10
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNjA3MjFfMjMz/MDAxNzg0NTk4NjIyOTMw.8wgQBBrdFU-C6P6ANfmnmbQLt3QdpbEmCPFToZ-iiwkg.i7pXerE1cHUgPQo91NpmTYbBGMQwf1c-i12IW55AujYg.JPEG/900_20260718_170542.jpg?type=w773",
+      "origName": "900_20260718_170542.jpg",
+      "role": "after",
+      "dateHint": "2026-07-18",
+      "ext": ".jpg",
+      "index": 11
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNjA3MjFfMTIz/MDAxNzg0NTk4NjIyNzIw.jXw0Fzrf3MHY6OxiF-yioCXyZeNQHAnrkptA_gkbqk0g.0N-USwuWCmWLmifiNboynTA22FXd4OyXP7bWlQ9ooggg.JPEG/900_20260718_170537.jpg?type=w773",
+      "origName": "900_20260718_170537.jpg",
+      "role": "after",
+      "dateHint": "2026-07-18",
+      "ext": ".jpg",
+      "index": 12
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNjA3MjFfMTEw/MDAxNzg0NTk4NjI0Mjgx.XlaME678Gxq4qGOzbQk8B_bCmhL6bpsIgQ7TYxFwtfkg.im-TPt-b4_m24T3eqFokkEf5G0z2Fa3ML_V3AOwxKQ4g.JPEG/900_20260718_170516.jpg?type=w773",
+      "origName": "900_20260718_170516.jpg",
+      "role": "after",
+      "dateHint": "2026-07-18",
+      "ext": ".jpg",
+      "index": 13
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNjA3MjFfMjYz/MDAxNzg0NTk4NjI0NzMw.mTfQCAeXncknoYKAYiPjkc3yn76i1eqmTz_8L6ZVJ8Ag.sMM8Upoz7dJoSHSbBKx4q349TycSG6uNhlmI7UtnSOkg.JPEG/900_20260718_170503.jpg?type=w773",
+      "origName": "900_20260718_170503.jpg",
+      "role": "after",
+      "dateHint": "2026-07-18",
+      "ext": ".jpg",
+      "index": 14
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNjA3MjFfMjg5/MDAxNzg0NTk4NjIwODQ4.suTUduQmwFTNsmR2MhAdFqFzFb8WluNlHN3P_jw145Yg.qRUBZZDeF6_U5NuL4h474NPd-uobViQrPwWYn26d-9Ug.JPEG/900_20260718_170427.jpg?type=w773",
+      "origName": "900_20260718_170427.jpg",
+      "role": "after",
+      "dateHint": "2026-07-18",
+      "ext": ".jpg",
+      "index": 15
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNjA3MjFfNTEg/MDAxNzg0NTk4NjI0Mjgz.l_5D3trBeMqLSp4_RXyn42jxIZbU9pXgzLwZeKq67j4g.OJKmMpWLDMqAkLztligOMXIHjYAcuDHcptBq2xQw1Dog.JPEG/900_20260718_170432.jpg?type=w773",
+      "origName": "900_20260718_170432.jpg",
+      "role": "after",
+      "dateHint": "2026-07-18",
+      "ext": ".jpg",
+      "index": 16
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNjA3MjFfMjI5/MDAxNzg0NTk4NjIxOTI3.yEmkGoAsdPizfpV4qD4Ew7ccn_Hk5A-GA7ennrt1noUg.14hjuH0H-vIjyq-EJrOsIVQabbBMq3qonT2D2TmK5YQg.JPEG/900_20260718_170443.jpg?type=w773",
+      "origName": "900_20260718_170443.jpg",
+      "role": "after",
+      "dateHint": "2026-07-18",
+      "ext": ".jpg",
+      "index": 17
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNjA3MjFfMjU5/MDAxNzg0NTk4NjIyNzY2.KkZzQxPynMUGOgON41UdeMJenc94woU1O8Gq3bLAJoQg.gXmAG7OM-LCeIyaR7TmvoGumCTkw-W6pKlovyb47pHAg.JPEG/900_20260718_170453.jpg?type=w773",
+      "origName": "900_20260718_170453.jpg",
+      "role": "after",
+      "dateHint": "2026-07-18",
+      "ext": ".jpg",
+      "index": 18
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNjA3MjFfMzIg/MDAxNzg0NTk4NjIwODQ4.wuQcTL5SmjmBrK3Gnp0f0ZzSpbDWEWBYqOW39mYqe8Ig.nAEWsuR0enr_mqRNVjLfVKl9a7gTv7XcMAOHYCDFdDcg.JPEG/900_20260718_170606.jpg?type=w773",
+      "origName": "900_20260718_170606.jpg",
+      "role": "after",
+      "dateHint": "2026-07-18",
+      "ext": ".jpg",
+      "index": 19
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNjA3MjFfMzAg/MDAxNzg0NTk4NjIxNjcy.ocyzTl3cczgHCl6POfrdG4izf1A8ITGw3i9V5ShD-Ssg.h8heaXglEVHKoChmrkAXmviKsNxaXH1GFV0UrCG_2jUg.JPEG/900_20260718_170620.jpg?type=w773",
+      "origName": "900_20260718_170620.jpg",
+      "role": "after",
+      "dateHint": "2026-07-18",
+      "ext": ".jpg",
+      "index": 20
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNjA3MjFfNjkg/MDAxNzg0NTk4NjI0Nzgx.QbqV0knzAXv_tOR2X6aZ_oT3C_xBN83-LJnL8g8lYgwg.21F6gVXwTjxxfYyX0m3KW6d6lm_GXxFHVYNosHVn66Ag.JPEG/900_20260718_170624.jpg?type=w773",
+      "origName": "900_20260718_170624.jpg",
+      "role": "after",
+      "dateHint": "2026-07-18",
+      "ext": ".jpg",
+      "index": 21
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNjA3MjFfMjU5/MDAxNzg0NTk4NjIyNTA5.WsT6t6ffAcfn1I8VNegZE-4Li44Zhy1LOx7ucXz-ij0g.K11SOQ3Q5f3lHfa192833irzWtzDkYvNhZF9HuKrklsg.JPEG/900_20260718_170714.jpg?type=w773",
+      "origName": "900_20260718_170714.jpg",
+      "role": "after",
+      "dateHint": "2026-07-18",
+      "ext": ".jpg",
+      "index": 22
+    }
+  ],
+  "roleOverride": false,
+  "body": "안녕하세요. 아인산업안전입니다.\n\n이번 현장은 서귀포시 치유의 숲 입구 로터리 구간으로, 차량 통행량이 많고 회전 반경이 큰 도로에서 운전자들의 안전한 주행을 유도하기 위한 차선규제봉(시선유도봉) 설치공사를 진행하였습니다.\n\n로터리 구간은 일반 직선도로와 달리 진입과 진출 차량이 동시에 발생하는 곳으로, 운전자의 순간적인 판단이 매우 중요한 장소입니다.\n\n특히 중앙분리 기능이 약하거나 시설물이 노후되면 불법 유턴, 차선 침범, 역주행 등의 위험이 높아질 수 있어 지속적인 유지관리가 필요한 시설입니다.\n\n---\n\n[작업전 사진]\n\n---\n\n이번 공사는 기존 시설물을 철거한 후 새로운 차선규제봉을 설치하여 도로의 안전성과 시인성을 향상시키는 것을 목표로 진행되었습니다.\n\n---\n\n공사 개요\n\n발주처 : 서귀포시청\n\n공사명 : 치유의 숲 앞 로터리 차선규제봉 설치\n\n공사내용\n\n기존 규제봉 철거\n\n설치 위치 측량 및 정렬\n\n앵커 천공 및 고정\n\n국내산 표준 차선규제봉 설치\n\n설치 상태 및 체결상태 최종 점검\n\n---\n\n[작업중 사진]\n\n---\n\n차선규제봉이 필요한 이유\n\n차선규제봉은 단순히 차선을 구분하는 시설물이 아닙니다.\n\n도로교통의 흐름을 일정하게 유지하고 차량의 진행 방향을 명확하게 유도하여 사고를 예방하는 중요한 교통안전시설입니다.\n\n대표적인 역할은 다음과 같습니다.\n\n중앙선 침범 방지\n\n불법 유턴 방지\n\n차선 이탈 예방\n\n운전자 시선 유도\n\n야간 및 우천 시 시인성 확보\n\n보행자 안전 확보\n\n특히 제주도와 같이 관광객의 통행이 많은 지역에서는 익숙하지 않은 도로 환경으로 인해 순간적인 차선 변경이 자주 발생하기 때문에 차선규제봉의 역할이 더욱 중요합니다.\n\n---\n\n[작업후 사진]\n\n---\n\n국내산 표준 차선규제봉의 특징\n\n이번 현장에는 국내산 표준 규격의 차선규제봉을 적용하였습니다.\n\n국내산 제품은 내구성과 복원력이 우수하며 국내 도로 환경에 맞춰 제작되어 유지관리 측면에서도 뛰어난 성능을 제공합니다.\n\n주요 특징은 다음과 같습니다.\n\nㆍ고탄성 TPU 또는 우레탄 재질 적용\n\nㆍ차량 충돌 시 원상복원 기능\n\nㆍ자외선(UV) 및 염분에 강한 내후성\n\nㆍ고휘도 반사띠 적용으로 야간 시인성 우수\n\nㆍ스테인리스 앵커를 이용한 견고한 고정\n\nㆍ반복 충격에도 쉽게 파손되지 않는 구조\n\n제주지역은 강풍과 염분의 영향을 지속적으로 받기 때문에 저가 제품보다는 내후성과 복원력이 검증된 국내산 제품을 사용하는 것이 장기적으로 유지관리 비용을 절감하는 데 도움이 됩니다.\n\n---\n\n시공에서 가장 중요한 것은 '정확한 정렬'\n\n차선규제봉은 설치만 한다고 끝나는 시설물이 아닙니다.\n\n설치 간격과 직선 정렬이 조금만 틀어져도 운전자에게 시각적인 불편을 주고, 도로의 미관과 안전성 모두가 떨어질 수 있습니다.\n\n아인산업안전은 설치 전 위치를 정확하게 확인한 후 일정한 간격과 직진성을 유지하여 시공하며, 모든 체결부를 다시 한번 점검하여 장기간 안전하게 사용할 수 있도록 작업을 진행하고 있습니다.\n\n---\n\n안전을 위한 작은 시설물 하나의 가치\n\n도로 위 작은 차선규제봉 하나가 교통사고를 예방하고 운전자와 보행자의 생명을 지키는 중요한 역할을 합니다.\n\n눈에 잘 띄지 않는 시설물이지만, 이러한 교통안전시설 하나하나가 안전한 도로환경을 만드는 기본입니다.\n\n아인산업안전은 앞으로도 도로안전시설물 설치, 차선규제봉, 볼라드, 시선유도봉, 안전시설물 유지보수 등 다양한 현장에서 축적된 경험과 기술력을 바탕으로 안전하고 품질 높은 시공을 제공하겠습니다.\n\n감사합니다."
+}

@@ -1,0 +1,99 @@
+{
+  "caseNo": "004",
+  "sourceRef": "Raw/04. 안전시설/안전시설-004.md",
+  "extractedAt": "2026-08-27",
+  "frontmatter": {
+    "tags": [
+      "안전시설",
+      "시공기술사례",
+      "그레이팅"
+    ],
+    "created": "2026-08-18",
+    "type": "시공사례",
+    "category": "안전시설",
+    "work_type": "중하중 그레이팅 설치",
+    "materials": "중하중용 그레이팅",
+    "source": "아인산업안전",
+    "related": [
+      "[[Wiki/건설현장/노출콘크리트 면보수 — 콘채 시방서]]"
+    ]
+  },
+  "dateHints": [
+    "2026-04-15"
+  ],
+  "imageCount": 8,
+  "roleCounts": {
+    "before": 3,
+    "after": 3,
+    "process": 1,
+    "product": 1
+  },
+  "images": [
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNjA0MTVfOTEg/MDAxNzc2MjQwMjY4Mjky.ExGWFfq9ZZxqrgyOn2OUPhjljQV_VTj2ZWLdZB4dYoYg.sh1FeuvgnsiWzarZ0uao4--UfGUTwu8QG9dK3l8Cwwwg.JPEG/1280%EF%BC%BF20260415%EF%BC%BF093228.jpg?type=w773",
+      "origName": "1280＿20260415＿093228.jpg",
+      "role": "before",
+      "dateHint": "2026-04-15",
+      "ext": ".jpg",
+      "index": 1
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNjA0MTVfMjU2/MDAxNzc2MjQwMjc0MDg5.KsZYuDOqACzqBduvlK9uyKILdb6r33kzD1agPRG3kX0g.RS_77kNAo5mAn7lsUYZq23Uv4tUTRvC4h30AfIhTfeAg.JPEG/1280%EF%BC%BF20260415%EF%BC%BF093950.jpg?type=w773",
+      "origName": "1280＿20260415＿093950.jpg",
+      "role": "after",
+      "dateHint": "2026-04-15",
+      "ext": ".jpg",
+      "index": 2
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNjA0MTVfMjk5/MDAxNzc2MjQwMjgzNzg2.9URRjBpNXYy93VjmIBFcb_okOsRaFygxucZYa27TYYkg.MAhnGDbmhJP7pc58A_weMqh7QbENbPE6WCmHaFn0FmIg.JPEG/1280%EF%BC%BF20260415%EF%BC%BF093223.jpg?type=w773",
+      "origName": "1280＿20260415＿093223.jpg",
+      "role": "before",
+      "dateHint": "2026-04-15",
+      "ext": ".jpg",
+      "index": 3
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNjA0MTVfOTQg/MDAxNzc2MjQwMjkxMzIw.a6uMykDlssD5hQ8Onsmcz4YzwaSREzzavlc8FhZ9E94g.WNaLlcg_iD3YGDwvRncR6hky0XPQwnLPOekTBiB3ZQkg.JPEG/1280%EF%BC%BF20260415%EF%BC%BF093954.jpg?type=w773",
+      "origName": "1280＿20260415＿093954.jpg",
+      "role": "after",
+      "dateHint": "2026-04-15",
+      "ext": ".jpg",
+      "index": 4
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNjA0MTVfMjkz/MDAxNzc2MjQwMjk3MDMz.uFGZWhODDRmzMe8X4_ik8wtNtb1Dql0ffWGxv4QK_64g.SSA7yt0SmzgX5ipUoT6iA9BjG9qt8QXF6RB45K4Wydkg.JPEG/1280%EF%BC%BF20260415%EF%BC%BF093232.jpg?type=w773",
+      "origName": "1280＿20260415＿093232.jpg",
+      "role": "before",
+      "dateHint": "2026-04-15",
+      "ext": ".jpg",
+      "index": 5
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNjA0MTVfMTcx/MDAxNzc2MjQwMzIyNzQw.VPtIESKNquLq-yJgcOi9B0EqkmYfxrDamNlKaN6W9x4g.OafDrEf09H4hx-SV0Dt6W3SyhfIrjCrMYa3hpwoHLNEg.JPEG/1280%EF%BC%BF20260415%EF%BC%BF093946.jpg?type=w773",
+      "origName": "1280＿20260415＿093946.jpg",
+      "role": "after",
+      "dateHint": "2026-04-15",
+      "ext": ".jpg",
+      "index": 6
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNjA0MTVfMjU4/MDAxNzc2MjQwMzM5ODI3.Y4d2bWZ-nd2U8bC17co6NjDS2TU_bIu_7rRraTg7IsAg.R9qK_UMCyrcKCVr4F_VuX71nGJIw7n4OZ3uhp3RRRosg.JPEG/1280%EF%BC%BF20260415%EF%BC%BF093956.jpg?type=w773",
+      "origName": "1280＿20260415＿093956.jpg",
+      "role": "process",
+      "dateHint": "2026-04-15",
+      "ext": ".jpg",
+      "index": 7
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNjA0MTVfMTEg/MDAxNzc2MjQxMzIwMjIx.XIHLWXQYsx0iE7PDSKLDwAv1ZU-LMNvHEHI8pv_pHEcg.qvo6UgX7TiJuwNMRzSkveXk3F8qvE921NNsfreKmA7Ig.PNG/ChatGPT_Image_2026%EB%85%84_4%EC%9B%94_15%EC%9D%BC_%EC%98%A4%ED%9B%84_05_21_53.png?type=w773",
+      "origName": "ChatGPT_Image_2026년_4월_15일_오후_05_21_53.png",
+      "role": "product",
+      "dateHint": null,
+      "ext": ".png",
+      "index": 8
+    }
+  ],
+  "roleOverride": false,
+  "body": "안녕하세요, 아인산업안전입니다.\n\n오늘은 초등학교 현장에서 진행한\n\n**중하중 그레이팅 설치 작업 사례**를 소개드립니다.\n\n---\n\n**■ 기존 상태 문제점**\n\n현장 확인 결과,\n\n- 바닥 콘크리트 균열 다수 발생\n\n- 배수로 주변 파손 및 열화 진행\n\n- 기존 그레이팅 하중 대응 부족\n\n특히 학생들이 이용하는 공간이라\n\n**안전사고 위험이 높은 상태**였습니다.\n\n---\n\n**■ 시공 내용**\n\n이번 작업에서는\n\n**중하중용 그레이팅**을 적용하여\n\n- 차량 및 보행 하중 대응 강화\n\n- 배수 기능 개선\n\n- 구조적 안정성 확보\n\n를 목표로 시공했습니다.\n\n---\n\n|   |   |\n|---|---|\n|시공전|시공후|\n|||\n|||\n|||\n\n**■ 시공 과정**\n\n- 기존 그레이팅 철거\n\n- 배수로 주변 보수 및 정리\n\n- 중하중 그레이팅 설치 및 고정\n\n---\n\n**■ 시공 후 변화**\n\n- 균열부 주변 정리로 **외관 개선**\n\n- 하중 대응 구조로 **내구성 강화**\n\n- 학생 이동 구간 **안전성 확보**\n\n특히 학교, 공장, 주차장 등\n\n하중이 지속적으로 발생하는 구간에서는\n\n일반 그레이팅보다 **중하중 제품 적용이 필수**입니다.\n\n---\n\n**■ 적용 포인트 (실무 핵심)**\n\n✔ 학교 / 공공시설 → 안전 최우선\n\n✔ 차량 진입 구간 → 중하중 필수\n\n✔ 균열 발생 구간 → 보수 + 교체 같이 진행\n\n---\n\n**■ 마무리**\n\n단순 교체가 아니라\n\n**하중 조건 + 사용 환경을 고려한 설계 시공**이 중요합니다.\n\n아인산업안전은\n\n현장에 맞는 최적의 솔루션을 제공합니다.\n\n중차량용 중하중 그레이팅 = 높은 하중을 견뎌야하는 조건에서 적용"
+}

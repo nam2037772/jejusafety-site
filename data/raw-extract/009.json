@@ -1,0 +1,231 @@
+{
+  "caseNo": "009",
+  "sourceRef": "Raw/04. 안전시설/안전시설-009.md",
+  "extractedAt": "2026-08-27",
+  "frontmatter": {
+    "tags": [
+      "안전시설",
+      "시공기술사례",
+      "경계석"
+    ],
+    "created": "2026-08-18",
+    "type": "시공사례",
+    "category": "안전시설",
+    "work_type": "경계석 철거·재설치, 아스콘 포장 복구",
+    "materials": "잡석, 도로복구용 아스콘",
+    "source": "아인산업안전",
+    "related": [
+      "[[Wiki/건설현장/노출콘크리트 면보수 — 콘채 시방서]]"
+    ]
+  },
+  "dateHints": [
+    "2025-07-31",
+    "2025-08-05"
+  ],
+  "imageCount": 24,
+  "roleCounts": {
+    "before": 2,
+    "process": 20,
+    "after": 2
+  },
+  "images": [
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTA3MzFfMTcg/MDAxNzUzOTQ4ODIwMTY1.gMZjHI2WmE0GWTvGHStRqs5PYcIfJjE_0jtLpSyxKJ0g.lTCf-FiS3wVG939UGVH-xSBHzrt6MuEWcdwb4h0D2sUg.JPEG/900%EF%BC%BF20250731%EF%BC%BF081750.jpg?type=w773",
+      "origName": "900＿20250731＿081750.jpg",
+      "role": "before",
+      "dateHint": "2025-07-31",
+      "ext": ".jpg",
+      "overridden": true,
+      "index": 1
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTA3MzFfMTg4/MDAxNzUzOTQ4ODE1OTIy.k2NoUQfBdFxfzlFNzZjDI8VISH5J9xWOzwaijX3eRB4g.wjpJR080Q61zdUu0FaiHpzw_Xp4qTwl0Soxtr5d6NPIg.JPEG/900%EF%BC%BF20250731%EF%BC%BF081801.jpg?type=w773",
+      "origName": "900＿20250731＿081801.jpg",
+      "role": "before",
+      "dateHint": "2025-07-31",
+      "ext": ".jpg",
+      "overridden": true,
+      "index": 2
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTA3MzFfMjI3/MDAxNzUzOTQ4ODE3NzM5.jskuucolvrXExNPT0W_PQ7ZcIiRRF9GYmE2bhGmv9Icg.77Zl2lKLEMMEBEJNoFVNhupWjHR_BtomB8g4YdhODKUg.JPEG/900%EF%BC%BF20250731%EF%BC%BF082847.jpg?type=w773",
+      "origName": "900＿20250731＿082847.jpg",
+      "role": "process",
+      "dateHint": "2025-07-31",
+      "ext": ".jpg",
+      "index": 3
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTA3MzFfMzIg/MDAxNzUzOTQ4ODE1ODcz.IZbj-L-eDdIe3llfmfr-ZbPFU_SpM6_IN4KgNyX_dggg.SDYnYFmwBNOLtWZmgByGPpkpLlBQAoOTuA7CAHw7_ZYg.JPEG/900%EF%BC%BF20250731%EF%BC%BF084647.jpg?type=w773",
+      "origName": "900＿20250731＿084647.jpg",
+      "role": "process",
+      "dateHint": "2025-07-31",
+      "ext": ".jpg",
+      "index": 4
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTA3MzFfMTUw/MDAxNzUzOTQ4ODIxMzQ5.nJ5DM6mqGoSOUALFM0QDr4Z1uen8rrYaW6ns7StbxzIg.eKxTZAI2zLmCwqZttjYWoMfkeLgXsfGX2qzipvhMdhEg.JPEG/900%EF%BC%BF20250731%EF%BC%BF084649.jpg?type=w773",
+      "origName": "900＿20250731＿084649.jpg",
+      "role": "process",
+      "dateHint": "2025-07-31",
+      "ext": ".jpg",
+      "index": 5
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTA3MzFfMTM1/MDAxNzUzOTQ4ODE2MjI0.wrEHbPBmW1HQRSNJ_k1PxrdyezaC_FicZpTtxERyJoAg.73VjVg365w7XcjFnZPkWZsdbOfyaioV5JjarxoxBbkYg.JPEG/900%EF%BC%BF20250731%EF%BC%BF100939.jpg?type=w773",
+      "origName": "900＿20250731＿100939.jpg",
+      "role": "process",
+      "dateHint": "2025-07-31",
+      "ext": ".jpg",
+      "index": 6
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTA3MzFfODYg/MDAxNzUzOTQ4ODE5MDMx.rrJRx-ATuC6Bq-1Rw44U9g_YtvQnhajr9oc4AeQyy8Qg.qEvYa14gMvp84I30vV-jx0Wubph7EguI5yH0Miyt2K4g.JPEG/900%EF%BC%BF20250731%EF%BC%BF100942.jpg?type=w773",
+      "origName": "900＿20250731＿100942.jpg",
+      "role": "process",
+      "dateHint": "2025-07-31",
+      "ext": ".jpg",
+      "index": 7
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTA3MzFfMTYw/MDAxNzUzOTQ4ODIwMzY2.3vQNUUMzYceZpvcfDF3rBBmX6PCrZzHwIeOIhn0R8aIg.xiVpxdnrRRowzc-V6ozhQ9Kvd6wrOBoKv88w4-A_xH8g.JPEG/900%EF%BC%BF20250731%EF%BC%BF101027.jpg?type=w773",
+      "origName": "900＿20250731＿101027.jpg",
+      "role": "process",
+      "dateHint": "2025-07-31",
+      "ext": ".jpg",
+      "index": 8
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTA3MzFfMjgg/MDAxNzUzOTQ4ODE3MjIz._7yjCVba_U_N9jRaCxQyzEpK2Ul_6P-UxnESbxlnExog.qAj3KnO7ncAqhX_5QlhnNWcYQAR46IcSzIpjEjTd9oIg.JPEG/900%EF%BC%BF20250731%EF%BC%BF111236.jpg?type=w773",
+      "origName": "900＿20250731＿111236.jpg",
+      "role": "process",
+      "dateHint": "2025-07-31",
+      "ext": ".jpg",
+      "index": 9
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTA3MzFfNDMg/MDAxNzUzOTQ4ODE3MjM3.nBXHDBkIrvsVigVDSbSV3eMnRYHL3eDZpRFnzfBsEjgg.iHNWZ5fUX6q81WRD82XkRI4IRpiLB1ESAbpf9krB4icg.JPEG/900%EF%BC%BF20250731%EF%BC%BF111238.jpg?type=w773",
+      "origName": "900＿20250731＿111238.jpg",
+      "role": "process",
+      "dateHint": "2025-07-31",
+      "ext": ".jpg",
+      "index": 10
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTA3MzFfMTAy/MDAxNzUzOTQ4ODIxNjA4.-ZNrMcpIWAwFLTY-5FGZtpmhk8jgOjRd6tLxW5ISN4Ag.KnJZsk3MYPVNGQ3XLmwgIo0j1bvil8XQ1NeTi14julQg.JPEG/900%EF%BC%BF20250731%EF%BC%BF111241.jpg?type=w773",
+      "origName": "900＿20250731＿111241.jpg",
+      "role": "process",
+      "dateHint": "2025-07-31",
+      "ext": ".jpg",
+      "index": 11
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTA3MzFfMTg4/MDAxNzUzOTQ4ODE5MjIx.1dl_Ad-L3IqMgxCJYsxiIaA5LwDghOUyf8xWEDO9_B4g.zKUXqsaHZG8rPCtt5zq1pJ6jGUFW9QGG8YwwDSWIXBYg.JPEG/900%EF%BC%BF20250731%EF%BC%BF111909.jpg?type=w773",
+      "origName": "900＿20250731＿111909.jpg",
+      "role": "process",
+      "dateHint": "2025-07-31",
+      "ext": ".jpg",
+      "index": 12
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTA3MzFfMjM5/MDAxNzUzOTQ4ODE5MDkx.xdJLIuqn716V7ATOzTyEoxX4h4PLyHNZFXC8_RJrlBIg.Br8bbHAWy5uf-O_zURX0iR09lidxS1M609SyTGIF-jAg.JPEG/900%EF%BC%BF20250731%EF%BC%BF111912.jpg?type=w773",
+      "origName": "900＿20250731＿111912.jpg",
+      "role": "process",
+      "dateHint": "2025-07-31",
+      "ext": ".jpg",
+      "index": 13
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTA3MzFfMjkx/MDAxNzUzOTQ4ODE3NzYy.EI_6SStRWeLqhgnKyPLvjH6Fs2Q7Tj1jBhPpMKNceP4g.8eXQPBEfD06pnwEBU_l_sEuR3-GA6QnXz6QPpGkpGpsg.JPEG/900%EF%BC%BF20250731%EF%BC%BF130829.jpg?type=w773",
+      "origName": "900＿20250731＿130829.jpg",
+      "role": "process",
+      "dateHint": "2025-07-31",
+      "ext": ".jpg",
+      "index": 14
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTA3MzFfOTEg/MDAxNzUzOTQ4ODE5MzU3.l50jAKlWGb8fSJDUQbcWSSdMyQ8bY2O_S2qxt8cIcqkg.6SH9Pd41AZjyV0jZyuK2kD9ZUcJtyMZYyt_4ziKllVEg.JPEG/900%EF%BC%BF20250731%EF%BC%BF131552.jpg?type=w773",
+      "origName": "900＿20250731＿131552.jpg",
+      "role": "process",
+      "dateHint": "2025-07-31",
+      "ext": ".jpg",
+      "index": 15
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTA3MzFfMjA3/MDAxNzUzOTQ4ODIwNDE5.Z3PhRVOulTmOsxmQ3-gVbRQ17ddH0B46P_2QUFoxd5Qg.9gXADfKO8jVRrlMeM3PXVlO8iWFdIzNO72Iw3pYFlZsg.JPEG/900%EF%BC%BF20250731%EF%BC%BF140617.jpg?type=w773",
+      "origName": "900＿20250731＿140617.jpg",
+      "role": "process",
+      "dateHint": "2025-07-31",
+      "ext": ".jpg",
+      "index": 16
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTA3MzFfNjMg/MDAxNzUzOTQ4ODE5ODkw.rnT-DNqKdVZ0SPvqpGEHKYmSlxCHY25zc1CgzWzQ9lwg.sppTD8_xJ5E412eSj-csrOM17CXJCslDvRw9otP5DCsg.JPEG/900%EF%BC%BF20250731%EF%BC%BF140620.jpg?type=w773",
+      "origName": "900＿20250731＿140620.jpg",
+      "role": "process",
+      "dateHint": "2025-07-31",
+      "ext": ".jpg",
+      "index": 17
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTA3MzFfNzYg/MDAxNzUzOTQ4ODIxOTgw.tLPzZwoM9aR0V3jn_gHoolgIfeb-7TycN2nFCjc_Iqog.4RijYWHc_q3TYPhJ5XjzRRQBhFdJHrc30YX_yOMnoT0g.JPEG/900%EF%BC%BF20250731%EF%BC%BF141147.jpg?type=w773",
+      "origName": "900＿20250731＿141147.jpg",
+      "role": "process",
+      "dateHint": "2025-07-31",
+      "ext": ".jpg",
+      "index": 18
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTA3MzFfMjM0/MDAxNzUzOTQ4ODIwOTIw.Jmc5UVJs7eFA8RVjT5CPNQX-muc6Cn_Zhx0ksHAdpPsg.uQ-gMfgL-yOoaWcWItCEwS2L-oBm1--3AhIIXDuiwbcg.JPEG/900%EF%BC%BF20250731%EF%BC%BF141150.jpg?type=w773",
+      "origName": "900＿20250731＿141150.jpg",
+      "role": "process",
+      "dateHint": "2025-07-31",
+      "ext": ".jpg",
+      "index": 19
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTA3MzFfMjE5/MDAxNzUzOTQ4ODE1OTQw.LRuCL2sfbZOChnbpuKE6XZUmCr12Qzj63dkjFNT2BcAg.RKh3ChggcW8Gn-qreMvDkI5as-8K0hd0P4zcdXcnSZkg.JPEG/900%EF%BC%BF20250731%EF%BC%BF142508.jpg?type=w773",
+      "origName": "900＿20250731＿142508.jpg",
+      "role": "process",
+      "dateHint": "2025-07-31",
+      "ext": ".jpg",
+      "index": 20
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTA3MzFfMTc0/MDAxNzUzOTQ4ODIyMzcx.GrlRON6GCvQCIQrA-D0Hva6O0WZrT69y8jXwnFkVq78g.4Qhm03tOV6Lxb5hpDpxBpoqyxXcNhXpj8HRj__PrSl8g.JPEG/900%EF%BC%BF20250731%EF%BC%BF143506.jpg?type=w773",
+      "origName": "900＿20250731＿143506.jpg",
+      "role": "process",
+      "dateHint": "2025-07-31",
+      "ext": ".jpg",
+      "index": 21
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTA3MzFfMTM3/MDAxNzUzOTQ4ODIxMTQ3.yCd9AJ4K76wicTRfhXa32Pc7k1Nu-0K2lXnA-8IXoTEg.aAUHHtKiCJ-Ln61CZ_PKeX-Mf-ejB3qbOc3eCpp5y9Ig.JPEG/900%EF%BC%BF20250731%EF%BC%BF143511.jpg?type=w773",
+      "origName": "900＿20250731＿143511.jpg",
+      "role": "process",
+      "dateHint": "2025-07-31",
+      "ext": ".jpg",
+      "index": 22
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTA4MDVfMjM4/MDAxNzU0MzU2MTc3Mzcz.HtF-3_uiVdUoxyEMaxop9uC4rg9JiSjrekh9jufhSBIg.L9UOafQoj4JMXduEE_cs6wPK_PIhfnfX_s0h6kRBh9wg.JPEG/900%EF%BC%BF20250805%EF%BC%BF093156.jpg?type=w773",
+      "origName": "900＿20250805＿093156.jpg",
+      "role": "after",
+      "dateHint": "2025-08-05",
+      "ext": ".jpg",
+      "overridden": true,
+      "index": 23
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTA4MDVfMjE1/MDAxNzU0MzU2MTc3MzY5.hJn9gyQJSqmcQJFMZXNdEHukxTS2WunXQCJUMeQEAgcg.8KwKAOEpuZaqhTxOfiR6qiDb0Qo55nqGAMxjzvFVI8og.JPEG/900%EF%BC%BF20250805%EF%BC%BF093145.jpg?type=w773",
+      "origName": "900＿20250805＿093145.jpg",
+      "role": "after",
+      "dateHint": "2025-08-05",
+      "ext": ".jpg",
+      "overridden": true,
+      "index": 24
+    }
+  ],
+  "roleOverride": "idx1·2 = 철거 전 선형 표시 상태, idx23·24 = 경계석 재설치·아스콘 복구 완료 (사진 확인함).",
+  "body": "단지내 도로선형이 좁아 차들이 경계석을 밟고 지나가는 일이 자주생겨 경계석을 철거하고\n\n선형을 조정한후 경계석을 재설치하고 포장하는 일입니다.\n\n최대한 수목을 보호하며 화단을 줄입니다.\n\n경계석을 설치할 곳에 선형을 표시합니다.\n\n장비를 투입하여 기존 경계석을 철거하고 화단의 흙도 외부로 반출합니다.\n\n기존 경계석을 폐기물로 처리합니다.\n\n내부의 화단흙을 조심스럽게 철거하여 외부반출\n\n기존 화단의 흙을 다짐합니다.\n\n폭이 좁아 진동로라도 들어가기 힘든 공간이라 컴팩터로 다짐을 합니다.\n\n잡석을 포설하고 다시 다짐합니다.\n\n다짐시는 컴팩터로 밀실하게 여러번 다짐을 합니다.\n\n경계석을 설치합니다.\n\n경계석설치가 완료되면 포장마감을 할 위치에 레벨을 체크하고 구배를 확인합니다.\n\n전체를 다시 다짐하고 설치된 경계석의 뒷면을 뒷채움합니다.\n\n아스팔트프라이머를 도포하고 도로복구용 아스콘을 포설합니다.\n\n도로복구용 아스콘은 25kg포대를 사용하며\n\n5cm정도를 복구하는데 4포정도가 소요됩니다.\n\n두께에 따라 조금 여유있게 재료를 준비합니다.\n\n날이 더워 아스콘이 컴팩터에 붙지 않도록 경유를 컴팩터하부에 뿌려가며 충분히 다짐합니다.\n\n하루정도의 양생시간동안 차들의 통제를 막을 필요가 있습니다.\n\n이상 아인산업안전의 도로경계석철거 재설치와 아스콘포장복구 사례입니다.\n\n아인산업안전은 제주도내 공공기관을 포함한 모든 시설물들의 보수공사를 진행중입니다."
+}

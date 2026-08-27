@@ -1,0 +1,90 @@
+{
+  "caseNo": "005",
+  "sourceRef": "Raw/04. 안전시설/안전시설-005.md",
+  "extractedAt": "2026-08-27",
+  "frontmatter": {
+    "tags": [
+      "안전시설",
+      "시공기술사례",
+      "스덴자바라대문"
+    ],
+    "aliases": [
+      "스텐 자바라 대문",
+      "레일형 자바라 대문"
+    ],
+    "created": "2026-08-18",
+    "type": "시공사례",
+    "category": "안전시설",
+    "work_type": "스덴자바라 대문 설치 (레일형)",
+    "materials": "STS 304 스테인리스, 앵글 레일",
+    "source": "아인산업안전",
+    "related": [
+      "[[Wiki/건설현장/노출콘크리트 면보수 — 콘채 시방서]]"
+    ]
+  },
+  "dateHints": [
+    "2026-04-02"
+  ],
+  "imageCount": 6,
+  "roleCounts": {
+    "after": 6
+  },
+  "images": [
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNjA0MDJfMjIw/MDAxNzc1MTE5ODgzNTc4.knQvkFm1ODXRCoVWeee3nyJ73XPiPhVjao0hXrWTkn0g.U2ln4RdJt2bayI5VI4vLpLPHFXmLeB9WzIcO9HDrwR0g.JPEG/900%EF%BC%BF20260402%EF%BC%BF141905.jpg?type=w773",
+      "origName": "900＿20260402＿141905.jpg",
+      "role": "after",
+      "dateHint": "2026-04-02",
+      "ext": ".jpg",
+      "overridden": true,
+      "index": 1
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNjA0MDJfMTU2/MDAxNzc1MTE5ODgzMTI2.AhAKnmFtz88YWt7jtx5V6tpgtJKH2Sty8jAD-pIm-v4g.wb8M4Jm4ELq8OL1NzKz2uu0Vfv65qi8A9sdr8Y7_M_gg.JPEG/900%EF%BC%BF20260402%EF%BC%BF160358.jpg?type=w773",
+      "origName": "900＿20260402＿160358.jpg",
+      "role": "after",
+      "dateHint": "2026-04-02",
+      "ext": ".jpg",
+      "overridden": true,
+      "index": 2
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNjA0MDJfMTE3/MDAxNzc1MTE5ODgyNTkx.VjdCixr6UL3BolPvykBHk26u-Ymfx5vE04Y3NU6Camgg.oRcvRjUPmE-Cf28Ut3Cw_VpgVKPF79jTPBZ63bVDv6Mg.JPEG/900%EF%BC%BF20260402%EF%BC%BF160401.jpg?type=w773",
+      "origName": "900＿20260402＿160401.jpg",
+      "role": "after",
+      "dateHint": "2026-04-02",
+      "ext": ".jpg",
+      "overridden": true,
+      "index": 3
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNjA0MDJfMTc3/MDAxNzc1MTE5ODgyNTg2.Z9wlOPrYIwuqDhW5COSyfF1rI_mRmODbIOrFfy3GCykg.sxdZrrClsbyN-1YhqqxfSQh4J092X7K41ZUPjarlUpYg.JPEG/900%EF%BC%BF20260402%EF%BC%BF160414.jpg?type=w773",
+      "origName": "900＿20260402＿160414.jpg",
+      "role": "after",
+      "dateHint": "2026-04-02",
+      "ext": ".jpg",
+      "overridden": true,
+      "index": 4
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNjA0MDJfNTMg/MDAxNzc1MTE5ODgzNjI4.4bFlUUI6l_EywPhIUC50JleBsBe-KeKeXsJcGKyo3R8g.cUsbLJwBQL4xfJQFETgKEGXpqVfJddUNuld3jv24nbsg.JPEG/900%EF%BC%BF20260402%EF%BC%BF160419.jpg?type=w773",
+      "origName": "900＿20260402＿160419.jpg",
+      "role": "after",
+      "dateHint": "2026-04-02",
+      "ext": ".jpg",
+      "overridden": true,
+      "index": 5
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNjA0MDJfMTEz/MDAxNzc1MTE5ODgyNTkx.d56VaB0j_RwQcNuAAo3Q5pjq_vR999XO9_IIhTLHDRkg.G9atHPGaXniw415SX2WQCFQzmZoqhY3YjYOEMNG4qGcg.JPEG/900%EF%BC%BF20260402%EF%BC%BF160442.jpg?type=w773",
+      "origName": "900＿20260402＿160442.jpg",
+      "role": "after",
+      "dateHint": "2026-04-02",
+      "ext": ".jpg",
+      "overridden": true,
+      "index": 6
+    }
+  ],
+  "roleOverride": "6장 모두 설치 완료 상태의 자바라 대문. 시공 전 사진 없음 (사진 확인함).",
+  "body": "스덴자바라 대문설치 사례입니다.\n\n[시공사례] 흔들림 없는 고정력, '레일형' 스텐 자바라 대문 설치\n\n안녕하세요, 아인산업안전입니다.\n\n오늘은 차량 통행이 빈번하고 대문의 직선 주행성이 강조되어야 하는 현장에 최적화된 레일형 스텐 자바라 대문 시공 사례를 소개해 드립니다.\n\n1. 현장 개요: 왜 '레일형'인가?\n\n이번 현장은 바닥면에 앵글 레일을 매립(또는 고정)하여 자바라 바퀴가 길을 따라 정확하게 움직이도록 설계되었습니다.\n\n* 타입: 앵글 레일 주행 방식 (레일 위 바퀴)\n\n* 재질: 고내식성 STS 304 스테인리스\n\n* 특징: 강풍이나 경사지에서도 이탈 없이 안정적인 개폐 가능\n\n2. 레일형 자바라의 실무적 장점\n\n무레일 방식과 비교했을 때 레일형이 갖는 확실한 차별점입니다.\n\n* 직선 주행의 정확성: 레일이 가이드 역할을 하므로 대문이 길어져도 휘어짐 없이 일직선으로 부드럽게 열리고 닫힙니다.\n\n* 내구성 및 안정성: 바퀴가 레일에 맞물려 돌아가므로 외부 충격이나 강한 바람에도 대문이 경로를 이탈하거나 쓰러질 위험이 현저히 낮습니다.\n\n* 장기적 사용성: 바닥 마찰이 일정하여 바퀴의 편마모가 적고, 구동 부하가 낮아 조작이 훨씬 가볍습니다.\n\n3. 성공적인 시공을 위한 실무 체크리스트 (Tips)\n\n> Point 1. 레일의 수평과 고정\n\n> 레일 시공의 생명은 '수평'입니다. 바닥면과 레일이 들뜨지 않게 견고히 밀착되어야 바퀴 소음이 없고 이탈 사고를 방지할 수 있습니다.\n\n> Point 2. 레일 청소 및 관리\n\n> 레일 홈에 흙이나 자갈 등 이물질이 끼면 바퀴 손상의 원인이 됩니다. 주기적인 청소만으로도 부드러운 구동감을 오래 유지할 수 있습니다.\n\n> Point 3. 진입 각도 고려\n\n> 차량이 레일을 밟고 지나가야 하는 구조이므로, 레일이 바닥에서 너무 높게 돌출되지 않도록 마감 처리에 신경 써야 합니다.\n\n4. 아인산업안전의 약속\n\n저희는 현장의 지형과 사용 빈도를 면밀히 분석하여, 가장 고장이 적고 오래 사용할 수 있는 최적의 규격을 제안합니다.\n\n정직한 자재와 정밀한 시공으로 현장의 안전을 책임지겠습니다."
+}

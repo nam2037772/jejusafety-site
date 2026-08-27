@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# 네이버 검색로봇
+User-agent: Yeti
+Allow: /
+
+# Sitemap: 도메인 확정 후 config.js 의 siteUrl 을 채우고 tools/build.js 를 다시 실행하면 이 줄이 채워집니다.

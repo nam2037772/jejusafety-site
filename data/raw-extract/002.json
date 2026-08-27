@@ -1,0 +1,89 @@
+{
+  "caseNo": "002",
+  "sourceRef": "Raw/04. 안전시설/안전시설-002.md",
+  "extractedAt": "2026-08-27",
+  "frontmatter": {
+    "tags": [
+      "안전시설",
+      "시공기술사례",
+      "경사로진입판"
+    ],
+    "created": "2026-08-18",
+    "type": "시공사례",
+    "category": "안전시설",
+    "work_type": "경사로 진입판 설치",
+    "materials": "차량 진입판 U형(고강도 고무 컴파운드)",
+    "source": "아인산업안전",
+    "related": [
+      "[[Wiki/건설현장/노출콘크리트 면보수 — 콘채 시방서]]"
+    ]
+  },
+  "dateHints": [
+    "2026-04-16"
+  ],
+  "imageCount": 6,
+  "roleCounts": {
+    "before": 1,
+    "after": 3,
+    "process": 1,
+    "product": 1
+  },
+  "images": [
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNjA0MTZfODYg/MDAxNzc2MzI5MTUxMDk5.rraLdttNAwvOcFsiXjAlheAAEvKXAizVAF5Z8DORdK0g.1COPbH6Btr3p1m0epvHLNZAdxbCIXbsO5WdC3NrxRmsg.JPEG/1280%EF%BC%BF20260416%EF%BC%BF101703.jpg?type=w773",
+      "origName": "1280＿20260416＿101703.jpg",
+      "role": "before",
+      "dateHint": "2026-04-16",
+      "ext": ".jpg",
+      "overridden": true,
+      "index": 1
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNjA0MTZfMjI5/MDAxNzc2MzI5MTU3MTcw.qhBRPddVAAQA__tDq9rZ-3978inVvijMkBWCApqYViMg.yepVyV8uLjPQFEzHUxvVuXdwpjUky9MGOQfPauSQ_Jwg.JPEG/1280%EF%BC%BF20260416%EF%BC%BF112853.jpg?type=w773",
+      "origName": "1280＿20260416＿112853.jpg",
+      "role": "after",
+      "dateHint": "2026-04-16",
+      "ext": ".jpg",
+      "overridden": true,
+      "index": 2
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNjA0MTZfMTg3/MDAxNzc2MzI5MTkxMTIy.3N83qRjVSf4oHhxxbVkOitUT8aG327F-_RW7gvS9Pukg.CsEnaH9qdi3sVMAYBtoVuSVQmYemKEBPHFONCQabxIwg.JPEG/1280%EF%BC%BF20260416%EF%BC%BF112844.jpg?type=w773",
+      "origName": "1280＿20260416＿112844.jpg",
+      "role": "process",
+      "dateHint": "2026-04-16",
+      "ext": ".jpg",
+      "overridden": true,
+      "index": 3
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNjA0MTZfNjQg/MDAxNzc2MzI5MjEwNzE3.r6Y0MZI0ntMRcXo_nJEzfvUCYvIIDYjxI6xuCQe5R3sg.u_AydtQknwNHbCltiqxmCUmvuCSUUdKP-e08Lg0Yz20g.PNG/ChatGPT_Image_2026%EB%85%84_4%EC%9B%94_16%EC%9D%BC_%EC%98%A4%ED%9B%84_05_46_44.png?type=w773",
+      "origName": "ChatGPT_Image_2026년_4월_16일_오후_05_46_44.png",
+      "role": "product",
+      "dateHint": null,
+      "ext": ".png",
+      "overridden": true,
+      "index": 4
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNjA0MTZfMTU2/MDAxNzc2MzI5MjQ0MTg1.2Lv_vDKlvL2sukXOXnfQxtxwGWdxD-pzjr3CX8zaFHcg.Rm-VkSMwDeF2YsBvdQIVOcZsF9BCWErh9rI-a-mx6hEg.JPEG/1280%EF%BC%BF20260416%EF%BC%BF112848.jpg?type=w773",
+      "origName": "1280＿20260416＿112848.jpg",
+      "role": "after",
+      "dateHint": "2026-04-16",
+      "ext": ".jpg",
+      "overridden": true,
+      "index": 5
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNjA0MTZfMTgx/MDAxNzc2MzI5MjYxMzAy.XggOiBSghD7M1jDZRD2XMBrjy4obuemdTsy3_NkhvJAg.Esh81N6cAM27LlVLkUCq6vzPqOvpRWfh1V0XyesjqmEg.JPEG/1280%EF%BC%BF20260416%EF%BC%BF112856.jpg?type=w773",
+      "origName": "1280＿20260416＿112856.jpg",
+      "role": "after",
+      "dateHint": "2026-04-16",
+      "ext": ".jpg",
+      "overridden": true,
+      "index": 6
+    }
+  ],
+  "roleOverride": "시공전/시공후 표 + 후속 사진. idx6 은 idx2 와 같은 사진(112853)의 중복 게시본.",
+  "body": "안녕하세요. (주)아인산업안전입니다.\n\n이번 초등학교 현장에서는\n\n출입구 단차로 인해 불편했던 통행 환경을 개선하기 위해\n\n경사로 진입판 설치공사를 진행하였습니다.\n\n현장을 확인해보니 보도와 도로 사이에 단차가 있어\n\n아이들뿐만 아니라 유모차, 휠체어 이동 시에도\n\n불편함이 발생할 수 있는 구조였습니다.\n\n이러한 부분을 개선하기 위해\n\n현장 조건에 맞는 제품을 선정하여 시공을 진행하였습니다.\n\n|   |   |\n|---|---|\n|시공전|시공후|\n|||\n\n---\n\n**시공 내용**\n\n- 단차 구간에 맞춘 경사로 진입판 설치\n\n- 배수로 및 기존 구조 고려한 위치 조정\n\n- 흔들림 방지를 위한 고정 시공\n\n- 보행 및 차량 통행을 모두 고려한 배치\n\n현장마다 단차 높이와 구조가 다르기 때문에\n\n제품 선택과 배치가 중요한 작업입니다.\n\n---\n\n**사용 제품 (차량 진입판 U형)**\n\n- 제품명: 차량 진입판 U형\n\n- 재질: 고강도 고무(컴파운드)\n\n- 특징:\n\n- 미끄럼 방지 패턴 적용\n\n- 충격 흡수 및 내구성 우수\n\n- 다양한 규격 선택 가능 (현장 맞춤 적용)\n\n---\n\n**시공 후 변화**\n\n설치 이후에는\n\n- 보행 이동이 자연스럽게 이어지고\n\n- 차량 진입 시 충격이 줄어들며\n\n- 전체적인 통행 환경이 훨씬 안정적으로 개선되었습니다\n\n작은 단차 하나지만\n\n실제 사용 환경에서는 큰 차이를 만들어냅니다.\n\n---\n\n**이런 곳에 필요합니다**\n\n- 학교 및 교육시설 출입구\n\n- 어린이 보호구역 및 통학로\n\n- 주차장 및 건물 진입로\n\n- 보도와 도로 사이 단차 구간\n\n“조금 불편하다” 느껴지는 구간이\n\n가장 먼저 개선해야 할 부분입니다.\n\n---\n\n초등학교 경사로 진입판 설치공사는\n\n현장에 맞춰 깔끔하게 마무리되었습니다.\n\n앞으로도 안전하고 편리한 환경을 만들기 위해\n\n최선을 다하겠습니다.\n\n---\n\n**📞 상담 및 문의**\n\n현장 조건에 따라\n\n제품 선택 및 시공 방법이 달라질 수 있습니다.\n\n(주)아인산업안전은\n\n현장 맞춤형으로 안전한 시공을 도와드립니다.\n\n👉 대표전화: **1660-4019**\n\n부담 없이 문의주시면 친절하게 안내드리겠습니다."
+}

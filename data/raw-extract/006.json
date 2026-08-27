@@ -1,0 +1,134 @@
+{
+  "caseNo": "006",
+  "sourceRef": "Raw/04. 안전시설/안전시설-006.md",
+  "extractedAt": "2026-08-27",
+  "frontmatter": {
+    "tags": [
+      "안전시설",
+      "시공기술사례",
+      "출차주의등"
+    ],
+    "created": "2026-08-18",
+    "type": "시공사례",
+    "category": "안전시설",
+    "work_type": "출차주의등 설치 (미러센서·경광등)",
+    "materials": "미러센서, 경광등",
+    "source": "아인산업안전",
+    "related": [
+      "[[Wiki/건설현장/노출콘크리트 면보수 — 콘채 시방서]]"
+    ]
+  },
+  "dateHints": [
+    "2025-12-15"
+  ],
+  "imageCount": 12,
+  "roleCounts": {
+    "before": 2,
+    "process": 8,
+    "after": 2
+  },
+  "images": [
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTEyMTVfMjU2/MDAxNzY1NzkwMjE3NTAz.HbKMwv3cQKN--PmwWLfAoMNkugTbhRMVHU8QPb2H5Awg._5OL4bDHUGsLqyDqGrZfakQH21oi_uddoaexhprOY7Ig.JPEG/900%EF%BC%BF20251215%EF%BC%BF093630.jpg?type=w773",
+      "origName": "900＿20251215＿093630.jpg",
+      "role": "before",
+      "dateHint": "2025-12-15",
+      "ext": ".jpg",
+      "overridden": true,
+      "index": 1
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTEyMTVfMTMy/MDAxNzY1NzkwMjIwMDMz.5-1QZaOeJhEAXyVaAHYDWPUC_B7LhzVkDsYMWthO5AEg.WmV8P9RZud8ZhUxzaurLZZn-aP1P18fk4IB5a2gxCoQg.JPEG/900%EF%BC%BF20251215%EF%BC%BF093634.jpg?type=w773",
+      "origName": "900＿20251215＿093634.jpg",
+      "role": "before",
+      "dateHint": "2025-12-15",
+      "ext": ".jpg",
+      "overridden": true,
+      "index": 2
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTEyMTVfOTUg/MDAxNzY1NzkwMjE5MzUy.Oww052CDf9yP1oZXnFcAaliYuWoWyx2BjteuBpRuhoQg.H1X2E3mobeM6-WhanHZ5AiNBzHSXZfPwfSVldMmXAgQg.JPEG/900%EF%BC%BF20251215%EF%BC%BF094701.jpg?type=w773",
+      "origName": "900＿20251215＿094701.jpg",
+      "role": "process",
+      "dateHint": "2025-12-15",
+      "ext": ".jpg",
+      "index": 3
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTEyMTVfMzIg/MDAxNzY1NzkwMjE4NTYy.BpnrIK3Gdopzxf6urvqMX-XYUxH8WEGA4MYQ_EXiPr4g.JvoOrgfHbyysj5-jNL_eupnktBM5-mgbeziuQOGZE7Eg.JPEG/900%EF%BC%BF20251215%EF%BC%BF101815.jpg?type=w773",
+      "origName": "900＿20251215＿101815.jpg",
+      "role": "process",
+      "dateHint": "2025-12-15",
+      "ext": ".jpg",
+      "index": 4
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTEyMTVfMTQg/MDAxNzY1NzkwMjE3NTE0.vfpeVsOlklixLl_B0g-NuMcW5VmdtWALEY7zFqd0-QQg.11qrcac7pOh-WT-uaf71EgQjjBR5P9eD_JXVpifH_34g.JPEG/900%EF%BC%BF20251215%EF%BC%BF101821.jpg?type=w773",
+      "origName": "900＿20251215＿101821.jpg",
+      "role": "process",
+      "dateHint": "2025-12-15",
+      "ext": ".jpg",
+      "index": 5
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTEyMTVfNjgg/MDAxNzY1NzkwMjE4NTc0.xVLhuNBBqNjfTwd182-SBfKT0iSBAfjr4JSlindWZkog.6j0Fy9-8ObY8O2brgq81Ex1eKd8-t-_8HdexRG9r_AUg.JPEG/900%EF%BC%BF20251215%EF%BC%BF110423.jpg?type=w773",
+      "origName": "900＿20251215＿110423.jpg",
+      "role": "process",
+      "dateHint": "2025-12-15",
+      "ext": ".jpg",
+      "index": 6
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTEyMTVfMTIw/MDAxNzY1NzkwMjE5MzI3.9QNB7nErsL7cWx1_0djSEom5o35S0oLzcKX6m4suqPsg.wJQyF8nLc3bDj4bgXU_JTaR0gdCqeazjmTbX_fi6k6wg.JPEG/900%EF%BC%BF20251215%EF%BC%BF110429.jpg?type=w773",
+      "origName": "900＿20251215＿110429.jpg",
+      "role": "process",
+      "dateHint": "2025-12-15",
+      "ext": ".jpg",
+      "index": 7
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTEyMTVfMjk4/MDAxNzY1NzkwMjIwMjQw.c7qpsrLsXlSJZ1HYNrjzaq8MixmYmrFfvUbX7bQ4qKYg.aBwIHE5I78XPXzbYU-3jVaB_tOd6r7faiST0HN3udfcg.JPEG/900%EF%BC%BF20251215%EF%BC%BF111137.jpg?type=w773",
+      "origName": "900＿20251215＿111137.jpg",
+      "role": "process",
+      "dateHint": "2025-12-15",
+      "ext": ".jpg",
+      "index": 8
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTEyMTVfMjA1/MDAxNzY1NzkwMjE5NDc0.C228SWbmxou0E55bOjt6nTx2YjiEiR031WEEB6Ww9n4g.PSnDxqbUBvq2OtNhIiDRZttFce8i-yRmlaXpGugoaZAg.JPEG/900%EF%BC%BF20251215%EF%BC%BF111152.jpg?type=w773",
+      "origName": "900＿20251215＿111152.jpg",
+      "role": "process",
+      "dateHint": "2025-12-15",
+      "ext": ".jpg",
+      "index": 9
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTEyMTVfMTEg/MDAxNzY1NzkwMjE4NDg5.7zXyvcrJEeJI_7GNTpu-Pnjk0OMzlKAz7Ji4p9B5Jzog.A7o3CKtKr01H3eEm30Rj-QP1Vav1xCMCEyv8cHw1TGsg.JPEG/900%EF%BC%BF20251215%EF%BC%BF111828.jpg?type=w773",
+      "origName": "900＿20251215＿111828.jpg",
+      "role": "process",
+      "dateHint": "2025-12-15",
+      "ext": ".jpg",
+      "index": 10
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTEyMTVfODgg/MDAxNzY1NzkwMjIwMzc2.1oQYQTf1AtCG-CbLysW0VDeV6dtg5FD3X-lKFY5VxXsg.S0OSM3FaaAMMl3l5yEPeeaiLPtyAfUnk4LKCAEoUf-gg.JPEG/900%EF%BC%BF20251215%EF%BC%BF114224.jpg?type=w773",
+      "origName": "900＿20251215＿114224.jpg",
+      "role": "after",
+      "dateHint": "2025-12-15",
+      "ext": ".jpg",
+      "overridden": true,
+      "index": 11
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTEyMTVfNCAg/MDAxNzY1NzkwMjE3NDk4.XSEyC88Kh8ZqPKAeuQTeAgnyAZZPvWYYpKGdarZyjnQg.ukH5-eIm3rfUQWbLonAB8-QPl2tmiUmiv3xotIOhZp0g.JPEG/900%EF%BC%BF20251215%EF%BC%BF114229.jpg?type=w773",
+      "origName": "900＿20251215＿114229.jpg",
+      "role": "after",
+      "dateHint": "2025-12-15",
+      "ext": ".jpg",
+      "overridden": true,
+      "index": 12
+    }
+  ],
+  "roleOverride": "본문 서술 순서와 사진 일치. idx1·2 = 시공 전 진출입로, idx11·12 = 출차주의등 설치 완료 (사진 확인함).",
+  "body": "출차주의등은 진출입로 차가 나오는 곳의 보행자안전을 위한 조치입니다.\n\n먼저 현장을 확인 출차주의등의 위치와 시공방법에 대해 협의합니다.\n\n미러센서를 사용하고 일방향 센서가 작동하도록 주문하셨습니다.\n\n기초는 미리 준비했습니다.\n\n메인센서 1번 2번의 순서에 따라\n\n센서가 감지되면 경광등과 함께 음성이 나오는 방식입니다.\n\n센서를 조절합니다.\n\n차단기 설치후 작동 테스트\n\n출차주의등 설치\n\n테스트를 여러차례 해봅니다.\n\n**출차주의등**\n\n제주도 출차주의등 설치는\n\n아인산업안전 입니다."
+}

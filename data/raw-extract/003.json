@@ -1,0 +1,82 @@
+{
+  "caseNo": "003",
+  "sourceRef": "Raw/04. 안전시설/안전시설-003.md",
+  "extractedAt": "2026-08-27",
+  "frontmatter": {
+    "tags": [
+      "안전시설",
+      "시공기술사례",
+      "시선유도봉"
+    ],
+    "created": "2026-08-18",
+    "type": "시공사례",
+    "category": "안전시설",
+    "project": "서귀포 D초등학교 통학로 시선유도봉 설치",
+    "location": "서귀포 D초등학교 통학로",
+    "work_type": "시선유도봉 설치",
+    "materials": "연질 폴리우레탄 (규격 Ø250×Ø80×H750)",
+    "source": "아인산업안전",
+    "related": [
+      "[[Wiki/건설현장/노출콘크리트 면보수 — 콘채 시방서]]"
+    ]
+  },
+  "dateHints": [
+    "2026-04-15"
+  ],
+  "imageCount": 5,
+  "roleCounts": {
+    "before": 1,
+    "product": 1,
+    "process": 2,
+    "after": 1
+  },
+  "images": [
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNjA0MTZfMjc1/MDAxNzc2MzI3NDAxNzI5.oW-S6b_eV6uoLCRAqc9Jukmr45K8tm9GDPH_F3MnaGQg.qs4bfYv9jYmbhL9ia91Pdf-e8FzQyJgvyfWXGQO9hPAg.PNG/%EB%8F%99%ED%99%8D%EC%B4%88.png?type=w773",
+      "origName": "동홍초.png",
+      "role": "before",
+      "dateHint": null,
+      "ext": ".png",
+      "overridden": true,
+      "index": 1
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNjA0MTZfMjEz/MDAxNzc2MzI3OTI3MDM4.xNZhGRcy39LvrJtduTlczcCcX344txclTjRLLKh17Q4g.bVMUKmC8whFnWHn-M6PssICn2t49vU_rO9T92gWXlr8g.PNG/ChatGPT_Image_2026%EB%85%84_4%EC%9B%94_16%EC%9D%BC_%EC%98%A4%ED%9B%84_05_25_17.png?type=w773",
+      "origName": "ChatGPT_Image_2026년_4월_16일_오후_05_25_17.png",
+      "role": "product",
+      "dateHint": null,
+      "ext": ".png",
+      "overridden": true,
+      "index": 2
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNjA0MTZfMjMy/MDAxNzc2MzI3NDk4MjE5.HnQfk1tFD7fPRvk5LNWhi9SLNgKkqeiDKV76U9ncEUQg.gpz7z5QoPjIggv64xO6QoZlETqoAEpIejH5YoJlZ1vEg.JPEG/1280%EF%BC%BF20260415%EF%BC%BF110949_\\(1\\",
+      "origName": "1280＿20260415＿110949_\\(1\\",
+      "role": "process",
+      "dateHint": "2026-04-15",
+      "ext": ".jpg",
+      "overridden": true,
+      "index": 3
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNjA0MTZfMjA3/MDAxNzc2MzI3NTExNjEw.P9voi4YHVVaJrlDJuKZiW_cLZAiEtj1TKG7J67h0Eh8g.NReGDR_3oEWu47IkOx1Z7Lx713a5-jFY7tvShIyO4rYg.JPEG/1280%EF%BC%BF20260415%EF%BC%BF110443.jpg?type=w773",
+      "origName": "1280＿20260415＿110443.jpg",
+      "role": "process",
+      "dateHint": "2026-04-15",
+      "ext": ".jpg",
+      "overridden": true,
+      "index": 4
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNjA0MTZfMTY0/MDAxNzc2MzI3NjI2MDMw._9Be46rJkGneTeAHAGwW-uyQ5dsyqTdPOfLpceaZUGYg.Poy_xoK11kWgpe4sOSeWEZ9oMamm-ZoghzA7kQfuZcYg.JPEG/1280%EF%BC%BF20260415%EF%BC%BF111011_\\(1\\",
+      "origName": "1280＿20260415＿111011_\\(1\\",
+      "role": "after",
+      "dateHint": "2026-04-15",
+      "ext": ".jpg",
+      "overridden": true,
+      "index": 5
+    }
+  ],
+  "roleOverride": "idx1·6 은 같은 시공전 사진, idx5·7·8 은 같은 시공후 사진의 중복 게시본. 각각 한 장만 남깁니다.",
+  "body": "안녕하세요. 아인산업안전입니다.\n\n이번에는 서귀포 D초등학교 통학로 구간에\n\n시선유도봉 설치공사를 진행하게 되었습니다.\n\n현장을 처음 확인했을 때,\n\n차량과 보행자의 동선이 자연스럽게 섞일 수 있는 구조였고,\n\n특히 어린이들이 이용하는 통학로라는 점에서\n\n사전 안전 조치가 필요한 상황이었습니다.\n\n---\n\n****\n\n**1. 시공 내용**\n\n이번 공사는 다음과 같은 방식으로 진행되었습니다.\n\n- 차량 진입 구간에 시선유도봉 설치\n\n- 일정 간격 유지 및 직선 정렬 시공\n\n- 바닥 천공 후 앙카 고정 방식 적용\n\n- 주변 통행에 방해되지 않도록 위치 조정\n\n작업 자체는 단순해 보일 수 있지만,\n\n실제 현장에서는 간격, 정렬, 고정 상태에 따라\n\n완성도가 크게 달라지기 때문에\n\n세밀하게 시공을 진행하였습니다.\n\n---\n\n**2. 사용 제품 정보**\n\n- 규격: Ø250 × Ø80 × H750\n\n- 재질: 연질 폴리우레탄\n\n특징:\n\n- 충격 시 복원력 우수\n\n- 반사띠 적용으로 야간 시인성 확보\n\n- 외부 환경에 강한 내구성\n\n학교 및 공공시설에서 많이 사용되는\n\n안전 기준에 적합한 제품을 적용하였습니다.\n\n.jpg?type=w773)\n\n---\n\n**3. 시공 후 변화**\n\n설치 이후에는\n\n- 차량 이동 경로가 자연스럽게 정리되고\n\n- 보행자 동선이 명확하게 구분되며\n\n- 운전자 시인성이 개선되어\n\n전체적인 통학 환경이 보다 안정적으로 개선되었습니다.\n\n이처럼 시선유도봉은 단순한 시설물이지만,\n\n사고를 예방하는 데 있어 중요한 역할을 합니다.\n\n.jpg?type=w773)\n\n---\n\n**🔚 마무리 안내**\n\n서귀포 D초등학교 현장은\n\n안전성과 시공 품질을 고려하여\n\n깔끔하게 마무리되었습니다.\n\n|   |   |\n|---|---|\n|시공전|시공후|\n||  .jpg?type=w773)|\n\n.jpg?type=w773)\n\n---\n\n**📞 상담 및 문의**\n\n학교, 관공서, 주차장, 펜션 진입로 등\n\n차량과 보행자가 혼재되는 구간에서\n\n“동선 정리가 필요하다”\n\n또는\n\n“안전이 우려된다”는 느낌이 드신다면\n\n현장 상황에 맞는 최적의 방식으로\n\n시공을 도와드리고 있습니다.\n\n부담 없이 문의주시면\n\n현장에 맞는 방법을 함께 고민해드리겠습니다."
+}

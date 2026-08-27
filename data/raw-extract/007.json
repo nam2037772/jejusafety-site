@@ -1,0 +1,109 @@
+{
+  "caseNo": "007",
+  "sourceRef": "Raw/04. 안전시설/안전시설-007.md",
+  "extractedAt": "2026-08-27",
+  "frontmatter": {
+    "tags": [
+      "안전시설",
+      "시공기술사례",
+      "스덴자바라대문"
+    ],
+    "aliases": [
+      "스텐 자바라 대문"
+    ],
+    "created": "2026-08-18",
+    "type": "시공사례",
+    "category": "안전시설",
+    "work_type": "스덴자바라 대문 설치",
+    "materials": "SUS 304 스테인리스, 50×50 ST 앵글, 무수축몰탈",
+    "source": "아인산업안전",
+    "related": [
+      "[[Wiki/건설현장/노출콘크리트 면보수 — 콘채 시방서]]"
+    ]
+  },
+  "dateHints": [
+    "2025-12-01",
+    "2025-12-02"
+  ],
+  "imageCount": 8,
+  "roleCounts": {
+    "process": 4,
+    "after": 4
+  },
+  "images": [
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTEyMDNfNzcg/MDAxNzY0NzE2MTMxMjc5.fryCcdWAFrx_qx7GasIexbmEZ-wPJD7cQRkl6BkTNZcg.ZZoT9BTOuMDkjzrNQbQ2gqba6l_JCpc0shcKHE_qVLgg.JPEG/1280%EF%BC%BF20251201%EF%BC%BF080332.jpg?type=w773",
+      "origName": "1280＿20251201＿080332.jpg",
+      "role": "process",
+      "dateHint": "2025-12-01",
+      "ext": ".jpg",
+      "overridden": true,
+      "index": 1
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTEyMDNfMzkg/MDAxNzY0NzE2MTY3MTQ5.8Y3Vp5uY-wQmALVMpEz0_2yQvU0oItcihzT0tRjIja8g.oqWbYdP--TeCfhvPAZ7m8lss9HCd_W93BPsMc6TqiuYg.JPEG/1280%EF%BC%BF20251201%EF%BC%BF091052.jpg?type=w773",
+      "origName": "1280＿20251201＿091052.jpg",
+      "role": "process",
+      "dateHint": "2025-12-01",
+      "ext": ".jpg",
+      "overridden": true,
+      "index": 2
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTEyMDNfMTg3/MDAxNzY0NzE2MTkyMDc1.dKPUNnTPWf8NMiyFAU6W8u_mqj7C5y3pEuirA0-wDecg.hi1WIKRLpMB1ac37csbxBh2GqW-ec8Ms2ks8wFeGCwYg.JPEG/1280%EF%BC%BF20251201%EF%BC%BF115946.jpg?type=w773",
+      "origName": "1280＿20251201＿115946.jpg",
+      "role": "process",
+      "dateHint": "2025-12-01",
+      "ext": ".jpg",
+      "overridden": true,
+      "index": 3
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTEyMDNfMzEg/MDAxNzY0NzE2MjcyNzA5.tQsYKlUittvsgufxJtDfijHPjzEyC35bLSX79-KUs4Ag.PMy6NbcDQA-csAffeFkCJrkbUwNNicg9I5lGUYlj4BIg.JPEG/900%EF%BC%BF20251201%EF%BC%BF142210.jpg?type=w773",
+      "origName": "900＿20251201＿142210.jpg",
+      "role": "process",
+      "dateHint": "2025-12-01",
+      "ext": ".jpg",
+      "overridden": true,
+      "index": 4
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTEyMDNfMjY2/MDAxNzY0NzE2MzcyNTY4.Xy6JsW7mEUWiCCkGQaMsoVmNz94wy46xXZnMBFrwPSAg.bmYEaKT-1iijcUKOGFc9dCiiJaCDKjPWlGOMVObq0gAg.JPEG/900%EF%BC%BF20251202%EF%BC%BF105508.jpg?type=w773",
+      "origName": "900＿20251202＿105508.jpg",
+      "role": "after",
+      "dateHint": "2025-12-02",
+      "ext": ".jpg",
+      "overridden": true,
+      "index": 5
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTEyMDNfMjE5/MDAxNzY0NzE2MzcyNTY4.7zul-z5RHuMjP3N7J9YxtOoNdmhAS7XlRLY2SMmgbRsg.kvS_jCEaqo_lYQ8TLZwmQuMmVxsA5Cdim1oIrWX6_XUg.JPEG/900%EF%BC%BF20251202%EF%BC%BF105517.jpg?type=w773",
+      "origName": "900＿20251202＿105517.jpg",
+      "role": "after",
+      "dateHint": "2025-12-02",
+      "ext": ".jpg",
+      "overridden": true,
+      "index": 6
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTEyMDNfMjcw/MDAxNzY0NzE2MzcyNTY5.osNt_XQHL5pjkKYK5kVhLG-JgX0MEQ96mRbSiTlsfbUg.B1Hg7scijw6dDVXi3iz4SsDUtmDZGXKmcVtLyaIMlX0g.JPEG/900%EF%BC%BF20251202%EF%BC%BF105534.jpg?type=w773",
+      "origName": "900＿20251202＿105534.jpg",
+      "role": "after",
+      "dateHint": "2025-12-02",
+      "ext": ".jpg",
+      "overridden": true,
+      "index": 7
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTEyMDNfMjQw/MDAxNzY0NzE2MzcyNTA4.3KT1d3KsvuUQcPOO0G--3YeW_24Hdm2yCs3RC12328sg.XZwOlstYJrLZNNKHRUjAtNoFIfw8jlkUOxQ9kkU4Rskg.JPEG/900%EF%BC%BF20251202%EF%BC%BF105608.jpg?type=w773",
+      "origName": "900＿20251202＿105608.jpg",
+      "role": "after",
+      "dateHint": "2025-12-02",
+      "ext": ".jpg",
+      "overridden": true,
+      "index": 8
+    }
+  ],
+  "roleOverride": "idx1~4 = 자재 도착·바닥 커팅·치핑·앵글 설치, idx5~8 = 익일 완료분 (사진 확인함).",
+  "body": "제주도 스덴자바라 대문 설치 사례\n\n[현장 기록]\n\n제주도 스덴 자바라 대문, '이것' 모르면 돈 날립니다 (설치 사례) \"대문 하나 다는데 뭐가 그리 복잡해?\" 라고 생각하실 수 있지만, 제주의 거친 바람과 습기를 견디려면 기본이 다릅니다.\n\n오늘은 스덴(스테인리스) 자바라 대문 설치 현장 이야기를 통해, 왜 전문가에게 맡겨야 하는지, 어떤 자재를 써야 오래 가는지 핵심만 딱 짚어드립니다.\n\n1. 왜 '스덴 자바라'인가?\n\n제주는 바닷바람(염분) 때문에 철제 대문은 금방 녹이 습니다. 그래서 SUS 304 정품 스테인리스를 사용한 자바라가 필수입니다.\n\n- 내구성: 녹에 강하고 튼튼함.\n\n- 공간 활용: 접이식이라 좁은 진입로에서도 차량 통행 확보 가능.\n\n2. 현장의 핵심: 바닥 레일 & 앙카 작업 대충 바닥에 놓는 게 아닙니다.\n\n태풍에도 흔들리지 않게 고정하는 것이 기술입니다.\n\n- 바닥 평탄화: 레일이 깔릴 바닥이 울퉁불퉁하면 자바라 바퀴가 금방 고장 납니다.\n\n- 앙카볼트 고정: 태풍급 바람에도 넘어가지 않도록 깊고 단단하게 박아야 합니다. (저희는 이 부분에 시간을 가장 많이 씁니다.)\n\n3. 설치 전/후 포인트 (Before & After)\n\n설치 후 가장 먼저 확인시켜 드리는 건 '부드러움'입니다.\n\n한 손으로도 스르륵 열리고 닫혀야 제대로 설치된 겁니다.\n\n4. \"싸게 단 대문은 태풍 한 번 오면 흉물이 됩니다. 한 번 달 때 제대로 된 자재와 시공법으로 시공하세요. 그게 돈 버는 길입니다.\"\n\n[문의] 제주 전 지역 시공 및 유지보수 상담 (010-5638-0103)\n\n---\n\n**제주도 스덴 자바라 대문 설치 사례 (현장 시공 후기)**\n\n제주도에서 진행한 ‘스텐(스테인리스) 자바라 대문 설치 사례’\n\n최근 제주 지역에서도\n\n– 녹슬지 않는 소재\n\n– 내구성\n\n– 디자인\n\n– 설치 속도\n\n이 네 가지 이유 때문에 **스텐 자바라 대문** 문의가 점점 늘고 있습니다.\n\n이번 포스팅에서는 실제로 제가 시공한 현장 사진과 함께\n\n**설치 과정, 핵심 포인트, 사용한 자재, 주의사항**까지 간단히 공유합니다.\n\n스덴자바라 현장도착\n\n---\n\n**✔ 설치 배경**\n\n**내구성 + 깔끔한 외관 + 관리 필요 없음**\n\n이 세 가지 조건을 충족하는 “스덴 자바라 대문”으로 결정하게 되었습니다.\n\n일단 바닥커팅이 필요합니다.\n\n커팅후 바닥치핑\n\n---\n\n**✔ 설치 과정 요약**\n\n**1) 앵글 프레임 위치 선정 (50×50 앵글)**\n\n자바라 대문은 고정 프레임이 매우 중요해서\n\n**50×50 ST 앵글을 기준점**으로 잡았습니다.\n\n- 하부는 무수축몰탈로 레벨 맞추기\n\n- 상부는 앙카 + 용접으로 단단히 고정\n\n- 전체 수직·수평 오차 최소화\n\n**2) 20mm 턱 제작**\n\n대문이 닫힐 때 자연스럽게 걸리고\n\n틈새를 최소화하기 위해 **20mm 턱**을 제작했습니다.\n\n이 턱 하나가\n\n– 흔들림\n\n– 바람 영향\n\n– 진동\n\n을 크게 줄여줍니다.\n\n접기/펴기\n\n앵글설치\n\n**3) 스덴 자바라 본체 설치**\n\n스테인리스는 알루미늄보다\n\n무게감과 내구성이 훨씬 좋습니다.\n\n- 고정 브라켓 체결\n\n- 펼침/접힘 테스트\n\n- 이동 레일 확인\n\n- 구배 체크\n\n- 조립부 간섭 확인\n\n**제주스덴자바라**\n\n**4) 마감 작업**\n\n- 하부는 무수축몰탈로 레벨 마무리\n\n- 오염 제거 및 스덴 광택 확인\n\n완료 후 테스트했을 때\n\n가볍게 밀어도 부드럽게 열리고\n\n닫힘 느낌도 아주 단단했습니다.\n\n**무수축몰탈**\n\n---\n\n**✔ 스덴 자바라의 장점**\n\n- **녹이 거의 없음 (제주 강풍·염분 환경에 강함)**\n\n- **바람에 강함**\n\n- **내구성 높음**\n\n- **공간 활용 효율적**\n\n- **시공 난이도 대비 완성도 높음**\n\n특히 제주도처럼 바람이 강하고 습도가 높은 곳은\n\n스덴 자바라가 오래 가는 정답입니다.\n\n---\n\n**✔ 시공 전/후 차이**\n\n- 기존 대문보다 **튼튼함 + 안정감 + 내식성**이 크게 올라감\n\n- 외관도 훨씬 깔끔해짐\n\n- 개폐 속도 빨라짐\n\n- 출입 동선이 정리됨\n\n[쇼츠 영상으로 전과정보기]\n\n---\n\n스덴 자바라 대문은 비용 대비 만족도가 높고\n\n특히 제주도 환경에 정말 잘 맞습니다.\n\n대문 교체가 필요하시거나\n\n설치 방식이 궁금하신 분들은\n\n댓글이나 메시지로 문의 주세요."
+}

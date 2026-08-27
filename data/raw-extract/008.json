@@ -1,0 +1,125 @@
+{
+  "caseNo": "008",
+  "sourceRef": "Raw/04. 안전시설/안전시설-008.md",
+  "extractedAt": "2026-08-27",
+  "frontmatter": {
+    "tags": [
+      "안전시설",
+      "시공기술사례",
+      "시선유도봉",
+      "반사테이프"
+    ],
+    "created": "2026-08-18",
+    "type": "시공사례",
+    "category": "안전시설",
+    "work_type": "반사테이프 부착, 시선유도봉 설치, 반사 경고도색",
+    "materials": "고휘도 반사테이프, 시선유도봉",
+    "source": "아인산업안전",
+    "related": [
+      "[[Wiki/건설현장/노출콘크리트 면보수 — 콘채 시방서]]"
+    ]
+  },
+  "dateHints": [
+    "2025-08-05"
+  ],
+  "imageCount": 10,
+  "roleCounts": {
+    "before": 3,
+    "process": 1,
+    "after": 6
+  },
+  "images": [
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTA4MDVfOTQg/MDAxNzU0MzU2OTcwNTY0.YfqMFZvYo9tl0B7IlU0L8n2lRpvi0JfT4oy67SuMm3Ig.IIQXZUFQd1QAI1r_dQ7u8FrYFU3-0Q6OMSSEVK1I5FYg.JPEG/900%EF%BC%BF20250805%EF%BC%BF100735.jpg?type=w773",
+      "origName": "900＿20250805＿100735.jpg",
+      "role": "before",
+      "dateHint": "2025-08-05",
+      "ext": ".jpg",
+      "overridden": true,
+      "index": 1
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTA4MDVfMjAg/MDAxNzU0MzU2OTY5NTE2.yblHjP6Htx6pqbFLehVJcDiF9QBMfyuQsa9DstBxJeMg.I1hI0thX4sMiost3hOPRRlUSRWgfKmMrO0THrg1zgKIg.JPEG/900%EF%BC%BF20250805%EF%BC%BF100742.jpg?type=w773",
+      "origName": "900＿20250805＿100742.jpg",
+      "role": "before",
+      "dateHint": "2025-08-05",
+      "ext": ".jpg",
+      "overridden": true,
+      "index": 2
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTA4MDVfMTc2/MDAxNzU0MzU2OTcwNTA1.UskDkBftaVqCypCEi_jTTwsraI9kE9Gum9hTuuUxgd8g.AYeF8PKfX41JG3EaIXU3hOwtBYy8bKXyqavwkDVqG0Ug.JPEG/900%EF%BC%BF20250805%EF%BC%BF100801.jpg?type=w773",
+      "origName": "900＿20250805＿100801.jpg",
+      "role": "before",
+      "dateHint": "2025-08-05",
+      "ext": ".jpg",
+      "overridden": true,
+      "index": 3
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTA4MDVfMjEw/MDAxNzU0Mzg3MTQ3MzQx.t50-2WGUOCruDWntKGgDwt2XtNoiWg0Mjk36xXbMM2sg.gEX81ULkflDAcOnffgcPV7kj7sIOlzHyGQa2xnzEl3Mg.JPEG/900%EF%BC%BF20250805%EF%BC%BF095701.jpg?type=w773",
+      "origName": "900＿20250805＿095701.jpg",
+      "role": "process",
+      "dateHint": "2025-08-05",
+      "ext": ".jpg",
+      "overridden": true,
+      "index": 4
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTA4MDVfMjIy/MDAxNzU0Mzg3MTQ3MzUw.Yst5RJbUVUhhiDSCC9FRYZ6XIDyktUIfCrUC4bCHY_gg.Z8bjnP-vskZZBu9Jz8zVNqQPRj5fpi8V54e3Ecy7yA8g.JPEG/900%EF%BC%BF20250805%EF%BC%BF100809.jpg?type=w773",
+      "origName": "900＿20250805＿100809.jpg",
+      "role": "after",
+      "dateHint": "2025-08-05",
+      "ext": ".jpg",
+      "overridden": true,
+      "index": 5
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTA4MDVfMjEy/MDAxNzU0Mzg3MTQ3MzQ1.Riw8yAAFETFgbBiBjbu4Ki54q4gG25V-rQj_QZclFaUg.xVyxgX8GsoR3K-a00ggwqzuXHSFYlD2zGj5h1sAtx8Mg.JPEG/900%EF%BC%BF20250805%EF%BC%BF100816.jpg?type=w773",
+      "origName": "900＿20250805＿100816.jpg",
+      "role": "after",
+      "dateHint": "2025-08-05",
+      "ext": ".jpg",
+      "overridden": true,
+      "index": 6
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTA4MDVfMTUy/MDAxNzU0Mzg3MTQ3MzUx.36coL7c93BLT6cDd00-ULgTBo4QSgtzxjxDmODxW6Fog.eEvGQqr4DPnYwIpcrVGi7zsOMhAvOHoKUESsDMGh8QMg.JPEG/900%EF%BC%BF20250805%EF%BC%BF100823.jpg?type=w773",
+      "origName": "900＿20250805＿100823.jpg",
+      "role": "after",
+      "dateHint": "2025-08-05",
+      "ext": ".jpg",
+      "overridden": true,
+      "index": 7
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTA4MDVfMjI1/MDAxNzU0Mzg3MTcxNzEy.bQ_eI407X_HT9M0SaQUXogbKBnN-TMRJGN7p-MFT_hQg.28qW-8BSXL8h-8pDgMoZarMglckOsVpwgi78H3fpvNMg.JPEG/900%EF%BC%BF20250805%EF%BC%BF143648.jpg?type=w773",
+      "origName": "900＿20250805＿143648.jpg",
+      "role": "after",
+      "dateHint": "2025-08-05",
+      "ext": ".jpg",
+      "overridden": true,
+      "index": 8
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTA4MDVfMjA2/MDAxNzU0Mzg3MTcxNjc2.ef9RGGMjd_j_PDyhqqXTXu63IqYnsKHpRnWWUk5KhN4g.G-4Cb9LP1jpOzIIrGAcRXqdVyoLhkPzCJcfk_k-4YK4g.JPEG/900%EF%BC%BF20250805%EF%BC%BF143659.jpg?type=w773",
+      "origName": "900＿20250805＿143659.jpg",
+      "role": "after",
+      "dateHint": "2025-08-05",
+      "ext": ".jpg",
+      "overridden": true,
+      "index": 9
+    },
+    {
+      "url": "https://postfiles.pstatic.net/MjAyNTA4MDVfMjY5/MDAxNzU0Mzg3MjEwMzgz.WN6fW5iO4DpBnrVbaY_lEpwLqEgDRdtPgguBr6e5XCkg.P-LLuKjXXVzzCrFDHvpWTk9qyAGxfOZqMbYPmHbvG3Mg.JPEG/900%EF%BC%BF20250805%EF%BC%BF143708.jpg?type=w773",
+      "origName": "900＿20250805＿143708.jpg",
+      "role": "after",
+      "dateHint": "2025-08-05",
+      "ext": ".jpg",
+      "overridden": true,
+      "index": 10
+    }
+  ],
+  "roleOverride": "idx1~3 = 기둥 반사테이프 부착 전, idx5~10 = 부착·유도봉·도색 완료 (사진 확인함).",
+  "body": "제주도 안전시설물 설치 사례 – 반사테이프 & 시선유도봉 시공\n\n오늘은 제주도 내 주차장에 안전시설물 설치 작업을 진행했습니다.\n\n주요 시공 항목은 다음과 같습니다:\n\nㆍ기둥 보호용 반사테이프 부착\n\nㆍ차량 및 보행자 동선 유도를 위한 시선유도봉 설치\n\nㆍ돌출 구조물 식별을 위한 고휘도 반사 경고 도색 및 마감\n\n---\n\n1. 주차장 기둥 반사테이프 부착\n\n기둥이 주차면 중앙에 위치해 있어, 차량 출입 시 충돌 위험이 높았습니다.\n\n노란/검정 벌집 패턴의 고휘도 반사테이프를 부착해 운전자 시야 확보를 도왔습니다.\n\n📌 시공 포인트:\n\n주·야간 시인성 확보\n\n차량 측면 접촉 예방\n\n간단한 시공으로 큰 효과\n\n---\n\n2. 시선유도봉 설치\n\n보행자 및 차량의 안전한 동선 분리를 위해\n\n주차장 모서리와 보행로 경계부에 시선유도봉을 설치했습니다.\n\n📌 시공 포인트:\n\n보행자 보호\n\n불법 주정차 방지\n\n차량 회전 공간 확보\n\n---\n\n3. 코너 및 턱 부분 반사도색 마감\n\n도로와 잔디 경계석에 노란/검정 반사 도색을 추가해\n\n시인성을 높이고 충돌 사고를 예방했습니다.\n\n---\n\n✅ 시공 후기\n\n짧은 시간 안에 간단하게 설치할 수 있었고,\n\n주차장 안전성과 가시성이 크게 향상되었습니다.\n\n특히 야간 주차 시 운전자의 시야 확보에 큰 도움이 됩니다.\n\n---\n\n🔧 시공 문의\n\n👉 아인산업안전\n\n제주 지역 각종 안전시설물 시공 가능합니다.\n\n반사테이프\n\n시선유도봉\n\n주차장 안전 보강\n\n교통안전 설치물 일체"
+}
