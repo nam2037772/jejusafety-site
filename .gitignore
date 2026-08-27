@@ -5,3 +5,9 @@ desktop.ini
 
 # 로컬 확인용 임시 파일
 _*.html
+
+# 비공개 보류 사례의 사진 — 공개 저장소·GitHub Pages 에 올리지 않습니다.
+# Case 007 은 사진 배경에 제3자 상호·전화번호가 찍혀 있어 공개 검토 중입니다 (published:false).
+# 게시가 승인되면 이 줄을 지우고 사진을 커밋하면 됩니다.
+# 파일이 로컬에 없으면: node tools/import-raw.js --write --download --thumbs
+assets/images/cases/007/

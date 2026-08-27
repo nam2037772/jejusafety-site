@@ -78,13 +78,20 @@ CASES.forEach((c) => {
   roles.forEach((r) => (c.images[r] || []).forEach((f) => listed.push(f)));
   if (c.images.representative) listed.push(c.images.representative);
 
+  /* 비공개 보류 사례(미발행·공개 검토 중)는 사진을 공개 저장소에 두지 않습니다.
+     그래서 파일이 없는 것이 정상입니다 — 오류가 아니라 경고로 알립니다.
+     게시 승인 시 .gitignore 의 해당 줄을 지우고 사진을 넣으면 됩니다. */
+  const isPublic = c.published && !(c.review && c.review.disclosure === '확인필요');
+
   listed.forEach((f) => {
     const p = path.join(dir, f);
-    if (!fs.existsSync(p)) E(id, `이미지 없음: ${path.relative(ROOT, p)}`);
-    else {
-      const thumb = p.replace(/(\.[a-z]+)$/i, '-thumb$1');
-      if (!fs.existsSync(thumb)) W(id, `썸네일 없음(목록이 원본을 씁니다): ${path.basename(thumb)}`);
+    if (!fs.existsSync(p)) {
+      if (isPublic) E(id, `이미지 없음: ${path.relative(ROOT, p)}`);
+      else W(id, `비공개 보류 사례의 사진이 저장소에 없습니다(정상): ${path.basename(p)}`);
+      return;
     }
+    const thumb = p.replace(/(\.[a-z]+)$/i, '-thumb$1');
+    if (!fs.existsSync(thumb)) W(id, `썸네일 없음(목록이 원본을 씁니다): ${path.basename(thumb)}`);
   });
 
   if (c.images.representative) {
