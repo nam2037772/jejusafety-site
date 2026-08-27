@@ -181,6 +181,8 @@ function page(p) {
 <meta name="description" content="${esc(p.description)}">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="author" content="${esc(COMPANY.brand)}">
+${((COMPANY.verification || {}).naver || '').trim() ? `<meta name="naver-site-verification" content="${esc(COMPANY.verification.naver.trim())}">` : ''}
+${((COMPANY.verification || {}).google || '').trim() ? `<meta name="google-site-verification" content="${esc(COMPANY.verification.google.trim())}">` : ''}
 ${canonical ? `<link rel="canonical" href="${canonical}">` : `<!-- canonical: 도메인 확정 후 config.js 의 siteUrl 을 채우고 tools/build.js 를 다시 실행하세요. 임의의 도메인을 넣지 않습니다. -->`}
 <meta property="og:type" content="${p.ogType || 'website'}">
 <meta property="og:site_name" content="${esc(COMPANY.brand)}">

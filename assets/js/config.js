@@ -93,6 +93,16 @@ const COMPANY = {
   /* 같은 사업자가 운영하는 안전용품 쇼핑몰 — JSON-LD 에서는 sameAs 로 연결합니다. */
   storeUrl: 'https://www.ainsafety.com',
 
+  /* ── 검색엔진 소유확인 ────────────────────────────────────
+     각 검색엔진 콘솔이 발급한 content 값만 넣습니다.
+     빈 값이면 <head> 에 아무것도 나가지 않습니다 — 추측한 값을 넣지 않습니다.
+       naver  : 서치어드바이저 > 웹마스터도구 > 사이트 등록 > HTML 태그
+       google : Search Console > 속성 추가 > URL 접두어 > HTML 태그 */
+  verification: {
+    naver: 'fbaa5a4fc892a6f3c2bbd682a93096b51a9fc9b3',
+    google: ''
+  },
+
   /* ▶ 도메인 미확정.
        확정되면 여기 한 줄만 채우고 `node tools/build.js` 를 다시 실행하세요.
        canonical · og:url · sitemap.xml 이 모두 이 값에서 만들어집니다.
