@@ -5,4 +5,4 @@ Allow: /
 User-agent: Yeti
 Allow: /
 
-# Sitemap: 도메인 확정 후 config.js 의 siteUrl 을 채우고 tools/build.js 를 다시 실행하면 이 줄이 채워집니다.
+Sitemap: https://jejusafety.kr/sitemap.xml

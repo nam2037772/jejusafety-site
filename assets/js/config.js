@@ -99,7 +99,7 @@ const COMPANY = {
        ※ 비어 있는 동안에는 canonical / og:url / sitemap 을 만들지 않습니다.
          임의의 placeholder 도메인을 넣지 않습니다 — 잘못된 정본 주소가
          색인되면 되돌리는 비용이 큽니다. */
-  siteUrl: ''
+  siteUrl: 'https://jejusafety.kr'
 };
 
 /* 외부 채널 — 새 탭 (target=_blank, rel="noopener noreferrer") */
