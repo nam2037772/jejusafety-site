@@ -92,66 +92,128 @@ const PAGES = [
       { q: '공공기관이 아니어도 문의할 수 있나요?', a: '가능합니다. 공공·교육시설이 중심이지만 제주도 내 공동주택, 병원, 호텔·리조트, 어린이집, 사업장 등도 문의를 받고 있습니다.' }
     ],
     body: `
+<!-- ═══════════ 01 HERO ═══════════
+     흰 배경 비대칭 — 좌 헤드라인 / 우 실제 현장 사진.
+     사진은 사례 001(서귀포시 치유의 숲 입구 로터리)의 실제 시공 후 사진입니다. -->
 <section class="hero">
-  <div class="wrap">
-    <h1>제주 공공·교육시설의<br>안전 문제를 현장에서 해결합니다.</h1>
-    <p class="hero-sub">관공서·공공기관·학교의 안전시설 설치·교체·보수부터 안전자재 납품까지</p>
-    <div class="btn-row">
-      <a class="btn btn-safety" href="contact.html?type=site">현장 견적 문의</a>
-      <a class="btn btn-ghost" href="cases.html">제주 시공사례 보기</a>
+  <div class="wrap hero__grid">
+    <div class="hero__text">
+      <h1 class="hero__title">제주의 안전시설을<br>설치하고, 고치고,<br>오래 지킵니다.</h1>
+      <p class="hero__scope">도로 · 학교 · 공공시설 · 관광시설</p>
+      <p class="hero__desc">안전시설 시공 · 유지보수 · 안전자재 납품</p>
+      <div class="hero__actions">
+        <a class="link-arrow" href="cases.html">제주 시공사례</a>
+        <a class="btn-ghost" href="contact.html?type=site">현장 견적 문의</a>
+      </div>
     </div>
-    <p class="hero-trust">
-      <strong>제주 전 지역 현장 대응</strong> · 1개소부터 시공·납품 · 운영 (주)아인산업안전
-    </p>
+    <figure class="hero__media">
+      <img src="assets/images/cases/001/after-01.jpg" alt="서귀포시 로터리 진입부에 차선규제봉을 교체한 도로" width="900" height="507" loading="eager" fetchpriority="high" decoding="async">
+      <figcaption>서귀포시 치유의 숲 입구 로터리 — 차선규제봉 교체</figcaption>
+    </figure>
   </div>
 </section>
 
+<!-- ═══════════ 02 ABOUT ═══════════ -->
 <section class="section">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">무엇이 필요하신가요</span>
-      <h2>두 가지로 도와드립니다</h2>
+  <div class="wrap statement__grid">
+    <div class="statement__text reveal">
+      <span class="eyebrow">About Us</span>
+      <h2>제주의 현장을 알고,<br>필요한 안전을<br>현장에서 해결합니다.</h2>
+      <p>제주안전시설은 ${COMPANY.relationSentence} 관공서·공공기관·학교의 안전시설을
+         설치하고, 교체하고, 보수합니다. 영업 지역은 ${COMPANY.areaServedLabel}입니다.</p>
+      <p>물량이 작아 견적을 받기 어려운 현장을 주로 맡습니다. 1개소부터 시공하고,
+         직영으로 설치하시는 경우에는 자재만 납품합니다. 시설물 유지관리 공사업과
+         안전용품 업종을 함께 등록해 두어 시공과 납품을 한 곳에서 처리합니다.</p>
+      <p class="statement__more"><a class="link-arrow" href="about.html">회사소개</a></p>
     </div>
-    <div class="split">
-      <a href="service.html">
-        <b>설치·교체·보수가 필요합니다</b>
-        <span>현장을 확인하고 시설을 설치하거나 교체·보수합니다. 기존 시설 철거도 함께 진행합니다.</span>
-      </a>
-      <a href="products.html">
-        <b>자재만 납품받고 싶습니다</b>
-        <span>직영으로 설치하시는 경우 필요한 자재를 납품합니다. 소량은 쇼핑몰에서 바로 구매하실 수 있습니다.</span>
-      </a>
-    </div>
+    <figure class="statement__media reveal">
+      <img src="assets/images/cases/009/after-02.jpg" alt="단지 내 도로의 경계석을 교체하고 아스콘 포장을 복구한 모습" width="900" height="507" loading="lazy" decoding="async">
+      <figcaption>단지 내 도로 — 경계석 교체와 아스콘 포장 복구</figcaption>
+    </figure>
   </div>
 </section>
 
+<!-- ═══════════ 03 RECENT PROJECTS ═══════════
+     사진이 주인공입니다. 상자형 카드를 쓰지 않습니다.
+     지역·시설·작업은 cases.js 에 실제로 있는 값만 표시됩니다. -->
 <section class="section section--surface">
   <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">SERVICE</span>
-      <h2>주요 서비스</h2>
-      <p>제주에서 실제로 수행한 작업을 기준으로 분야를 나눴습니다.</p>
+    <div class="section-head section-head--row reveal">
+      <div>
+        <span class="eyebrow">Recent Projects</span>
+        <h2>제주에서 한 일</h2>
+      </div>
+      <p>사진과 작업 내용을 그대로 정리했습니다.<br>비슷한 현장이면 견적을 가늠하실 수 있습니다.</p>
     </div>
-    <div class="grid grid--3">${serviceCards('')}</div>
+    <div class="works__grid" id="homeWorks" data-limit="6"></div>
+    <p class="works__more"><a class="link-arrow" href="cases.html">시공사례 전체 보기</a></p>
   </div>
 </section>
 
+<!-- ═══════════ 04 SERVICES ═══════════
+     번호 + 괘선 목록. 동일한 라운드 카드를 다섯 번 반복하지 않습니다. -->
 <section class="section">
   <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">CASES</span>
-      <h2>실제 제주 시공사례</h2>
-      <p>사진과 작업 내용을 그대로 정리했습니다. 비슷한 현장이면 견적을 가늠하실 수 있습니다.</p>
+    <div class="section-head reveal">
+      <span class="eyebrow">Services</span>
+      <h2>다섯 가지 분야</h2>
+      <p>제주에서 실제로 수행한 작업을 기준으로 나눴습니다.</p>
     </div>
-    <div class="grid grid--3" id="homeCases" data-limit="6"></div>
-    <p style="margin-top:18px"><a class="btn btn-ghost" href="cases.html">시공사례 전체 보기</a></p>
+    <div class="svc-list">
+      ${SERVICES.map((s, i) => `
+      <a class="svc-row reveal" href="service/${s.slug}.html">
+        <span class="svc-row__no">${String(i + 1).padStart(2, '0')}</span>
+        <div>
+          <h3 class="svc-row__ttl">${s.name}</h3>
+          <p class="svc-row__text">${s.summary}</p>
+          <ul class="svc-row__items">${s.facilities.slice(0, 4).map((f) => `<li>${f}</li>`).join('')}</ul>
+        </div>
+        <span class="svc-row__go">보기</span>
+      </a>`).join('')}
+    </div>
   </div>
 </section>
 
+<!-- ═══════════ 05 자재 납품 ═══════════ -->
+<section class="section section--surface">
+  <div class="wrap supply__grid">
+    <div class="supply__text reveal">
+      <span class="eyebrow">Materials</span>
+      <h2>시공 없이<br>자재만 납품받을 수 있습니다.</h2>
+      <p class="supply__desc">직영으로 설치하시는 경우 필요한 시설과 수량을 알려주시면 납품 견적을 드립니다.
+         규격과 재질은 현장 조건에 맞춰 함께 정합니다. 소량 구매는 안전용품 쇼핑몰에서 바로 하실 수 있습니다.</p>
+      <div class="supply__actions">
+        <a class="link-arrow" href="products.html">제품·자재 보기</a>
+        <a class="btn-ghost" href="${SHOP}" target="_blank" rel="noopener noreferrer">안전용품 쇼핑몰</a>
+      </div>
+    </div>
+    <figure class="supply__media reveal">
+      <img src="assets/images/cases/004/after-01.jpg" alt="배수로에 새로 설치한 중하중 그레이팅" width="966" height="544" loading="lazy" decoding="async">
+      <figcaption class="figure-note">배수로 중하중 그레이팅 — 교체 후</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ═══════════ 06 진행 절차 ═══════════ -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Process</span>
+      <h2>진행 절차</h2>
+      <p>자재 납품은 <strong>필요 자재 확인 → 규격·수량 협의 → 견적 → 납품</strong> 순으로 진행합니다.</p>
+    </div>
+    <ol class="steps">
+      ${PROCESS_INSTALL.map(([t, d]) => `<li><b>${t}</b><span>${d}</span></li>`).join('\n      ')}
+    </ol>
+  </div>
+</section>
+
+<!-- ═══════════ 07 현장 상황별 안내 ═══════════ -->
 <section class="section section--surface">
   <div class="wrap">
-    <div class="section-head">
-      <h2>어떤 문제를 해결하나요?</h2>
+    <div class="section-head reveal">
+      <span class="eyebrow">Where to start</span>
+      <h2>어떤 상황이신가요?</h2>
       <p>지금 겪고 계신 상황을 고르시면 해당 안내로 바로 이동합니다.</p>
     </div>
     <ul class="problem-list">
@@ -161,52 +223,17 @@ const PAGES = [
   </div>
 </section>
 
-<section class="section">
-  <div class="wrap">
-    <div class="section-head">
-      <h2>진행 절차</h2>
-      <p>현장 확인부터 유지관리까지. 자재 납품은 <strong>필요 자재 확인 → 규격·수량 협의 → 견적 → 납품</strong> 순으로 진행합니다.</p>
-    </div>
-    <ol class="steps">
-      ${PROCESS_INSTALL.map(([t, d]) => `<li><b>${t}</b><span>${d}</span></li>`).join('\n      ')}
-    </ol>
-  </div>
-</section>
-
-<section class="section section--surface">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">PRODUCT</span>
-      <h2>안전시설·안전자재가 필요하신가요?</h2>
-      <p>수량과 규격이 정해진 납품은 견적으로, 소량 직접 구매는 쇼핑몰로 안내합니다.</p>
-    </div>
-    <div class="btn-row">
-      <a class="btn btn-primary" href="contact.html?type=supply">자재 납품 문의</a>
-      <a class="btn btn-ghost" href="${SHOP}" target="_blank" rel="noopener noreferrer">안전용품 쇼핑몰에서 구매</a>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="wrap">
-    <div class="section-head"><h2>운영회사</h2></div>
-    <div class="card">
-      <h3>(주)아인산업안전</h3>
-      <p>${COMPANY.relationSentence} 시설물 유지관리 공사업과 안전용품 업종을 등록해 두고 있어,
-         시공과 자재 납품을 한 곳에서 처리할 수 있습니다.</p>
-      <p class="card-tags">등록 업종 · ${COMPANY.registeredBusiness.join(' · ')}</p>
-      <a class="card-more" href="about.html">회사소개 자세히 보기 →</a>
-    </div>
-  </div>
-</section>
-
+<!-- ═══════════ 08 CONTACT ═══════════ -->
 <section class="cta-band">
   <div class="wrap">
-    <h2>현장 사진 한 장이면 시작할 수 있습니다</h2>
+    <span class="eyebrow">Contact</span>
+    <h2>현장 사진 한 장이면<br>시작할 수 있습니다.</h2>
     <p>현장 사진 1~2장과 위치, 수량을 보내주시면 개략 견적을 드립니다.</p>
+    <a class="cta-band__tel" href="${TEL}">${COMPANY.tel}</a>
+    <p class="cta-band__hours">${COMPANY.areaServedLabel} · 1개소부터 시공·납품</p>
     <div class="btn-row">
-      <a class="btn btn-safety" href="${TEL}">☎ ${COMPANY.tel} 전화하기</a>
-      <a class="btn btn-ghost" href="contact.html">문의 남기기</a>
+      <a class="btn" href="contact.html">문의 남기기</a>
+      <a class="btn-ghost" href="contact.html?type=supply">자재 납품 문의</a>
     </div>
   </div>
 </section>`

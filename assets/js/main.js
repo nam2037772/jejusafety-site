@@ -36,10 +36,33 @@
       toggle.addEventListener('click', function () {
         var open = gnb.classList.toggle('is-open');
         toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        /* 메뉴가 열리면 헤더가 어두운 오버레이 위에 놓입니다.
+           로고가 검정 그대로면 배경에 묻히므로 헤더에도 상태를 알립니다. */
+        var header = document.querySelector('.site-header');
+        if (header) header.classList.toggle('is-nav-open', open);
       });
     }
     var year = document.querySelector('[data-year]');
     if (year) year.textContent = new Date().getFullYear();
+  }
+
+  /* ── 스크롤 등장 ──────────────────────────────────────────
+     .reveal 은 CSS 에서 opacity:0 으로 시작합니다. 관찰자가 없으면
+     내용이 영영 보이지 않으므로, 지원하지 않는 브라우저에서는
+     즉시 모두 보이게 합니다. */
+  function initReveal() {
+    var items = document.querySelectorAll('.reveal');
+    if (!items.length) return;
+    if (!('IntersectionObserver' in window)) {
+      for (var i = 0; i < items.length; i++) items[i].classList.add('in');
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+    for (var j = 0; j < items.length; j++) io.observe(items[j]);
   }
 
   /* ── 사례 카드 (빌드가 심는 것과 같은 모양) ───────────── */
@@ -207,6 +230,7 @@
   /* ── 시작 ─────────────────────────────────────────────── */
   function boot() {
     initChrome();
+    initReveal();
     initCasesPage();
     if (typeof COMPANY !== 'undefined') initContact();
   }

@@ -190,7 +190,12 @@ ${canonical ? `<link rel="canonical" href="${canonical}">` : `<!-- canonical: ë
 ${canonical ? `<meta property="og:url" content="${canonical}">` : ''}
 ${p.ogImage && HAS_DOMAIN ? `<meta property="og:image" content="${abs(p.ogImage)}">` : ''}
 <meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300..500&family=Noto+Serif+KR:wght@300..500&display=swap">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300..500&family=Noto+Serif+KR:wght@300..500&display=swap"></noscript>
 <link rel="stylesheet" href="${root}assets/css/style.css">
+<script>document.documentElement.className+=' js';</script>
 <script type="application/ld+json">
 ${JSON.stringify(stripUndefined({ '@context': 'https://schema.org', '@graph': graph }), null, 2)}
 </script>

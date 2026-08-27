@@ -107,6 +107,31 @@ function caseCardHtml(c, root) {
     `<span class="card-more">사례 자세히 보기 →</span></div></a>`;
 }
 
+/* 홈 RECENT PROJECTS — 편집형 기록.
+   상자형 카드가 아니라 사진 + 현장 정보 한 줄 + 제목으로 둡니다.
+   지역·시설·작업은 데이터에 있는 것만 씁니다. 시공 연도는 cases.js 에
+   date 가 비어 있으므로 넣지 않습니다 (지어내지 않습니다). */
+function workRowHtml(c, root) {
+  const href = `${root}case/${pad3(c.id)}-${c.slug}.html`;
+  const dir = `${root}assets/images/cases/${pad3(c.id)}/`;
+  const rep = c.images && c.images.representative;
+  const fig = rep
+    ? `<img src="${dir}${rep.replace(/(\.[a-z]+)$/i, '-thumb$1')}" alt="${esc(c.title)} 시공 후 모습"` +
+      ` width="773" height="435" loading="lazy" decoding="async">`
+    : '<div class="noimg">사진 준비 중</div>';
+
+  const meta = [];
+  const place = c.region || c.regionDetail || c.customerLabel;
+  if (place) meta.push(esc(place));
+  if (c.facilityType) meta.push(esc(c.facilityType));
+  if ((c.workType || []).length) meta.push(esc(c.workType.join(' · ')));
+
+  return `<a class="work" href="${href}">` +
+    `<figure class="work__media">${fig}</figure>` +
+    (meta.length ? `<p class="work__meta">${meta.map((m) => `<span>${m}</span>`).join('')}</p>` : '') +
+    `<h3 class="work__ttl">${esc(c.title)}</h3></a>`;
+}
+
 function prefillCases(html, depth) {
   const root = '../'.repeat(depth);
   const list = publishedCases();
@@ -115,6 +140,11 @@ function prefillCases(html, depth) {
     let picked = null;
     const limit = (attrs.match(/data-limit="(\d+)"/) || [])[1];
 
+    if (/id="homeWorks"/.test(attrs)) {
+      const n = parseInt(limit || '6', 10);
+      const inner = list.slice(0, n).map((c) => workRowHtml(c, root)).join('\n      ');
+      return `<div${attrs}>\n      ${inner || '<p class="note">등록된 시공사례가 아직 없습니다.</p>'}\n    </div>`;
+    }
     if (/id="caseGrid"/.test(attrs)) picked = list;
     else if (/id="homeCases"/.test(attrs)) picked = list.slice(0, parseInt(limit || '6', 10));
     else {
