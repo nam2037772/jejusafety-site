@@ -89,6 +89,8 @@ const PAGES = [
       { q: '제주 어느 지역까지 시공하나요?', a: '제주특별자치도 전 지역입니다. 제주시·서귀포시와 읍면 지역에서 현장 확인 후 시공합니다. 육지 시공은 하지 않습니다.' },
       { q: '안전시설 자재만 납품받을 수 있나요?', a: '가능합니다. 직영으로 설치하시는 경우 필요한 시설과 수량을 알려주시면 납품 견적을 드립니다. 소량 구매는 안전용품 쇼핑몰에서 바로 하실 수 있습니다.' },
       { q: '소규모 공사도 맡아 주시나요?', a: '1개소부터 시공합니다. 물량이 작아 견적을 받기 어려운 현장을 주로 맡고 있습니다.' },
+      { q: '제주 건설현장에 안전용품·안전자재 납품이 되나요?', a: '가능합니다. 제주도 내 건설·시공 현장에 차선규제봉, 시선유도봉, 반사테이프, 배수로 그레이팅, 경계석, 금속 부자재 등을 납품합니다. 설치가 필요하면 시공까지 함께 진행합니다.' },
+      { q: '제주 학교 안전시설 시공이 가능한가요?', a: '가능합니다. 통학로 시선유도봉, 출입구 경사로 진입판, 교내 배수로 그레이팅 등을 시공한 사례가 있습니다. 학생 통행이 없는 방학 기간에 맞춰 진행합니다.' },
       { q: '공공기관이 아니어도 문의할 수 있나요?', a: '가능합니다. 공공·교육시설이 중심이지만 제주도 내 공동주택, 병원, 호텔·리조트, 어린이집, 사업장 등도 문의를 받고 있습니다.' }
     ],
     body: `
@@ -119,8 +121,9 @@ const PAGES = [
     <div class="statement__text reveal">
       <span class="eyebrow">About Us</span>
       <h2>제주의 현장을 알고,<br>필요한 안전을<br>현장에서 해결합니다.</h2>
-      <p>제주안전시설은 ${COMPANY.relationSentence} 관공서·공공기관·학교의 안전시설을
-         설치하고, 교체하고, 보수합니다. 영업 지역은 ${COMPANY.areaServedLabel}입니다.</p>
+      <p>${COMPANY.relationSentence} 제주도 안에서 관공서·공공기관과 학교의 안전시설을
+         설치하고, 교체하고, 보수합니다. 건설·시공 현장에는 안전용품과 안전자재를 납품하고,
+         필요하면 설치까지 함께 진행합니다. 영업 지역은 ${COMPANY.areaServedLabel}입니다.</p>
       <p>물량이 작아 견적을 받기 어려운 현장을 주로 맡습니다. 1개소부터 시공하고,
          직영으로 설치하시는 경우에는 자재만 납품합니다. 시설물 유지관리 공사업과
          안전용품 업종을 함께 등록해 두어 시공과 납품을 한 곳에서 처리합니다.</p>
@@ -181,11 +184,16 @@ const PAGES = [
       <span class="eyebrow">Materials</span>
       <h2>시공 없이<br>자재만 납품받을 수 있습니다.</h2>
       <p class="supply__desc">직영으로 설치하시는 경우 필요한 시설과 수량을 알려주시면 납품 견적을 드립니다.
-         규격과 재질은 현장 조건에 맞춰 함께 정합니다. 소량 구매는 안전용품 쇼핑몰에서 바로 하실 수 있습니다.</p>
+         규격과 재질은 현장 조건에 맞춰 함께 정합니다. 관공서·학교의 안전자재 납품과
+         제주도 내 건설·시공 현장의 안전용품 납품을 모두 받고 있습니다.
+         소량 구매는 안전용품 쇼핑몰에서 바로 하실 수 있습니다.</p>
       <div class="supply__actions">
         <a class="link-arrow" href="products.html">제품·자재 보기</a>
-        <a class="btn-ghost" href="${SHOP}" target="_blank" rel="noopener noreferrer">안전용품 쇼핑몰</a>
+        <a class="btn-ghost" href="construction-safety.html">건설현장 안전용품·자재 납품</a>
       </div>
+      <p class="figure-note" style="margin-top:1.6em">
+        소량·직접 구매는 <a href="${SHOP}" target="_blank" rel="noopener noreferrer">안전용품 쇼핑몰</a>에서 바로 하실 수 있습니다.
+      </p>
     </div>
     <figure class="supply__media reveal">
       <img src="assets/images/cases/004/after-01.jpg" alt="배수로에 새로 설치한 중하중 그레이팅" width="966" height="544" loading="lazy" decoding="async">
@@ -350,9 +358,10 @@ const PAGES = [
   /* ── PRODUCT ──────────────────────────────────────────── */
   {
     file: 'products.html', navKey: 'products',
-    title: '제주 안전시설·안전자재 납품 | 제주안전시설',
-    description: '제주도 내 안전시설·안전자재 납품 안내입니다. 차선규제봉, 시선유도봉, 반사테이프, ' +
-      '배수로 그레이팅, 경사로 진입판 등 수량·규격이 정해진 납품은 견적으로, 소량 구매는 안전용품 쇼핑몰로 안내합니다.',
+    title: '제주 안전용품·안전자재 납품 | 품목별 규격과 선택 기준',
+    description: '제주도 내 안전용품·안전자재 납품 안내입니다. 차선규제봉, 시선유도봉, 반사테이프, ' +
+      '배수로 그레이팅, 경사로 진입판 등 품목별 규격과 고르는 기준을 정리했습니다. ' +
+      '수량·규격이 정해진 납품은 견적으로, 소량 구매는 안전용품 쇼핑몰로 안내합니다.',
     trail: [{ label: '홈', href: 'index.html' }, { label: '제품·자재' }],
     faq: [
       { q: '안전시설 자재만 납품받을 수 있나요?', a: '가능합니다. 직영 인력이 설치하시는 경우 필요한 자재와 수량을 알려주시면 납품 견적을 드립니다.' },
@@ -363,9 +372,11 @@ const PAGES = [
     body: `
 <section class="page-head">
   <div class="wrap">
-    <h1>안전시설·안전자재 납품</h1>
-    <p>제주도 내 관공서·학교·공공기관에 안전시설과 안전자재를 납품합니다.
-       설치까지 필요하시면 시공 견적으로, 직접 설치하시면 자재 납품 또는 쇼핑몰 구매로 안내합니다.</p>
+    <h1>안전용품·안전자재 납품</h1>
+    <p>제주도 내 관공서·공공기관·학교와 건설·시공 현장에 안전용품과 안전자재를 납품합니다.
+       설치까지 필요하시면 시공 견적으로, 직접 설치하시면 자재 납품 또는 쇼핑몰 구매로 안내합니다.
+       건설현장 납품은 <a href="construction-safety.html">제주 건설현장 안전용품·자재 납품</a>에
+       품목과 진행 순서를 따로 정리했습니다.</p>
   </div>
 </section>
 
@@ -419,6 +430,166 @@ ${PRODUCT_GROUPS.map((g, i) => `
     <div class="btn-row">
       <a class="btn btn-safety" href="${TEL}">☎ ${COMPANY.tel}</a>
       <a class="btn btn-ghost" href="contact.html?type=supply">자재 납품 문의</a>
+    </div>
+  </div>
+</section>`
+  },
+
+  /* ── 건설현장 안전용품·안전자재 납품 ──────────────────────
+     사업 축 B(납품)를 건설현장 수요로 확장한 페이지입니다.
+     ※ docs/BRAND_POSITIONING.md 는 '건설현장 가설 안전시설 업체'
+       포지션을 명시적으로 거부합니다(주 고객이 건설사가 아님).
+       그래서 이 페이지는 '가설 안전시설 시공'이 아니라
+       '제주도 내 현장에 안전시설·안전자재를 납품'하는 범위로만 씁니다.
+       비계·안전난간·안전망·보호구 등 근거 없는 품목은 적지 않습니다. */
+  {
+    file: 'construction-safety.html', navKey: 'products',
+    title: '제주 건설현장 안전용품·안전자재 납품 | 제주안전시설',
+    description: '제주도 내 건설·시공 현장에 안전시설과 안전자재를 납품합니다. ' +
+      '차선규제봉, 시선유도봉, 반사테이프, 배수로 그레이팅, 경계석, 금속 부자재를 규격·수량에 맞춰 공급하고, ' +
+      '설치가 필요하면 시공까지 함께 진행합니다. 제주 전 지역, 1개소·소량부터.',
+    trail: [{ label: '홈', href: 'index.html' }, { label: '건설현장 안전용품·자재' }],
+    /* 실제 페이지 내용과 같은 범위만 선언합니다 — 납품(공급)과 설치.
+       가설 안전시설 시공은 하지 않으므로 넣지 않습니다. */
+    jsonld: [{
+      '@type': 'Service',
+      '@id': '#service-construction-supply',
+      name: '제주 건설현장 안전용품·안전자재 납품',
+      serviceType: '안전용품·안전자재 납품',
+      description: '제주도 내 건설·시공 현장에 차선규제봉, 시선유도봉, 반사테이프, 배수로 그레이팅, ' +
+        '경계석, 금속 부자재 등 안전시설과 안전자재를 납품하고, 필요하면 설치까지 진행합니다.',
+      provider: { '@id': '#brand' },
+      areaServed: COMPANY.areaServed.map((a) => ({ '@type': 'AdministrativeArea', name: a }))
+    }],
+    faq: [
+      { q: '제주 건설현장에 안전용품·안전자재 납품이 가능한가요?', a: '가능합니다. 제주특별자치도 전 지역으로 납품합니다. 필요한 품목과 규격, 수량, 현장 위치를 알려주시면 견적을 드립니다. 육지 납품은 하지 않습니다.' },
+      { q: '납품만 받을 수 있나요, 설치도 해주시나요?', a: '둘 다 가능합니다. 직영 인력이 설치하시면 자재만 납품하고, 설치가 필요하면 시공 견적으로 진행합니다. 기존 시설 철거가 필요한 경우도 함께 처리합니다.' },
+      { q: '소량만 필요한데 납품되나요?', a: '1개소·소량부터 납품합니다. 물량이 작아 견적을 받기 어려운 현장을 주로 맡고 있습니다. 아주 소량이면 (주)아인산업안전이 운영하는 안전용품 쇼핑몰에서 바로 구매하실 수도 있습니다.' },
+      { q: '세금계산서와 거래 서류 처리가 되나요?', a: '가능합니다. 세금계산서를 발행하고, 필요한 거래 서류를 준비해 드립니다. 필요한 양식을 알려주세요.' },
+      { q: '규격을 모르는 상태에서도 문의할 수 있나요?', a: '가능합니다. 제주도 내 현장이면 방문해 실측한 뒤 규격을 정합니다. 배수로 그레이팅처럼 기존 프레임 실측이 필요한 품목은 특히 그렇습니다. 현장 사진 1~2장만 보내주셔도 됩니다.' }
+    ],
+    body: `
+<section class="page-head">
+  <div class="wrap">
+    <span class="eyebrow">Construction Site Supply</span>
+    <h1>제주 건설현장 안전용품·안전자재 납품</h1>
+    <p>제주도 내 건설·시공 현장에 안전시설과 안전자재를 납품합니다.
+       규격과 수량이 정해져 있으면 견적으로, 설치까지 필요하면 시공으로 진행합니다.
+       ${COMPANY.areaServedLabel}에서 1개소·소량부터 대응합니다.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2>납품할 수 있는 품목</h2>
+    <p>아래는 제주안전시설이 실제로 시공하거나 납품해 온 품목입니다.
+       현장에서 다뤄 본 것만 적었습니다. 품목별 규격과 선택 기준은
+       <a href="products.html">제품·자재 페이지</a>에 정리되어 있습니다.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>구분</th><th>품목</th><th>건설현장에서 쓰이는 곳</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>도로·교통 안전자재</strong></td>
+            <td>차선규제봉, 시선유도봉, 고휘도 반사테이프, 반사 경고도료, 볼라드</td>
+            <td>공사 구간 차로 분리, 진출입 동선 유도, 야간 시인성 확보</td>
+          </tr>
+          <tr>
+            <td><strong>보행·배수 자재</strong></td>
+            <td>배수로 그레이팅, 중하중 그레이팅, 트렌치 커버</td>
+            <td>차량이 지나는 구간의 배수로 복개, 발 빠짐·덜컹거림 해소</td>
+          </tr>
+          <tr>
+            <td><strong>진입·단차 자재</strong></td>
+            <td>경사로 진입판(차량 진입판 U형)</td>
+            <td>보도·도로 단차 해소, 차량 진입 충격 완화</td>
+          </tr>
+          <tr>
+            <td><strong>보수·복구 자재</strong></td>
+            <td>도로 경계석, 아스콘, 방청·재도장 자재, 앵커·고정 부자재</td>
+            <td>준공 전 원상복구, 파손 구간 부분 보수</td>
+          </tr>
+          <tr>
+            <td><strong>스테인리스·금속 부자재</strong></td>
+            <td>앵글·프레임 부재, 무수축몰탈, 고정 브래킷</td>
+            <td>현장 조건에 맞춘 고정·프레임 작업</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note note--safety">
+      취급하지 않는 품목은 적지 않았습니다. 위 목록에 없는 자재가 필요하시면
+      먼저 문의해 주세요. 가능한 것과 불가능한 것을 그대로 알려드립니다.
+    </p>
+  </div>
+</section>
+
+<section class="section section--surface">
+  <div class="wrap">
+    <h2>납품만 받을지, 설치까지 맡길지</h2>
+    <p>현장 인력이 직접 설치하는 경우와 시공까지 맡기는 경우를 나눠 진행합니다.</p>
+    <div class="split">
+      <a href="contact.html?type=supply">
+        <b>자재만 납품</b>
+        <span>규격과 수량이 정해진 경우입니다. 견적 후 납품하며, 세금계산서와 필요한 거래 서류를 준비해 드립니다. 1개소·소량도 가능합니다.</span>
+      </a>
+      <a href="contact.html?type=site">
+        <b>납품 + 설치</b>
+        <span>설치까지 필요한 경우입니다. 제주도 내 현장을 확인한 뒤 규격을 정하고, 기존 시설 철거가 필요하면 함께 진행합니다.</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2>제주 현장에서 자주 나오는 요청</h2>
+    <p>건설·시공 현장에서 실제로 들어오는 요청은 대개 다음 형태입니다.
+       모두 제주안전시설이 시공사례로 남긴 작업과 같은 계열입니다.</p>
+    <ul class="problem-list">
+      <li><a href="service/road-traffic.html">공사 구간 차로를 분리할 시선유도봉·차선규제봉이 필요합니다<em>도로·교통 안전시설 →</em></a></li>
+      <li><a href="service/pedestrian-life.html">차량이 지나는 배수로에 중하중 그레이팅을 넣어야 합니다<em>보행·배수 안전시설 →</em></a></li>
+      <li><a href="service/public-maintenance.html">준공 전에 경계석과 포장을 원상복구해야 합니다<em>보수·유지관리 →</em></a></li>
+      <li><a href="service/metal-fabrication.html">해풍 환경이라 금속 부재 재질을 정해야 합니다<em>스테인리스·금속 시설물 →</em></a></li>
+      <li><a href="products.html">규격·수량이 정해진 자재를 납품받고 싶습니다<em>제품·자재 안내 →</em></a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section section--surface">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Evidence</span>
+      <h2>같은 계열의 제주 시공사례</h2>
+      <p>건설현장 납품과 같은 품목을 실제로 시공한 기록입니다. 규격과 작업 방식을 가늠하실 수 있습니다.</p>
+    </div>
+    <div class="works__grid" id="worksGrid" data-cases-ids="1,9,4"></div>
+    <p class="works__more"><a class="link-arrow" href="cases.html">제주 시공사례 전체 보기</a></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2>납품 진행 순서</h2>
+    <ol class="steps">
+      <li><b>필요 품목 확인</b><span>품목과 대략 수량, 현장 위치를 알려주세요. 현장 사진 1~2장이면 충분한 경우가 많습니다.</span></li>
+      <li><b>규격·수량 협의</b><span>규격이 정해지지 않았으면 제주도 내 현장을 방문해 실측합니다.</span></li>
+      <li><b>견적</b><span>자재만 납품할지, 설치까지 포함할지 나눠 견적을 드립니다.</span></li>
+      <li><b>납품 또는 시공</b><span>납품 일정을 맞추고, 설치가 포함되면 현장 일정에 맞춰 진행합니다.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <span class="eyebrow">Contact</span>
+    <h2>필요한 품목과 수량을<br>알려주세요.</h2>
+    <p>제주도 내 현장이면 방문해 실측한 뒤 규격을 정합니다. 현장 사진 1~2장만 보내주셔도 됩니다.</p>
+    <a class="cta-band__tel" href="${TEL}">${COMPANY.tel}</a>
+    <p class="cta-band__hours">${COMPANY.areaServedLabel} · 1개소·소량부터 납품</p>
+    <div class="btn-row">
+      <a class="btn" href="contact.html?type=supply">자재 납품 문의</a>
+      <a class="btn-ghost" href="${SHOP}" target="_blank" rel="noopener noreferrer">안전용품 쇼핑몰</a>
     </div>
   </div>
 </section>`
@@ -684,4 +855,4 @@ ${PRODUCT_GROUPS.map((g, i) => `
   }
 ];
 
-module.exports = { PAGES, serviceCards, PROCESS_INSTALL };
+module.exports = { PAGES, serviceCards, PROCESS_INSTALL, PRODUCT_GROUPS };

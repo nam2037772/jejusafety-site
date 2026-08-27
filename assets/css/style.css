@@ -319,6 +319,20 @@ em{font-style:normal}
 .card-link{transition:opacity .3s}
 .card-link:hover{opacity:.72}
 
+/* 두 갈래 안내 (납품 견적 / 쇼핑몰 구매) — 괘선으로만 나눕니다 */
+.split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:0;border-top:1px solid var(--line)}
+.split>a{display:block;padding:2em clamp(20px,2.4vw,36px) 2.2em;
+  border-bottom:1px solid var(--line);transition:background .3s}
+.split>a+a{border-left:1px solid var(--line)}
+.split>a:first-child{padding-left:0}
+.split>a:last-child{padding-right:0}
+.split>a:hover{background:var(--paper)}
+.split b{display:block;font-family:var(--serif);font-weight:500;
+  font-size:1.1rem;line-height:1.5;color:var(--ink);margin-bottom:.7em}
+.split b::after{content:" →";font-family:var(--sans);font-weight:300;color:var(--sub)}
+.split span{display:block;max-width:32em;font-size:.92rem;line-height:1.9;color:var(--ink-2)}
+
 /* 사례 카드 — 사진을 먼저, 상자 없이 */
 .case-card{border-top:0;padding-top:0}
 .case-card>figure{margin-bottom:1.2em}
@@ -483,6 +497,9 @@ input[type="email"],select,textarea{
   .gnb a[aria-current="page"]{color:#fff}
   .mobile-cta{display:grid}
   .works__grid,.grid--2,.grid--3{grid-template-columns:minmax(0,1fr)}
+  .split{grid-template-columns:minmax(0,1fr)}
+  .split>a{padding-left:0;padding-right:0}
+  .split>a+a{border-left:0}
   .gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
   .section-head--row{align-items:flex-start}
   .spec-list div,.spec-list li{grid-template-columns:minmax(0,1fr);gap:.3em}

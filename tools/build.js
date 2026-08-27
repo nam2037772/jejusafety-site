@@ -26,7 +26,14 @@ const { page, esc, HAS_DOMAIN, abs, COMPANY } = require('./lib/layout.js');
 const { SERVICES, SERVICE_BY_SLUG } = require('../assets/js/services.js');
 const { CASES, publishedCases } = require('../assets/js/cases.js');
 const { GUIDES } = require('../assets/js/guides.js');
-const { PAGES } = require('../content/pages.js');
+const { PAGES, PRODUCT_GROUPS } = require('../content/pages.js');
+
+/* 제품군 slug → 한글 이름.
+   앵커 텍스트에 'traffic 자재 안내' 처럼 영문 슬러그가 그대로 나가면
+   사람에게도 검색엔진에도 의미가 없습니다. */
+const PRODUCT_NAME = {};
+PRODUCT_GROUPS.forEach((g) => { PRODUCT_NAME[g.id] = g.name; });
+const productLabel = (id) => (PRODUCT_NAME[id] || id) + ' 안내';
 const { SERVICE_COPY } = require('../content/service-copy.js');
 const { GUIDE_COPY } = require('../content/guide-copy.js');
 
@@ -140,9 +147,18 @@ function prefillCases(html, depth) {
     let picked = null;
     const limit = (attrs.match(/data-limit="(\d+)"/) || [])[1];
 
-    if (/id="homeWorks"/.test(attrs)) {
-      const n = parseInt(limit || '6', 10);
-      const inner = list.slice(0, n).map((c) => workRowHtml(c, root)).join('\n      ');
+    /* 편집형 시공사례 블록. data-cases-ids 로 사례를 직접 고를 수 있습니다
+       (고르지 않으면 최신 순으로 data-limit 만큼). */
+    if (/id="(homeWorks|worksGrid)"/.test(attrs)) {
+      const ids = (attrs.match(/data-cases-ids="([^"]+)"/) || [])[1];
+      let sel;
+      if (ids) {
+        sel = ids.split(',').map((s) => parseInt(s.trim(), 10))
+          .map((id) => list.filter((c) => c.id === id)[0]).filter(Boolean);
+      } else {
+        sel = list.slice(0, parseInt(limit || '6', 10));
+      }
+      const inner = sel.map((c) => workRowHtml(c, root)).join('\n      ');
       return `<div${attrs}>\n      ${inner || '<p class="note">등록된 시공사례가 아직 없습니다.</p>'}\n    </div>`;
     }
     if (/id="caseGrid"/.test(attrs)) picked = list;
@@ -164,16 +180,29 @@ function prefillCases(html, depth) {
   });
 }
 
+/* FAQPage 구조화데이터는 같은 Q&A 가 페이지에 실제로 보일 때만 쓸 수 있습니다
+   (검색엔진 가이드라인). 정적 페이지는 faq 를 JSON-LD 로만 내보내고 있었으므로,
+   본문에 보이는 FAQ 가 없으면 다크 CTA 앞에 끼워 넣습니다. */
+function withVisibleFaq(body, faq) {
+  if (!faq || !faq.length) return body;
+  if (/<details>/.test(body)) return body;
+  const block = faqBlock(faq, /class="section--surface"[\s\S]*$/.test(body) ? '' : 'surface');
+  const i = body.lastIndexOf('<section class="cta-band">');
+  return i === -1 ? body + '\n' + block : body.slice(0, i) + block + '\n\n' + body.slice(i);
+}
+
 /* ── 1. 정적 페이지 ────────────────────────────────────── */
 function buildStatic() {
   PAGES.forEach((p) => {
     write(p.file, page({
       file: p.file, navKey: p.navKey, title: p.title, description: p.description,
-      trail: p.trail, faq: p.faq, body: prefillCases(p.body, 0),
+      trail: p.trail, faq: p.faq, body: withVisibleFaq(prefillCases(p.body, 0), p.faq),
       needsCaseIndex: p.file === 'cases.html',
-      jsonld: p.file === 'index.html'
+      /* 페이지가 직접 선언한 노드(p.jsonld)를 그대로 싣습니다.
+         실제 페이지 내용과 일치하는 스키마만 넣습니다 — 평점·리뷰·가격은 넣지 않습니다. */
+      jsonld: (p.file === 'index.html'
         ? [{ '@type': 'WebSite', '@id': '#website', name: COMPANY.brand, publisher: { '@id': '#operator' } }]
-        : []
+        : []).concat(p.jsonld || [])
     }));
   });
 }
@@ -419,7 +448,7 @@ function buildCases() {
       <div class="card">
         <h3>관련 제품·자재</h3>
         ${(c.relatedProducts || []).length
-          ? `<ul>${c.relatedProducts.map((p) => `<li><a href="{{ROOT}}products.html#${p}">${esc(p)} 자재 안내</a></li>`).join('')}</ul>`
+          ? `<ul>${c.relatedProducts.map((p) => `<li><a href="{{ROOT}}products.html#${p}">${esc(productLabel(p))}</a></li>`).join('')}</ul>`
           : '<p>이 사례는 제작·시공 위주입니다.</p>'}
         <a class="card-more" href="{{ROOT}}contact.html?type=supply">자재 납품 문의 →</a>
       </div>
@@ -513,7 +542,7 @@ ${copy}
       </div>
       <div class="card">
         <h3>관련 제품·자재</h3>
-        <ul>${(g.relatedProducts || []).map((p) => `<li><a href="{{ROOT}}products.html#${p}">${esc(p)} 자재 안내</a></li>`).join('')}</ul>
+        <ul>${(g.relatedProducts || []).map((p) => `<li><a href="{{ROOT}}products.html#${p}">${esc(productLabel(p))}</a></li>`).join('')}</ul>
         <a class="card-more" href="{{ROOT}}contact.html?type=supply">자재 납품 문의 →</a>
       </div>
       <div class="card">

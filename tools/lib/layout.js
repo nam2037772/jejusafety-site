@@ -224,6 +224,7 @@ ${p.body}
     <p class="footer-brand">제주안전시설<span>${esc(COMPANY.relationSentence)}</span></p>
     <ul class="footer-nav">
       ${NAV.map((n) => `<li><a href="${root}${n.href}">${n.label}</a></li>`).join('\n      ')}
+      <li><a href="${root}construction-safety.html">건설현장 안전용품·자재</a></li>
       <li><a href="${root}privacy.html">개인정보처리방침</a></li>
       <li><a href="${COMPANY.storeUrl}" target="_blank" rel="noopener noreferrer">안전용품 쇼핑몰</a></li>
     </ul>
