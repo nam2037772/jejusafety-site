@@ -100,7 +100,7 @@ const COMPANY = {
        google : Search Console > 속성 추가 > URL 접두어 > HTML 태그 */
   verification: {
     naver: 'fbaa5a4fc892a6f3c2bbd682a93096b51a9fc9b3',
-    google: ''
+    google: 'lIU_aSNVopLG3RdK7WE9Zb8Sjeq7fx7Pd04_GsTx2pI'
   },
 
   /* ▶ 도메인 미확정.
