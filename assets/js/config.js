@@ -114,10 +114,15 @@ const COMPANY = {
 
 /* 외부 채널 — 새 탭 (target=_blank, rel="noopener noreferrer") */
 const EXTERNAL_LINKS = {
+  /* 안전용품 온라인몰 — 표기의 단일 출처입니다.
+     제품 페이지 대표 CTA(label)·푸터(shortLabel)·설명(desc) 이 모두 여기서 나옵니다.
+     주소나 문구를 바꿀 일이 생기면 이 블록만 고칩니다. */
   shop: {
     url: COMPANY.storeUrl,
-    label: '안전용품 쇼핑몰에서 구매',
-    desc: '소량이거나 직접 설치하시는 경우, 안전용품을 온라인에서 바로 구매하실 수 있습니다.'
+    label: '안전용품 온라인 구매',
+    shortLabel: '안전용품 온라인몰',
+    desc: '소량이거나 직접 설치하시는 경우, 안전용품을 온라인에서 바로 구매하실 수 있습니다. ' +
+      '제주 현장 설치·납품은 제주안전시설에서, 소량 구매는 온라인몰에서 진행됩니다.'
   },
   blog: { url: 'https://blog.naver.com/ainsafe', label: '네이버 블로그', desc: '현장에서 기록한 시공 과정을 올립니다.' }
 };

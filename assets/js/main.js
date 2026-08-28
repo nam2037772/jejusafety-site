@@ -28,6 +28,11 @@
   }
   function pad3(n) { return String(n).padStart(3, '0'); }
 
+  /* 증거 유형 표기 — build.js 의 EVIDENCE_LABEL 과 같은 값을 씁니다.
+     시공사례·납품사례·교체/유지보수 사례를 한 목록에서 구분하기 위한 것입니다.
+     기술자료(가이드)는 이 목록에 들어오지 않습니다 — guide/ 로 따로 있습니다. */
+  var EVIDENCE_LABEL = { '시공': '시공', '납품': '납품', '유지보수': '교체·유지보수' };
+
   /* ── 헤더 · 푸터 ──────────────────────────────────────── */
   function initChrome() {
     var toggle = document.querySelector('.nav-toggle');
@@ -75,6 +80,8 @@
       : '<div class="noimg">사진 준비 중</div>';
 
     var badges = [];
+    badges.push('<span class="badge badge--evidence">' +
+      esc(EVIDENCE_LABEL[c.evidenceType] || '시공') + '</span>');
     if (c.region) badges.push('<span class="badge badge--region">' + esc(c.region) + '</span>');
     var cust = c.customerLabel || c.customerType;
     if (cust) badges.push('<span class="badge badge--customer">' + esc(cust) + '</span>');
@@ -98,9 +105,10 @@
     if (!grid || typeof CASE_INDEX === 'undefined') return;
 
     var all = CASE_INDEX; // 정렬은 빌드 시점에 이미 적용됨
-    var state = { service: '', customer: '', region: '', work: '', q: '' };
+    var state = { evidence: '', service: '', customer: '', region: '', work: '', q: '' };
 
     function matches(c) {
+      if (state.evidence && (c.evidenceType || '시공') !== state.evidence) return false;
       if (state.service && c.primaryService !== state.service &&
         (c.relatedServices || []).indexOf(state.service) < 0) return false;
       if (state.customer && c.customerType !== state.customer) return false;
@@ -151,7 +159,7 @@
       var hit = all.filter(matches);
       var count = document.getElementById('caseCount');
       if (count) {
-        count.textContent = '시공사례 ' + hit.length + '건' +
+        count.textContent = '사례 ' + hit.length + '건' +
           (hit.length !== all.length ? ' (전체 ' + all.length + '건 중)' : '');
       }
       grid.innerHTML = hit.map(caseCard).join('') ||

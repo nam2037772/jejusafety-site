@@ -6,16 +6,27 @@
    ============================================================ */
 'use strict';
 
-const { COMPANY } = require('../assets/js/config.js');
+const { COMPANY, EXTERNAL_LINKS } = require('../assets/js/config.js');
 const { SERVICES } = require('../assets/js/services.js');
 const { GUIDES } = require('../assets/js/guides.js');
+const { publishedCases } = require('../assets/js/cases.js');
 const { entityId } = require('../tools/lib/layout.js');
+
+/* 증거 유형 필터 값 — 실제로 발행된 사례에 있는 유형만 칩으로 냅니다.
+   아직 사례가 없는 유형(예: 납품)을 0건 칩으로 내걸지 않기 위한 것입니다. */
+const EVIDENCE_ORDER = [
+  { value: '시공', label: '시공' },
+  { value: '유지보수', label: '교체·유지보수' },
+  { value: '납품', label: '납품' }
+];
+const EVIDENCE_FILTER = EVIDENCE_ORDER.filter((t) =>
+  publishedCases().some((c) => (c.evidenceType || '시공') === t.value));
 
 /* 브랜드 엔티티 @id — layout.js 와 같은 값을 씁니다. */
 const ENTITY_BRAND = entityId('#brand');
 
 const TEL = COMPANY.telHref;
-const SHOP = COMPANY.storeUrl;
+const SHOP = EXTERNAL_LINKS.shop.url;
 
 /* 홈·서비스 개요에서 함께 쓰는 서비스 카드 */
 function serviceCards(root) {
@@ -91,7 +102,7 @@ const PAGES = [
     trail: null,
     faq: [
       { q: '제주 어느 지역까지 시공하나요?', a: '제주특별자치도 전 지역입니다. 제주시·서귀포시와 읍면 지역에서 현장 확인 후 시공합니다. 육지 시공은 하지 않습니다.' },
-      { q: '안전시설 자재만 납품받을 수 있나요?', a: '가능합니다. 직영으로 설치하시는 경우 필요한 시설과 수량을 알려주시면 납품 견적을 드립니다. 소량 구매는 안전용품 쇼핑몰에서 바로 하실 수 있습니다.' },
+      { q: '안전시설 자재만 납품받을 수 있나요?', a: '가능합니다. 직영으로 설치하시는 경우 필요한 시설과 수량을 알려주시면 납품 견적을 드립니다. 소량 구매는 \에서 바로 하실 수 있습니다.' },
       { q: '소규모 공사도 맡아 주시나요?', a: '1개소부터 시공합니다. 물량이 작아 견적을 받기 어려운 현장을 주로 맡고 있습니다.' },
       { q: '제주 건설현장에 안전용품·안전자재 납품이 되나요?', a: '가능합니다. 제주도 내 건설·시공 현장에 차선규제봉, 시선유도봉, 반사테이프, 배수로 그레이팅, 경계석, 금속 부자재 등을 납품합니다. 설치가 필요하면 시공까지 함께 진행합니다.' },
       { q: '제주 학교 안전시설 시공이 가능한가요?', a: '가능합니다. 통학로 시선유도봉, 출입구 경사로 진입판, 교내 배수로 그레이팅 등을 시공한 사례가 있습니다. 학생 통행이 없는 방학 기간에 맞춰 진행합니다.' },
@@ -190,14 +201,11 @@ const PAGES = [
       <p class="supply__desc">직영으로 설치하시는 경우 필요한 시설과 수량을 알려주시면 납품 견적을 드립니다.
          규격과 재질은 현장 조건에 맞춰 함께 정합니다. 관공서·학교의 안전자재 납품과
          제주도 내 건설·시공 현장의 안전용품 납품을 모두 받고 있습니다.
-         소량 구매는 안전용품 쇼핑몰에서 바로 하실 수 있습니다.</p>
+         소량·직접 구매는 <a href="${SHOP}" target="_blank" rel="noopener noreferrer">${EXTERNAL_LINKS.shop.shortLabel}</a>에서 바로 하실 수 있습니다.</p>
       <div class="supply__actions">
         <a class="link-arrow" href="products.html">제품·자재 보기</a>
         <a class="btn-ghost" href="construction-safety.html">건설현장 안전용품·자재 납품</a>
       </div>
-      <p class="figure-note" style="margin-top:1.6em">
-        소량·직접 구매는 <a href="${SHOP}" target="_blank" rel="noopener noreferrer">안전용품 쇼핑몰</a>에서 바로 하실 수 있습니다.
-      </p>
     </div>
     <figure class="supply__media reveal">
       <img src="assets/images/cases/004/after-01.jpg" alt="배수로에 새로 설치한 중하중 그레이팅" width="966" height="544" loading="lazy" decoding="async">
@@ -313,8 +321,9 @@ const PAGES = [
 <section class="page-head">
   <div class="wrap">
     <h1>제주 안전시설 시공사례</h1>
-    <p>제주도에서 실제로 해결한 현장 기록입니다. 발주처 유형과 시설로 걸러 보시면
-       비슷한 현장을 찾기 쉽습니다.</p>
+    <p>제주도에서 실제로 해결한 현장 기록입니다. 새로 설치한 <strong>시공</strong>과
+       기존 시설을 고친 <strong>교체·유지보수</strong>를 기록 유형으로 구분해 두었습니다.
+       발주처 유형과 시설로 걸러 보시면 비슷한 현장을 찾기 쉽습니다.</p>
   </div>
 </section>
 
@@ -324,6 +333,9 @@ const PAGES = [
       <label class="sr-only" for="caseSearch">사례 검색</label>
       <input class="search-box" id="caseSearch" type="search" placeholder="시설명·지역·작업으로 검색 (예: 그레이팅, 서귀포, 교체)">
 
+      <div class="filter-group" data-filter="evidence" data-values='${JSON.stringify(EVIDENCE_FILTER)}'>
+        <span>기록 유형</span><div class="chips"></div>
+      </div>
       <div class="filter-group" data-filter="customer" data-values='${JSON.stringify(['관공서', '공공기관', '공기업', '학교', '교육기관', '공공주차장', '공원·체육시설', '공동주택', '사업장'])}'>
         <span>발주처 유형</span><div class="chips"></div>
       </div>
@@ -365,13 +377,13 @@ const PAGES = [
     title: '제주 안전용품·안전자재 납품 | 품목별 규격과 선택 기준',
     description: '제주도 내 안전용품·안전자재 납품 안내입니다. 차선규제봉, 시선유도봉, 반사테이프, ' +
       '배수로 그레이팅, 경사로 진입판 등 품목별 규격과 고르는 기준을 정리했습니다. ' +
-      '수량·규격이 정해진 납품은 견적으로, 소량 구매는 안전용품 쇼핑몰로 안내합니다.',
+      '수량·규격이 정해진 납품은 견적으로, 소량 구매는 \로 안내합니다.',
     trail: [{ label: '홈', href: 'index.html' }, { label: '제품·자재' }],
     faq: [
       { q: '안전시설 자재만 납품받을 수 있나요?', a: '가능합니다. 직영 인력이 설치하시는 경우 필요한 자재와 수량을 알려주시면 납품 견적을 드립니다.' },
       { q: '규격을 모르는데 어떻게 주문하나요?', a: '제주도 내 현장이면 방문해 실측한 뒤 규격을 정해 드립니다. 배수로 그레이팅처럼 실측이 필요한 품목은 특히 그렇습니다.' },
       { q: '관공서 수의계약 서류도 처리되나요?', a: '가능합니다. 세금계산서 발행과 필요한 서류를 준비해 드립니다. 필요한 양식을 알려주세요.' },
-      { q: '소량만 필요한데 어떻게 하나요?', a: '안전용품 쇼핑몰에서 바로 구매하실 수 있습니다. 설치까지 필요하시면 견적 문의를 이용해 주세요.' }
+      { q: '소량만 필요한데 어떻게 하나요?', a: '\에서 바로 구매하실 수 있습니다. 설치까지 필요하시면 견적 문의를 이용해 주세요.' }
     ],
     body: `
 <section class="page-head">
@@ -392,8 +404,8 @@ const PAGES = [
         <span>견적으로 진행합니다. 세금계산서 발행과 관공서·학교 수의계약 서류를 준비해 드립니다. 1개소·소량도 가능합니다.</span>
       </a>
       <a href="${SHOP}" target="_blank" rel="noopener noreferrer">
-        <b>소량 · 직접 구매</b>
-        <span>운영회사 (주)아인산업안전이 운영하는 안전용품 쇼핑몰에서 바로 구매하실 수 있습니다. (새 창)</span>
+        <b>${EXTERNAL_LINKS.shop.label}</b>
+        <span>${EXTERNAL_LINKS.shop.desc} 운영회사 (주)아인산업안전이 운영합니다. (새 창)</span>
       </a>
     </div>
     <p class="note note--safety" style="margin-top:18px">
@@ -422,7 +434,6 @@ ${PRODUCT_GROUPS.map((g, i) => `
     </div>
     <div class="btn-row" style="margin-top:14px">
       <a class="btn btn-primary" href="contact.html?type=supply">${g.name} 납품 문의</a>
-      <a class="btn btn-ghost" href="${SHOP}" target="_blank" rel="noopener noreferrer">쇼핑몰에서 구매</a>
     </div>
   </div>
 </section>`).join('')}
@@ -468,7 +479,7 @@ ${PRODUCT_GROUPS.map((g, i) => `
     faq: [
       { q: '제주 건설현장에 안전용품·안전자재 납품이 가능한가요?', a: '가능합니다. 제주특별자치도 전 지역으로 납품합니다. 필요한 품목과 규격, 수량, 현장 위치를 알려주시면 견적을 드립니다. 육지 납품은 하지 않습니다.' },
       { q: '납품만 받을 수 있나요, 설치도 해주시나요?', a: '둘 다 가능합니다. 직영 인력이 설치하시면 자재만 납품하고, 설치가 필요하면 시공 견적으로 진행합니다. 기존 시설 철거가 필요한 경우도 함께 처리합니다.' },
-      { q: '소량만 필요한데 납품되나요?', a: '1개소·소량부터 납품합니다. 물량이 작아 견적을 받기 어려운 현장을 주로 맡고 있습니다. 아주 소량이면 (주)아인산업안전이 운영하는 안전용품 쇼핑몰에서 바로 구매하실 수도 있습니다.' },
+      { q: '소량만 필요한데 납품되나요?', a: '1개소·소량부터 납품합니다. 물량이 작아 견적을 받기 어려운 현장을 주로 맡고 있습니다. 아주 소량이면 (주)아인산업안전이 운영하는 \에서 바로 구매하실 수도 있습니다.' },
       { q: '세금계산서와 거래 서류 처리가 되나요?', a: '가능합니다. 세금계산서를 발행하고, 필요한 거래 서류를 준비해 드립니다. 필요한 양식을 알려주세요.' },
       { q: '규격을 모르는 상태에서도 문의할 수 있나요?', a: '가능합니다. 제주도 내 현장이면 방문해 실측한 뒤 규격을 정합니다. 배수로 그레이팅처럼 기존 프레임 실측이 필요한 품목은 특히 그렇습니다. 현장 사진 1~2장만 보내주셔도 됩니다.' }
     ],
@@ -593,7 +604,7 @@ ${PRODUCT_GROUPS.map((g, i) => `
     <p class="cta-band__hours">${COMPANY.areaServedLabel} · 1개소·소량부터 납품</p>
     <div class="btn-row">
       <a class="btn" href="contact.html?type=supply">자재 납품 문의</a>
-      <a class="btn-ghost" href="${SHOP}" target="_blank" rel="noopener noreferrer">안전용품 쇼핑몰</a>
+      <a class="btn-ghost" href="${SHOP}" target="_blank" rel="noopener noreferrer">\</a>
     </div>
   </div>
 </section>`
@@ -692,7 +703,7 @@ ${PRODUCT_GROUPS.map((g, i) => `
           <tr><th>대표전화</th><td><a href="${TEL}">${COMPANY.tel}</a></td></tr>
           <tr><th>이메일</th><td><a href="mailto:${COMPANY.email}">${COMPANY.email}</a></td></tr>
           <tr><th>등록 업종</th><td>${COMPANY.registeredBusiness.join(' · ')}</td></tr>
-          <tr><th>안전용품 쇼핑몰</th><td><a href="${SHOP}" target="_blank" rel="noopener noreferrer">${SHOP}</a></td></tr>
+          <tr><th>\</th><td><a href="${SHOP}" target="_blank" rel="noopener noreferrer">${SHOP}</a></td></tr>
         </tbody>
       </table>
     </div>

@@ -21,13 +21,23 @@
      id            3자리 일련번호 (재사용 금지)
      slug          영문 kebab-case. 한 번 정하면 바꾸지 않습니다 (URL)
      title         H1 이자 목록 제목. 사람이 실제로 검색하는 표현으로 씁니다
-     date          시공 시기. 원문에 없으면 null (사진 촬영일 힌트는 _dateHint 주석에만)
+     date          시공 시기 'YYYY-MM' | 'YYYY-MM-DD' | null. 근거가 없으면 null
+     dateBasis     date 의 근거. '문서' | '사진' | null
+                     '문서' — 계약·준공 서류로 확인된 날짜. 그대로 표기합니다
+                     '사진' — 사진 촬영일만 근거. 화면에 '2026년 7월경' 으로 표기하고
+                              JSON-LD datePublished 에는 넣지 않습니다 (단정하지 않기 위해)
+                     null   — date 가 없을 때. 화면에 시공 시기를 표시하지 않습니다
      region        '제주시' | '서귀포시' | null
      regionDetail  읍면동·현장 성격. 공개 가능한 범위만
      facilityType  시설명 — 검색어의 핵심
      customerType  발주처 유형 (services.js 의 CUSTOMER_TYPES) | null
      customerName  발주처 실명. 공개 가능할 때만
      customerLabel 화면 표기용 익명 라벨 (예: '제주 소재 초등학교')
+     evidenceType  '시공' | '납품' | '유지보수' (없으면 '시공')
+                     시공     — 없던 시설을 새로 설치
+                     납품     — 자재만 공급. 설치는 포함하지 않음
+                     유지보수 — 기존 시설의 교체·보수·복구
+                   ※ 기술자료·제품 안내는 사례가 아닙니다. guides.js 로 갑니다
      primaryService / relatedServices
      workType      ['설치','교체','보수','개선','납품'] 중 복수
      problem       현장에서 무엇이 위험했는가
@@ -53,13 +63,15 @@ const CASES = [
     id: 1,
     slug: 'seogwipo-rotary-lane-delineator-replacement',
     title: '서귀포시 로터리 차선규제봉 교체',
-    date: null, // _dateHint: 사진 촬영일 2026-07-16~18 (원문에 시공일 기재 없음 → 확인 후 채울 것)
+    date: '2026-07',
+    dateBasis: '사진', // _dateHint: 사진 촬영일 2026-07-16~18 (원문에 시공일 기재 없음 → 확인 후 채울 것)
     region: '서귀포시',
     regionDetail: '치유의 숲 입구 로터리',
     facilityType: '차선규제봉(시선유도봉)',
     customerType: '관공서',
     customerName: '서귀포시청',
     customerLabel: '서귀포시청',
+    evidenceType: '유지보수',
     primaryService: 'road-traffic',
     relatedServices: [],
     workType: ['교체', '설치'],
@@ -118,13 +130,15 @@ const CASES = [
     id: 6,
     slug: 'jeju-exit-warning-light-mirror-sensor',
     title: '제주 진출입로 출차주의등 설치 (미러센서·경광등)',
-    date: null, // _dateHint: 사진 촬영일 2025-12-15
+    date: '2025-12',
+    dateBasis: '사진', // _dateHint: 사진 촬영일 2025-12-15
     region: null,
     regionDetail: '건물 진출입로',
     facilityType: '출차주의등',
     customerType: null,
     customerName: null,
     customerLabel: null,
+    evidenceType: '시공',
     primaryService: 'road-traffic',
     relatedServices: ['pedestrian-life'],
     workType: ['설치'],
@@ -186,13 +200,15 @@ const CASES = [
     id: 9,
     slug: 'road-kerb-realignment-asphalt-restoration',
     title: '단지 내 도로 경계석 철거·재설치 및 아스콘 포장 복구',
-    date: null, // _dateHint: 사진 촬영일 2025-07-31 ~ 2025-08-05
+    date: '2025-07',
+    dateBasis: '사진', // _dateHint: 사진 촬영일 2025-07-31 ~ 2025-08-05
     region: null,
     regionDetail: '단지 내 도로',
     facilityType: '도로 경계석 / 아스콘 포장',
     customerType: null,
     customerName: null,
     customerLabel: null,
+    evidenceType: '유지보수',
     primaryService: 'road-traffic',
     relatedServices: ['public-maintenance'],
     workType: ['교체', '개선'],
@@ -256,61 +272,139 @@ const CASES = [
   /* ────────────────────────────────────────────────────────── */
   {
     id: 8,
-    slug: 'jeju-parking-reflective-tape-delineator-post',
-    title: '제주 주차장 반사테이프·시선유도봉 설치',
-    date: null, // _dateHint: 사진 촬영일 2025-08-05
+    slug: 'jeju-parking-pillar-reflective-tape',
+    title: '제주 주차장 기둥 고휘도 반사테이프 부착',
+    date: '2025-08',
+    dateBasis: '사진', // 사진 촬영일 2025-08-05 — 원문에 시공일 기재 없음
     region: null,
     regionDetail: '제주도 내 주차장',
-    facilityType: '고휘도 반사테이프 / 시선유도봉 / 반사 경고도색',
+    facilityType: '고휘도 반사테이프',
     customerType: null,
     customerName: null,
     customerLabel: null,
+    evidenceType: '시공',
     primaryService: 'road-traffic',
     relatedServices: ['pedestrian-life'],
     workType: ['설치', '개선'],
 
-    problem: '주차면 중앙에 기둥이 서 있어 차량이 드나들 때 측면 접촉 위험이 컸습니다. ' +
-      '보행자와 차량의 동선이 겹치는 구간이 있었고, 돌출된 경계 구조물은 야간에 잘 보이지 않았습니다.',
-    purpose: '주·야간 시인성을 높이고, 차량과 보행자의 동선을 눈으로 구분되게 만듭니다.',
+    problem: '주차면 한가운데에 구조물 기둥이 서 있어, 차를 대고 뺄 때 운전자가 기둥을 보지 못하고 ' +
+      '차량 측면을 긁는 접촉 사고 위험이 컸습니다. 기둥이 회색이라 밝은 낮에도 배경과 구분되지 않았습니다.',
+    purpose: '기둥의 위치가 주·야간 모두 한눈에 들어오게 만들어 측면 접촉을 막습니다.',
     work: [
-      '주차장 기둥에 고휘도 반사테이프 부착 (노랑·검정 패턴)',
-      '주차장 모서리와 보행로 경계부에 시선유도봉 설치',
-      '도로와 잔디 경계석에 반사 경고도색 마감'
+      '기둥 표면 오염 제거 및 부착면 정리',
+      '운전자 눈높이에 맞춰 부착 높이 결정',
+      '노랑·검정 패턴 고휘도 반사테이프 부착',
+      '주차면에서 실제로 보이는지 차량 위치에서 확인'
     ],
     materials: [
-      { name: '고휘도 반사테이프', spec: '노랑·검정 패턴' },
-      { name: '시선유도봉', spec: null }
+      { name: '고휘도 반사테이프', spec: '노랑·검정 패턴' }
     ],
     quantity: null,
     duration: null,
-    result: '기둥과 돌출 구조물이 주·야간 모두 눈에 들어오게 되어 차량 측면 접촉 위험이 줄었고, ' +
-      '시선유도봉으로 보행 동선과 차량 회전 공간이 구분되었습니다. ' +
-      '짧은 시간에 시공할 수 있으면서 야간 주차 시 체감 효과가 큰 작업입니다.',
+    result: '기둥이 주·야간 모두 눈에 들어오게 되어 차량 측면 접촉 위험이 줄었습니다. ' +
+      '자재비와 시공 시간이 크게 들지 않으면서 야간 주차 시 체감 효과가 큰 작업입니다.',
 
     images: {
-      representative: 'after-05.jpg',
+      representative: 'after-01.jpg',
       before: ['before-01.jpg', 'before-02.jpg', 'before-03.jpg'],
       process: ['process-01.jpg'],
-      after: ['after-01.jpg', 'after-02.jpg', 'after-03.jpg', 'after-04.jpg', 'after-05.jpg', 'after-06.jpg'],
+      after: ['after-01.jpg', 'after-02.jpg', 'after-03.jpg'],
+      product: []
+    },
+
+    relatedProducts: ['traffic'],
+    relatedGuides: [],
+    relatedCases: [11, 9, 1],
+    faq: [
+      { q: '반사테이프만 부착하는 소규모 작업도 맡기나요?',
+        a: '맡습니다. 기둥 몇 개에 반사테이프를 붙이는 정도의 작업도 시공합니다.' },
+      { q: '주차장 운영을 멈추지 않고 작업할 수 있나요?',
+        a: '반사테이프 부착은 기둥 단위로 짧게 진행할 수 있어, 해당 주차면만 잠시 비워 주시면 됩니다.' }
+    ],
+    tags: ['제주 반사테이프', '주차장 기둥 보호', '고휘도 반사테이프', '주차장 안전시설', '기둥 충돌 방지'],
+    seo: {
+      title: '제주 주차장 기둥 반사테이프 부착 사례 | 제주안전시설',
+      description: '주차면 중앙에 선 기둥이 보이지 않아 차량 측면 접촉 위험이 있던 제주 주차장에 고휘도 반사테이프를 부착해 주·야간 시인성을 확보한 시공사례입니다.'
+    },
+    sourceRef: 'Raw/04. 안전시설/안전시설-008.md',
+    review: {
+      disclosure: 'ok',
+      notes: '원문에 발주처·정확한 지역 기재 없음 → null 유지 (공공주차장 여부 미확인). ' +
+        '원문 008 은 한 현장에서 수행한 서로 다른 작업 3가지를 한 글에 담고 있어, ' +
+        '증거(사진)가 각각 독립적으로 성립하는 단위로 사례 008(기둥 반사테이프)과 사례 011(시선유도봉·반사 경고도색)로 나눴습니다. ' +
+        '두 사례는 사진을 공유하지 않습니다. ' +
+        'process-01 은 배경 건물의 기관 명패가 찍혀 있어 상단을 잘라냈습니다(발주처 미확인 상태 유지).'
+    },
+    featured: false,
+    published: true
+  },
+
+  /* ──────────────────────────────────────────────────────────
+     008 과 같은 현장·같은 날의 기록이지만, 시설·문제·사진이 모두 다릅니다.
+     008 = 주차면 기둥(반사테이프) / 011 = 진입 모서리 경계석(유도봉·도색).
+     사진은 한 장도 겹치지 않습니다. ────────────────────────── */
+  {
+    id: 11,
+    slug: 'jeju-parking-delineator-post-kerb-marking',
+    title: '제주 주차장 시선유도봉·경계석 반사 경고도색',
+    date: '2025-08',
+    dateBasis: '사진', // 사진 촬영일 2025-08-05 — 원문에 시공일 기재 없음
+    region: null,
+    regionDetail: '제주도 내 주차장 진입 모서리',
+    facilityType: '시선유도봉 / 반사 경고도색',
+    customerType: null,
+    customerName: null,
+    customerLabel: null,
+    evidenceType: '시공',
+    primaryService: 'road-traffic',
+    relatedServices: ['pedestrian-life'],
+    workType: ['설치', '개선'],
+
+    problem: '주차장 진입 모서리에서 차량 회전 동선과 보행 동선이 구분 없이 겹쳤습니다. ' +
+      '화단 쪽으로 돌출된 경계석은 낮에도 눈에 잘 띄지 않아 차량이 타고 넘거나 긁는 일이 반복될 수 있는 자리였습니다.',
+    purpose: '차량이 도는 공간과 사람이 걷는 공간을 눈으로 구분되게 하고, 돌출된 경계석의 위치를 알립니다.',
+    work: [
+      '주차장 모서리와 보행로 경계부에 시선유도봉 설치',
+      '도로와 잔디 경계석 돌출부에 노랑·검정 반사 경고도색',
+      '차량 회전 반경을 침범하지 않는 위치인지 확인'
+    ],
+    materials: [
+      { name: '시선유도봉', spec: null },
+      { name: '반사 경고도료', spec: '노랑·검정' }
+    ],
+    quantity: null,
+    duration: null,
+    result: '보행 동선과 차량 회전 공간이 눈으로 구분되었고, 돌출된 경계석이 식별되어 ' +
+      '타고 넘거나 접촉하는 일을 줄일 수 있게 되었습니다.',
+
+    images: {
+      representative: 'after-02.jpg',
+      before: [],
+      process: [],
+      after: ['after-01.jpg', 'after-02.jpg', 'after-03.jpg'],
       product: []
     },
 
     relatedProducts: ['traffic', 'pedestrian'],
     relatedGuides: ['delineator-post-installation'],
-    relatedCases: [9, 1],
+    relatedCases: [8, 1, 3],
     faq: [
-      { q: '반사테이프만 부착하는 소규모 작업도 맡기나요?',
-        a: '맡습니다. 기둥 몇 개에 반사테이프를 붙이는 정도의 작업도 시공합니다.' },
-      { q: '주차장 운영을 멈추지 않고 작업할 수 있나요?',
-        a: '반사테이프 부착과 경고도색은 구간을 나눠 짧게 진행할 수 있습니다. 시선유도봉은 바닥 고정이 필요해 해당 구간만 잠시 비워 주시면 됩니다.' }
+      { q: '경계석 반사도색만 따로 의뢰할 수 있나요?',
+        a: '가능합니다. 돌출된 경계석이나 턱 부위만 반사 경고도색으로 마감하는 작업도 별도로 진행합니다.' },
+      { q: '시선유도봉을 세울 자리는 어떻게 정하나요?',
+        a: '차량 회전 반경을 침범하지 않으면서 보행 동선은 지켜 주는 위치로 잡습니다. 회전 구간 안쪽으로 너무 붙이면 오히려 접촉 대상이 됩니다.' }
     ],
-    tags: ['제주 반사테이프', '주차장 기둥 보호', '제주 시선유도봉', '반사 경고도색', '주차장 안전시설'],
+    tags: ['제주 시선유도봉', '경계석 반사도색', '주차장 동선 분리', '반사 경고도색', '주차장 안전시설'],
     seo: {
-      title: '제주 주차장 반사테이프·시선유도봉 설치 사례 | 제주안전시설',
-      description: '주차면 중앙 기둥의 충돌 위험과 야간 시인성을 개선한 제주 주차장 안전시설 시공사례입니다. 고휘도 반사테이프, 시선유도봉, 반사 경고도색을 함께 적용했습니다.'
+      title: '제주 주차장 시선유도봉·경계석 반사도색 사례 | 제주안전시설',
+      description: '차량 회전 동선과 보행 동선이 겹치던 제주 주차장 진입 모서리에 시선유도봉을 세우고 돌출 경계석에 반사 경고도색을 적용한 시공사례입니다.'
     },
     sourceRef: 'Raw/04. 안전시설/안전시설-008.md',
-    review: { disclosure: 'ok', notes: '원문에 발주처·정확한 지역 기재 없음 → null 유지 (공공주차장 여부 미확인).' },
+    review: {
+      disclosure: 'ok',
+      notes: '원문 008 에서 분리한 사례입니다. 원문에 발주처·정확한 지역 기재 없음 → null 유지. ' +
+        '시공 전 사진이 없어 before 는 비웠습니다 (원문에 해당 구간의 작업 전 사진이 없음 — 추측으로 채우지 않습니다).'
+    },
     featured: false,
     published: true
   },
@@ -320,13 +414,15 @@ const CASES = [
     id: 4,
     slug: 'school-drainage-heavy-duty-grating-replacement',
     title: '학교 배수로 중하중 그레이팅 교체',
-    date: null, // _dateHint: 사진 촬영일 2026-04-15
+    date: '2026-04',
+    dateBasis: '사진', // _dateHint: 사진 촬영일 2026-04-15
     region: null,
     regionDetail: null,
     facilityType: '중하중 그레이팅',
     customerType: '학교',
     customerName: null,
     customerLabel: '제주 소재 초등학교',
+    evidenceType: '유지보수',
     primaryService: 'pedestrian-life',
     relatedServices: ['school-child', 'public-maintenance'],
     workType: ['교체', '보수'],
@@ -384,13 +480,15 @@ const CASES = [
     id: 2,
     slug: 'school-entrance-ramp-plate-installation',
     title: '학교 출입구 경사로 진입판 설치',
-    date: null, // _dateHint: 사진 촬영일 2026-04-16
+    date: '2026-04',
+    dateBasis: '사진', // _dateHint: 사진 촬영일 2026-04-16
     region: null,
     regionDetail: null,
     facilityType: '경사로 진입판 (차량 진입판 U형)',
     customerType: '학교',
     customerName: null,
     customerLabel: '제주 소재 초등학교',
+    evidenceType: '시공',
     primaryService: 'school-child',
     relatedServices: ['pedestrian-life'],
     workType: ['설치'],
@@ -447,13 +545,15 @@ const CASES = [
     id: 3,
     slug: 'seogwipo-school-route-delineator-post',
     title: '서귀포시 초등학교 통학로 시선유도봉 설치',
-    date: null, // _dateHint: 사진 촬영일 2026-04-15
+    date: '2026-04',
+    dateBasis: '사진', // _dateHint: 사진 촬영일 2026-04-15
     region: '서귀포시',
     regionDetail: '초등학교 통학로',
     facilityType: '시선유도봉',
     customerType: '학교',
     customerName: null,
     customerLabel: '서귀포시 소재 초등학교',
+    evidenceType: '시공',
     primaryService: 'school-child',
     relatedServices: ['road-traffic'],
     workType: ['설치'],
@@ -510,13 +610,15 @@ const CASES = [
     id: 5,
     slug: 'stainless-folding-gate-rail-type',
     title: '레일형 스텐 자바라 대문 설치',
-    date: null, // _dateHint: 사진 촬영일 2026-04-02
+    date: '2026-04',
+    dateBasis: '사진', // _dateHint: 사진 촬영일 2026-04-02
     region: null,
     regionDetail: null,
     facilityType: '스텐 자바라 대문 (레일형)',
     customerType: null,
     customerName: null,
     customerLabel: null,
+    evidenceType: '시공',
     primaryService: 'metal-fabrication',
     relatedServices: [],
     workType: ['설치'],
@@ -574,13 +676,15 @@ const CASES = [
     id: 7,
     slug: 'jeju-stainless-folding-gate-angle-frame',
     title: '제주 스텐 자바라 대문 설치 (앵글 프레임·무수축몰탈)',
-    date: null, // _dateHint: 사진 촬영일 2025-12-01 ~ 12-02
+    date: '2025-12',
+    dateBasis: '사진', // _dateHint: 사진 촬영일 2025-12-01 ~ 12-02
     region: null,
     regionDetail: null,
     facilityType: '스텐 자바라 대문 (앵글 프레임형)',
     customerType: null,
     customerName: null,
     customerLabel: null,
+    evidenceType: '시공',
     primaryService: 'metal-fabrication',
     relatedServices: [],
     workType: ['설치'],

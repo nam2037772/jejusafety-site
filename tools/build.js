@@ -50,6 +50,31 @@ function write(file, html) {
 
 function pad3(n) { return String(n).padStart(3, '0'); }
 function caseFile(c) { return 'case/' + pad3(c.id) + '-' + c.slug + '.html'; }
+
+/* ── 시공 시기 표기 ────────────────────────────────────────
+   근거가 사진 촬영일뿐이면 '경' 을 붙여 근사값임을 드러냅니다.
+   확인된 날짜를 흐리지도, 추정치를 확정처럼 쓰지도 않기 위한 장치입니다.
+   date 가 없으면 null 을 돌려주고, 화면에서는 행 자체가 빠집니다. */
+function dateLabel(c) {
+  if (!c.date) return null;
+  const m = /^(\d{4})-(\d{2})(?:-(\d{2}))?$/.exec(c.date);
+  if (!m) return c.date;
+  const [, y, mo, d] = m;
+  const base = d
+    ? `${y}년 ${Number(mo)}월 ${Number(d)}일`
+    : `${y}년 ${Number(mo)}월`;
+  return c.dateBasis === '사진' ? base + '경' : base;
+}
+
+/* 증거 유형 — 시공사례 / 납품사례 / 교체·유지보수 사례를 화면에서 가릅니다.
+   값이 없으면 '시공' 으로 봅니다 (기존 데이터와의 호환). */
+const EVIDENCE_LABEL = { '시공': '시공', '납품': '납품', '유지보수': '교체·유지보수' };
+function evidenceOf(c) { return c.evidenceType || '시공'; }
+
+/* 발행 중인 사례만 id 로 찾습니다.
+   서비스 페이지의 '시공사례 보기' 배지가 보류 사례를 가리키지 않게 하는 근거입니다. */
+const PUBLISHED_BY_ID = {};
+publishedCases().forEach((c) => { PUBLISHED_BY_ID[c.id] = c; });
 function guideFile(g) { return 'guide/' + g.slug + '.html'; }
 
 /* ── 공통 조각 ─────────────────────────────────────────── */
@@ -101,6 +126,7 @@ function caseCardHtml(c, root) {
     : '<div class="noimg">사진 준비 중</div>';
 
   const badges = [];
+  badges.push(`<span class="badge badge--evidence">${esc(EVIDENCE_LABEL[evidenceOf(c)])}</span>`);
   if (c.region) badges.push(`<span class="badge badge--region">${esc(c.region)}</span>`);
   const cust = c.customerLabel || c.customerType;
   if (cust) badges.push(`<span class="badge badge--customer">${esc(cust)}</span>`);
@@ -213,9 +239,20 @@ function buildServices() {
     const c = SERVICE_COPY[s.slug];
     if (!c) throw new Error('service-copy 누락: ' + s.slug);
 
+    /* 시설 표의 '시공사례' 표시.
+       caseIds 에 적힌 사례 중 실제로 발행 중인 것만 인정하고, 그 사례로 링크합니다.
+       발행 사례가 없으면 아무 표시도 하지 않습니다 —
+       볼 수 없는 사례를 근거로 '시공사례 있음' 을 내걸지 않기 위한 것입니다. */
+    const caseLink = (f) => {
+      const hit = (f.caseIds || []).map((id) => PUBLISHED_BY_ID[id]).filter(Boolean);
+      if (!hit.length) return '';
+      const t = hit[0];
+      return ` <a class="badge badge--work" href="{{ROOT}}case/${pad3(t.id)}-${t.slug}.html">시공사례 보기 →</a>`;
+    };
+
     const facilityRows = c.facilities.map((f) => `
         <tr>
-          <td><strong>${esc(f.name)}</strong>${f.hasCase ? ' <span class="badge badge--work">시공사례 있음</span>' : ''}</td>
+          <td><strong>${esc(f.name)}</strong>${caseLink(f)}</td>
           <td>${esc(f.spec)}</td>
           <td>${esc(f.use)}</td>
         </tr>`).join('');
@@ -372,14 +409,22 @@ function buildCases() {
     };
 
     const specRows = [
+      ['기록 유형', EVIDENCE_LABEL[evidenceOf(c)] + ' 사례'],
       ['지역', c.region ? `${c.region}${c.regionDetail ? ' · ' + c.regionDetail : ''}` : (c.regionDetail || null)],
       ['발주처 유형', c.customerLabel || c.customerType],
       ['시설', c.facilityType],
       ['작업 유형', (c.workType || []).join(' · ')],
-      ['시공 시기', c.date],
+      ['시공 시기', dateLabel(c)],
       ['수량', c.quantity],
       ['소요 기간', c.duration]
     ].filter(([, v]) => v);
+
+    /* 시기가 사진 촬영일에서 온 경우, 그 사실을 화면에 밝힙니다.
+       '경' 만 붙여 두고 근거를 숨기면 읽는 사람이 확인할 방법이 없습니다. */
+    const dateNote = (c.date && c.dateBasis === '사진')
+      ? '<p class="figure-note">시공 시기는 현장 사진의 촬영일을 기준으로 한 근사값입니다. ' +
+        '원문에 시공일이 따로 기재되어 있지 않아 «경»으로 표기합니다.</p>'
+      : '';
 
     const rc = (c.relatedCases || []).filter((id) => byId[id]);
 
@@ -396,6 +441,7 @@ function buildCases() {
     <dl class="spec-list">
       ${specRows.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('\n      ')}
     </dl>
+    ${dateNote}
 
     <h2>문제</h2>
     <p>${esc(c.problem)}</p>
@@ -498,7 +544,10 @@ ${ctaBand('비슷한 현장이신가요?', '현장 사진과 위치, 수량을 �
       keywords: (c.tags || []).join(', ')
     };
     if (imgs.length) article.image = imgs;
-    if (c.date) article.datePublished = c.date;
+    /* 사진 촬영일에서 추정한 시기는 구조화 데이터에 넣지 않습니다.
+       화면에는 '2026년 7월경' 으로 근사임을 밝힐 수 있지만,
+       datePublished 는 근사 표기를 담을 수 없어 단정이 되어 버립니다. */
+    if (c.date && c.dateBasis === '문서') article.datePublished = c.date;
 
     write(caseFile(c), page({
       file: caseFile(c), navKey: 'cases',
@@ -594,6 +643,8 @@ function buildCaseIndex() {
     customerType: c.customerType, customerLabel: c.customerLabel,
     primaryService: c.primaryService, relatedServices: c.relatedServices || [],
     workType: c.workType,
+    evidenceType: evidenceOf(c),
+    dateLabel: dateLabel(c),
     excerpt: String(c.problem).slice(0, 78),
     representative: c.images.representative || null,
     hasBefore: !!(c.images.before && c.images.before.length),
@@ -662,6 +713,24 @@ buildServices();
 buildCases();
 buildGuides();
 buildCaseIndex();
+
+function buildRedirects() {
+  const html = `<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>페이지 이동 | 제주안전시설</title>
+  <meta http-equiv="refresh" content="0; url=008-jeju-parking-pillar-reflective-tape.html">
+  <link rel="canonical" href="${COMPANY.siteUrl}/case/008-jeju-parking-pillar-reflective-tape.html">
+</head>
+<body>
+  <p>해당 사례가 분리·이동되었습니다. <a href="008-jeju-parking-pillar-reflective-tape.html">새 페이지로 이동</a>해 주세요.</p>
+</body>
+</html>`;
+  write('case/008-jeju-parking-reflective-tape-delineator-post.html', html);
+}
+buildRedirects();
+
 buildRobotsAndSitemap();
 
 const skipped = CASES.filter((c) => !c.published || (c.review && c.review.disclosure === '확인필요'));

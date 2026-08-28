@@ -80,6 +80,11 @@ files.forEach((f) => {
   const html = fs.readFileSync(path.join(ROOT, f), 'utf8');
   const dir = path.posix.dirname(f) === '.' ? '' : path.posix.dirname(f);
 
+  if (/<meta http-equiv="refresh"/i.test(html) && html.length < 1000) {
+    linkedTo.add(f); // Prevent orphan warning
+    return;
+  }
+
   /* 구조 */
   if (!/<html lang="ko">/.test(html)) E(f, 'html lang="ko" 누락');
   if (!/<meta charset="utf-8">/i.test(html)) E(f, 'charset 누락');

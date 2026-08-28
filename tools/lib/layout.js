@@ -242,7 +242,7 @@ ${p.body}
       ${NAV.map((n) => `<li><a href="${root}${n.href}">${n.label}</a></li>`).join('\n      ')}
       <li><a href="${root}construction-safety.html">건설현장 안전용품·자재</a></li>
       <li><a href="${root}privacy.html">개인정보처리방침</a></li>
-      <li><a href="${COMPANY.storeUrl}" target="_blank" rel="noopener noreferrer">안전용품 쇼핑몰</a></li>
+      <li><a href="${EXTERNAL_LINKS.shop.url}" target="_blank" rel="noopener noreferrer">${esc(EXTERNAL_LINKS.shop.shortLabel)}</a></li>
     </ul>
     <dl class="footer-biz">
       <div><dt>운영회사</dt><dd>${esc(COMPANY.name)}</dd></div>

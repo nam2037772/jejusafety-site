@@ -347,6 +347,11 @@ em{font-style:normal}
 .badge--region{color:var(--navy)}
 .badge--customer{color:var(--sub)}
 .badge--work{color:var(--ink-2)}
+/* 기록 유형(시공 / 교체·유지보수 / 납품) — 배지 줄 맨 앞에 옵니다.
+   같은 목록 안에서 성격이 다른 기록을 가르는 값이라 테두리로만 조금 세웁니다. */
+.badge--evidence{color:var(--navy);border:1px solid var(--line-2);
+  padding:.18em .6em;letter-spacing:.08em}
+.badge--evidence+.badge::before{content:none}
 
 .tag,.chip{display:inline-block;padding:.4em .9em;border:1px solid var(--line);
   border-radius:0;background:#fff;

@@ -43,12 +43,14 @@ content/guide-copy.js   가이드 본문
 | `slug` | string | ✅ | 영문 kebab-case. URL 확정 후 **변경 금지** |
 | `title` | string | ✅ | H1 이자 목록 제목. **사람이 실제로 검색하는 표현**으로 |
 | `date` | `YYYY-MM` \| `YYYY-MM-DD` \| `null` | | 시공 시기. **원문에 없으면 null** (사진 촬영일 힌트는 주석으로만) |
+| `dateBasis` | `'문서'` \| `'사진'` \| `null` | | `date` 의 근거. '사진' 이면 화면에 '경'이 붙고 JSON-LD에서 빠짐 |
 | `region` | `'제주시'` \| `'서귀포시'` \| `null` | | 원문에 없으면 null. 지역 필터에서 빠집니다 |
 | `regionDetail` | string \| null | | 읍면동·현장 성격. 공개 가능한 범위만 |
 | `facilityType` | string | ✅ | 시설명 — 검색어의 핵심 |
 | `customerType` | enum \| `null` | | 발주처 유형 (2-3). 원문에 없으면 null |
 | `customerName` | string \| null | | 발주처 실명. 공개 가능할 때만. 쓰면 `review.notes` 에 근거 필수 |
 | `customerLabel` | string \| null | | 화면 표기용 익명 라벨 (예: `제주 소재 초등학교`) |
+| `evidenceType` | `'시공'` \| `'납품'` \| `'유지보수'` | | 기록 유형. 없으면 '시공' |
 | `primaryService` | enum(slug) | ✅ | 주 서비스 분야 1개 (2-2) |
 | `relatedServices` | slug[] | | 부 분야 — 교차 노출·내부 링크용 |
 | `workType` | enum[] | ✅ | `설치` \| `교체` \| `보수` \| `개선` \| `납품` |

@@ -22,9 +22,13 @@ const { CASES, publishedCases } = require('../assets/js/cases.js');
 const { SERVICE_BY_SLUG, CUSTOMER_TYPES, WORK_TYPES, REGIONS } = require('../assets/js/services.js');
 const { GUIDE_BY_SLUG } = require('../assets/js/guides.js');
 
+const { SERVICE_COPY } = require('../content/service-copy.js');
+
 const PRODUCT_ANCHORS = ['traffic', 'school', 'pedestrian', 'maintenance', 'metal'];
 const REQUIRED = ['id', 'slug', 'title', 'facilityType', 'primaryService', 'workType',
   'problem', 'purpose', 'work', 'result', 'images', 'seo', 'sourceRef', 'published'];
+const DATE_BASIS = ['문서', '사진'];
+const EVIDENCE_TYPES = ['시공', '납품', '유지보수'];
 
 const errors = [];
 const warns = [];
@@ -70,6 +74,21 @@ CASES.forEach((c) => {
 
   /* 날짜 형식 (있을 때만) */
   if (c.date && !/^\d{4}-\d{2}(-\d{2})?$/.test(c.date)) E(id, `date 형식 오류: ${c.date}`);
+
+  /* 날짜 근거 — date 를 쓰면 그 근거를 반드시 밝힙니다.
+     '사진' 이면 화면에 '경' 이 붙고 JSON-LD datePublished 에서 빠집니다.
+     근거 없이 날짜만 있는 상태를 막는 것이 이 검사의 목적입니다. */
+  if (c.dateBasis && DATE_BASIS.indexOf(c.dateBasis) < 0) E(id, `dateBasis 값 오류: ${c.dateBasis}`);
+  if (c.date && !c.dateBasis) E(id, 'date 가 있는데 dateBasis 가 없습니다 (\'문서\' 또는 \'사진\')');
+  if (!c.date && c.dateBasis) E(id, 'dateBasis 가 있는데 date 가 없습니다');
+
+  /* 증거 유형 */
+  if (c.evidenceType && EVIDENCE_TYPES.indexOf(c.evidenceType) < 0) {
+    E(id, `evidenceType 값 오류: ${c.evidenceType}`);
+  }
+  if (c.evidenceType === '납품' && (c.workType || []).indexOf('납품') < 0) {
+    W(id, "evidenceType 이 '납품' 인데 workType 에 '납품' 이 없습니다");
+  }
 
   /* 이미지 */
   const dir = path.join(ROOT, 'assets', 'images', 'cases', String(id).padStart(3, '0'));
@@ -141,6 +160,29 @@ pub.forEach((c) => {
   /* 서비스 페이지가 자동으로 3건씩 노출하므로 완전 고립은 아니지만,
      명시적 연결이 하나도 없으면 내부 링크가 얇아집니다. */
   if (!referenced.has(c.id)) W(c.id, '다른 사례·가이드에서 이 사례를 참조하지 않습니다 (relatedCases 연결 권장)');
+});
+
+/* ── 서비스 페이지의 '시공사례' 표시 정합성 ────────────────
+   service-copy.js 의 시설 표에서 caseIds 로 사례를 가리키는 행만
+   '시공사례 보기' 링크를 답니다. 여기서 막는 것은 두 가지입니다.
+     · 없는 사례 id 를 가리키는 행           → 오류
+     · 가리킨 사례가 전부 미발행인 행         → 경고 (배지는 자동으로 빠집니다)
+   근거 없이 '시공사례 있음' 이 화면에 남는 상태를 데이터 단계에서 끊습니다. */
+const pubIds = new Set(pub.map((c) => c.id));
+Object.keys(SERVICE_COPY).forEach((slug) => {
+  (SERVICE_COPY[slug].facilities || []).forEach((f) => {
+    const ids = f.caseIds || [];
+    if (!ids.length) return;
+    const unknown = ids.filter((i) => !allIds.has(i));
+    if (unknown.length) {
+      errors.push(`[service-copy:${slug}] '${f.name}' 의 caseIds 에 없는 사례: ${unknown.join(', ')}`);
+    }
+    const live = ids.filter((i) => pubIds.has(i));
+    if (!live.length) {
+      warns.push(`[service-copy:${slug}] '${f.name}' 이 가리키는 사례(${ids.join(', ')})가 ` +
+        '모두 미발행입니다 — 표에 시공사례 링크가 나오지 않습니다');
+    }
+  });
 });
 
 /* ── 출력 ─────────────────────────────────────────────── */
