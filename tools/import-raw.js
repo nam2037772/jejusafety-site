@@ -144,6 +144,14 @@ function extOf(name) {
   return m ? '.' + m[1].toLowerCase().replace('jpeg', 'jpg') : '.jpg';
 }
 
+/* 마크다운 이미지 링크. 파일명에 괄호가 있으면 `\(1\)` 처럼 이스케이프되어 들어오므로
+   `\.` 을 한 글자로 받아 URL 이 중간에서 잘리지 않게 합니다. */
+const MD_IMAGE_RE = /!\[[^\]]*\]\(((?:\\.|[^()\s])+)\)/g;
+
+function unescapeMd(url) {
+  return url.replace(/\\(.)/g, '$1');
+}
+
 /**
  * 본문을 훑어 이미지 목록을 순서대로 만듭니다.
  * - `[작업전/중/후 사진]` 마커가 나오면 그 다음 이미지들의 역할이 정해집니다.
@@ -172,15 +180,15 @@ function collectImages(body) {
       continue;
     }
 
-    const urls = [...line.matchAll(/!\[[^\]]*\]\((https?:\/\/[^)\s]+)\)/g)].map((m) => m[1]);
+    const urls = [...line.matchAll(MD_IMAGE_RE)].map((m) => unescapeMd(m[1]));
     if (!urls.length) { if (!/^\s*\|/.test(line)) tableCols = tableCols; continue; }
 
     /* 표 안의 줄이면 열 위치로 역할을 나눕니다 */
     if (tableCols && /^\s*\|/.test(line)) {
       const cells = line.split('|').slice(1, -1);
       cells.forEach((cell, i) => {
-        [...cell.matchAll(/!\[[^\]]*\]\((https?:\/\/[^)\s]+)\)/g)].forEach((m) => {
-          push(m[1], tableCols[i] || markerRole || 'process');
+        [...cell.matchAll(MD_IMAGE_RE)].forEach((m) => {
+          push(unescapeMd(m[1]), tableCols[i] || markerRole || 'process');
         });
       });
       continue;
@@ -190,6 +198,7 @@ function collectImages(body) {
   }
 
   function push(url, role) {
+    if (!/^https?:/.test(url)) return;
     if (seen.has(url)) return;
     seen.add(url);
     const origName = baseNameOf(url);
@@ -208,7 +217,7 @@ function collectImages(body) {
 /** 본문에서 이미지·구분선을 걷어낸 평문 — AI 가 사실을 뽑을 원자료 */
 function plainBody(body) {
   return body
-    .replace(/!\[[^\]]*\]\([^)]*\)/g, '')
+    .replace(new RegExp(MD_IMAGE_RE.source, 'g'), '')
     .replace(/\u200b/g, '')
     .split(/\r?\n/)
     .map((l) => l.replace(/\s+$/, ''))
