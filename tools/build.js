@@ -22,7 +22,7 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
-const { page, esc, HAS_DOMAIN, abs, COMPANY } = require('./lib/layout.js');
+const { page, esc, HAS_DOMAIN, abs, entityId, COMPANY } = require('./lib/layout.js');
 const { SERVICES, SERVICE_BY_SLUG } = require('../assets/js/services.js');
 const { CASES, publishedCases } = require('../assets/js/cases.js');
 const { GUIDES } = require('../assets/js/guides.js');
@@ -201,7 +201,7 @@ function buildStatic() {
       /* 페이지가 직접 선언한 노드(p.jsonld)를 그대로 싣습니다.
          실제 페이지 내용과 일치하는 스키마만 넣습니다 — 평점·리뷰·가격은 넣지 않습니다. */
       jsonld: (p.file === 'index.html'
-        ? [{ '@type': 'WebSite', '@id': '#website', name: COMPANY.brand, publisher: { '@id': '#operator' } }]
+        ? [{ '@type': 'WebSite', '@id': entityId('#website'), name: COMPANY.brand, publisher: { '@id': entityId('#operator') } }]
         : []).concat(p.jsonld || [])
     }));
   });
@@ -331,7 +331,7 @@ ${ctaBand('현장을 보고 견적을 드립니다', '제주도 내 현장이면
         name: s.h1,
         serviceType: s.name,
         description: c.lead,
-        provider: { '@id': '#brand' },
+        provider: { '@id': entityId('#brand') },
         areaServed: COMPANY.areaServed.map((a) => ({ '@type': 'AdministrativeArea', name: a })),
         hasOfferCatalog: {
           '@type': 'OfferCatalog',
@@ -492,8 +492,8 @@ ${ctaBand('비슷한 현장이신가요?', '현장 사진과 위치, 수량을 �
       headline: c.title,
       description: c.seo.description,
       about: { '@id': `#service-${c.primaryService}` },
-      author: { '@id': '#brand' },
-      publisher: { '@id': '#operator' },
+      author: { '@id': entityId('#brand') },
+      publisher: { '@id': entityId('#operator') },
       articleSection: svc ? svc.name : undefined,
       keywords: (c.tags || []).join(', ')
     };
@@ -574,8 +574,8 @@ ${ctaBand('현장에 맞는 방법을 함께 정합니다', '자료만으로 판
         headline: g.title,
         description: g.seo.description,
         about: { '@id': `#service-${g.service}` },
-        author: { '@id': '#brand' },
-        publisher: { '@id': '#operator' }
+        author: { '@id': entityId('#brand') },
+        publisher: { '@id': entityId('#operator') }
       }]
     }));
   });

@@ -21,6 +21,9 @@ const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
 const { COMPANY } = require('../assets/js/config.js');
+const { entityId } = require('./lib/layout.js');
+const ID_BRAND = entityId('#brand');
+const ID_OPERATOR = entityId('#operator');
 
 const errors = [];
 const warns = [];
@@ -120,12 +123,12 @@ files.forEach((f) => {
     try {
       const data = JSON.parse(m[1]);
       const g = data['@graph'] || [];
-      const brand = g.filter((n) => n['@id'] === '#brand')[0];
-      const op = g.filter((n) => n['@id'] === '#operator')[0];
+      const brand = g.filter((n) => n['@id'] === ID_BRAND)[0];
+      const op = g.filter((n) => n['@id'] === ID_OPERATOR)[0];
       if (!brand) E(f, 'JSON-LD 에 #brand(제주안전시설) 노드가 없습니다');
       if (!op) E(f, 'JSON-LD 에 #operator((주)아인산업안전) 노드가 없습니다');
       if (brand && brand.name !== COMPANY.brand) E(f, `JSON-LD brand.name 불일치: ${brand.name}`);
-      if (brand && (!brand.parentOrganization || brand.parentOrganization['@id'] !== '#operator')) {
+      if (brand && (!brand.parentOrganization || brand.parentOrganization['@id'] !== ID_OPERATOR)) {
         E(f, 'JSON-LD 에 브랜드→운영회사 관계(parentOrganization)가 없습니다');
       }
       if (brand && JSON.stringify(brand.areaServed || '').includes('전국')) E(f, 'areaServed 에 전국이 들어 있습니다');

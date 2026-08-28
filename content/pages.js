@@ -9,6 +9,10 @@
 const { COMPANY } = require('../assets/js/config.js');
 const { SERVICES } = require('../assets/js/services.js');
 const { GUIDES } = require('../assets/js/guides.js');
+const { entityId } = require('../tools/lib/layout.js');
+
+/* 브랜드 엔티티 @id — layout.js 와 같은 값을 씁니다. */
+const ENTITY_BRAND = entityId('#brand');
 
 const TEL = COMPANY.telHref;
 const SHOP = COMPANY.storeUrl;
@@ -109,7 +113,7 @@ const PAGES = [
       </div>
     </div>
     <figure class="hero__media">
-      <img src="assets/images/cases/001/after-01.jpg" alt="서귀포시 로터리 진입부에 차선규제봉을 교체한 도로" width="900" height="507" loading="eager" fetchpriority="high" decoding="async">
+      <img src="assets/images/cases/001/after-01.jpg" srcset="assets/images/cases/001/after-01-thumb.jpg 773w, assets/images/cases/001/after-01.jpg 900w" sizes="(max-width:900px) 100vw, 50vw" alt="서귀포시 로터리 진입부에 차선규제봉을 교체한 도로" width="900" height="507" loading="eager" fetchpriority="high" decoding="async">
       <figcaption>서귀포시 치유의 숲 입구 로터리 — 차선규제봉 교체</figcaption>
     </figure>
   </div>
@@ -458,7 +462,7 @@ ${PRODUCT_GROUPS.map((g, i) => `
       serviceType: '안전용품·안전자재 납품',
       description: '제주도 내 건설·시공 현장에 차선규제봉, 시선유도봉, 반사테이프, 배수로 그레이팅, ' +
         '경계석, 금속 부자재 등 안전시설과 안전자재를 납품하고, 필요하면 설치까지 진행합니다.',
-      provider: { '@id': '#brand' },
+      provider: { '@id': ENTITY_BRAND },
       areaServed: COMPANY.areaServed.map((a) => ({ '@type': 'AdministrativeArea', name: a }))
     }],
     faq: [

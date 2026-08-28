@@ -35,6 +35,20 @@ function abs(path) {
   return COMPANY.siteUrl.replace(/\/+$/, '') + '/' + String(path).replace(/^\/+/, '');
 }
 
+/* 기본 og:image — 페이지가 따로 지정하지 않았을 때만 씁니다.
+   사례 001(서귀포시 치유의 숲 입구 로터리) 실제 시공 후 사진으로,
+   홈 히어로에 이미 쓰고 있는 이미지입니다. 새 이미지를 만들지 않습니다. */
+const DEFAULT_OG_IMAGE = 'assets/images/cases/001/after-01.jpg';
+
+/** 엔티티 @id.
+    '#operator' 같은 문서 상대 조각은 페이지마다 다른 노드로 해석되어
+    운영회사·브랜드가 페이지 수만큼 쪼개집니다. 도메인이 확정된 뒤에는
+    사이트 루트 기준 절대 @id 를 써서 전 페이지가 같은 엔티티를 가리키게 합니다.
+    (도메인 미확정 시에는 기존대로 상대 조각을 유지합니다.) */
+function entityId(fragment) {
+  return HAS_DOMAIN ? abs('') + fragment : fragment;
+}
+
 /* ── 구조화 데이터 ─────────────────────────────────────────
    엔티티 관계를 모든 페이지에서 같은 모양으로 선언합니다.
 
@@ -48,7 +62,7 @@ function abs(path) {
 function baseGraph() {
   const operator = {
     '@type': 'Organization',
-    '@id': '#operator',
+    '@id': entityId('#operator'),
     name: COMPANY.name,
     legalName: COMPANY.legalName,
     identifier: [{ '@type': 'PropertyValue', name: '사업자등록번호', value: COMPANY.businessNumber }],
@@ -68,10 +82,10 @@ function baseGraph() {
 
   const brand = {
     '@type': ['LocalBusiness', 'ProfessionalService'],
-    '@id': '#brand',
+    '@id': entityId('#brand'),
     name: COMPANY.brand,
     description: COMPANY.description,
-    parentOrganization: { '@id': '#operator' },
+    parentOrganization: { '@id': entityId('#operator') },
     /* 영업 지역은 제주도 한정입니다 */
     areaServed: COMPANY.areaServed.map((a) => ({ '@type': 'AdministrativeArea', name: a })),
     address: operator.address,
@@ -190,7 +204,7 @@ ${canonical ? `<link rel="canonical" href="${canonical}">` : `<!-- canonical: �
 <meta property="og:title" content="${esc(p.title)}">
 <meta property="og:description" content="${esc(p.description)}">
 ${canonical ? `<meta property="og:url" content="${canonical}">` : ''}
-${p.ogImage && HAS_DOMAIN ? `<meta property="og:image" content="${abs(p.ogImage)}">` : ''}
+${(p.ogImage || DEFAULT_OG_IMAGE) && HAS_DOMAIN ? `<meta property="og:image" content="${abs(p.ogImage || DEFAULT_OG_IMAGE)}">` : ''}
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -257,4 +271,4 @@ ${p.needsCaseIndex ? `<script src="${root}assets/js/cases-index.js"></script>` :
 `;
 }
 
-module.exports = { page, esc, NAV, HAS_DOMAIN, abs, COMPANY };
+module.exports = { page, esc, NAV, HAS_DOMAIN, abs, entityId, COMPANY };
