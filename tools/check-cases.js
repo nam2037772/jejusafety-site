@@ -8,6 +8,7 @@
      · 필수 필드 누락 / enum 밖의 값
      · id·slug 중복, slug 형식 위반 (URL 은 바꾸면 안 되므로)
      · 데이터가 가리키는데 실제로 없는 이미지
+     · 원본 대신 받아진 오류 placeholder (네이버 100x56 등) 로 보이는 작은 사진
      · 존재하지 않는 서비스·가이드·사례·제품 앵커 참조 (고립·깨진 링크 예방)
      · 공개 검토가 끝나지 않은 사례가 발행되는 것
      · SEO title/description 누락·중복·길이 초과
@@ -23,12 +24,17 @@ const { SERVICE_BY_SLUG, CUSTOMER_TYPES, WORK_TYPES, REGIONS } = require('../ass
 const { GUIDE_BY_SLUG } = require('../assets/js/guides.js');
 
 const { SERVICE_COPY } = require('../content/service-copy.js');
+const { imageSize } = require('./lib/image-size.js');
 
 const PRODUCT_ANCHORS = ['traffic', 'school', 'pedestrian', 'maintenance', 'metal'];
 const REQUIRED = ['id', 'slug', 'title', 'facilityType', 'primaryService', 'workType',
   'problem', 'purpose', 'work', 'result', 'images', 'seo', 'sourceRef', 'published'];
 const DATE_BASIS = ['문서', '사진'];
 const EVIDENCE_TYPES = ['시공', '납품', '유지보수'];
+
+/* 사례 사진의 최소 가로폭. 내려받기가 쓰는 가장 작은 규격이 773(썸네일) 이므로
+   300 은 정상 사진을 오탐하지 않으면서 오류 placeholder(100x56)는 잡는 값입니다. */
+const MIN_IMAGE_WIDTH = 300;
 
 const errors = [];
 const warns = [];
@@ -96,6 +102,7 @@ CASES.forEach((c) => {
   const listed = [];
   roles.forEach((r) => (c.images[r] || []).forEach((f) => listed.push(f)));
   if (c.images.representative) listed.push(c.images.representative);
+  const sizeChecked = new Set();
 
   /* 비공개 보류 사례(미발행·공개 검토 중)는 사진을 공개 저장소에 두지 않습니다.
      그래서 파일이 없는 것이 정상입니다 — 오류가 아니라 경고로 알립니다.
@@ -111,6 +118,20 @@ CASES.forEach((c) => {
     }
     const thumb = p.replace(/(\.[a-z]+)$/i, '-thumb$1');
     if (!fs.existsSync(thumb)) W(id, `썸네일 없음(목록이 원본을 씁니다): ${path.basename(thumb)}`);
+
+    /* 원본이 아니라 오류 응답을 받아 저장한 사진을 배포 전에 잡습니다.
+       내려받기는 ?type=w966(원본) / w773(썸네일) 두 가지뿐이라 정상 사진은
+       가로 773 이상입니다. 네이버 오류 placeholder 는 100x56 으로 들어옵니다. */
+    [p, fs.existsSync(thumb) ? thumb : null].filter(Boolean).forEach((f) => {
+      if (sizeChecked.has(f)) return;      // representative 는 역할 목록과 겹칩니다
+      sizeChecked.add(f);
+      const s = imageSize(f);
+      if (!s) return;                       // 읽지 못하는 형식은 판단하지 않습니다
+      if (s.width < MIN_IMAGE_WIDTH) {
+        E(id, `사진이 비정상적으로 작습니다(원본 대신 오류 응답을 받았을 수 있습니다): ` +
+          `${path.basename(f)} ${s.width}x${s.height} — 최소 ${MIN_IMAGE_WIDTH}px`);
+      }
+    });
   });
 
   if (c.images.representative) {

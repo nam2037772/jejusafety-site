@@ -23,6 +23,7 @@ const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
 const { page, esc, HAS_DOMAIN, abs, entityId, COMPANY } = require('./lib/layout.js');
+const { imageSize } = require('./lib/image-size.js');
 const { SERVICES, SERVICE_BY_SLUG } = require('../assets/js/services.js');
 const { CASES, publishedCases } = require('../assets/js/cases.js');
 const { GUIDES } = require('../assets/js/guides.js');
@@ -110,6 +111,15 @@ function rel(html, depth) {
   return html.replace(/\{\{ROOT\}\}/g, '../'.repeat(depth));
 }
 
+/* <img> 의 width/height — 브라우저가 사진을 받기 전에 잡아 둘 자리입니다.
+   실제 파일 비율과 다르면 사진이 도착할 때 레이아웃이 밀립니다(CLS).
+   그래서 파일에서 직접 읽고, 못 읽을 때만 기존 기본값으로 물러섭니다.
+   `file` 은 assets/images/cases/<no>/ 안의 파일명입니다. */
+function sizeAttr(no, file, fallback) {
+  const s = imageSize(path.join(ROOT, 'assets', 'images', 'cases', no, file));
+  return s ? `width="${s.width}" height="${s.height}"` : fallback;
+}
+
 /* ── 사례 카드를 빌드 시점에 심습니다 ──────────────────────
    자바스크립트로만 카드를 그리면 사례 상세 페이지로 가는 링크가
    HTML 안에 존재하지 않습니다. 크롤러(특히 네이버 Yeti)가 스크립트를
@@ -120,9 +130,10 @@ function caseCardHtml(c, root) {
   const href = `${root}case/${pad3(c.id)}-${c.slug}.html`;
   const dir = `${root}assets/images/cases/${pad3(c.id)}/`;
   const rep = c.images && c.images.representative;
+  const repThumb = rep && rep.replace(/(\.[a-z]+)$/i, '-thumb$1');
   const fig = rep
-    ? `<img src="${dir}${rep.replace(/(\.[a-z]+)$/i, '-thumb$1')}" alt="${esc(c.title)} 시공 후 모습"` +
-      ` width="773" height="580" loading="lazy" decoding="async">`
+    ? `<img src="${dir}${repThumb}" alt="${esc(c.title)} 시공 후 모습"` +
+      ` ${sizeAttr(pad3(c.id), repThumb, 'width="773" height="580"')} loading="lazy" decoding="async">`
     : '<div class="noimg">사진 준비 중</div>';
 
   const badges = [];
@@ -148,9 +159,10 @@ function workRowHtml(c, root) {
   const href = `${root}case/${pad3(c.id)}-${c.slug}.html`;
   const dir = `${root}assets/images/cases/${pad3(c.id)}/`;
   const rep = c.images && c.images.representative;
+  const repThumb = rep && rep.replace(/(\.[a-z]+)$/i, '-thumb$1');
   const fig = rep
-    ? `<img src="${dir}${rep.replace(/(\.[a-z]+)$/i, '-thumb$1')}" alt="${esc(c.title)} 시공 후 모습"` +
-      ` width="773" height="435" loading="lazy" decoding="async">`
+    ? `<img src="${dir}${repThumb}" alt="${esc(c.title)} 시공 후 모습"` +
+      ` ${sizeAttr(pad3(c.id), repThumb, 'width="773" height="435"')} loading="lazy" decoding="async">`
     : '<div class="noimg">사진 준비 중</div>';
 
   const meta = [];
@@ -402,7 +414,7 @@ function buildCases() {
           const thumb = f.replace(/(\.[a-z]+)$/i, '-thumb$1');
           return `<a href="${dir}${f}" target="_blank" rel="noopener">` +
             `<img src="${dir}${thumb}" alt="${esc(c.title)} ${alt} ${i + 1}" ` +
-            `width="773" height="580" loading="lazy" decoding="async"></a>`;
+            `${sizeAttr(pad3(c.id), thumb, 'width="773" height="580"')} loading="lazy" decoding="async"></a>`;
         }).join('\n        ')}
       </div>
     </div>`;
@@ -471,7 +483,7 @@ function buildCases() {
       <h3><span class="tag tag--process">제품 이미지</span></h3>
       <div class="gallery">
         ${c.images.product.map((f, i) =>
-          `<img src="${dir}${f}" alt="${esc(c.facilityType)} 제품 이미지 ${i + 1}" width="773" height="580" loading="lazy" decoding="async">`).join('')}
+          `<img src="${dir}${f}" alt="${esc(c.facilityType)} 제품 이미지 ${i + 1}" ${sizeAttr(pad3(c.id), f, 'width="773" height="580"')} loading="lazy" decoding="async">`).join('')}
       </div>
       <p class="figure-note">제품 설명용 이미지입니다. 현장 촬영 사진이 아닙니다.</p>
     </div>` : ''}
