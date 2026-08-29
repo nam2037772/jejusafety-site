@@ -105,14 +105,13 @@
     if (!grid || typeof CASE_INDEX === 'undefined') return;
 
     var all = CASE_INDEX; // 정렬은 빌드 시점에 이미 적용됨
-    var state = { evidence: '', service: '', customer: '', region: '', work: '', q: '' };
+    var state = { evidence: '', service: '', customer: '', work: '', q: '' };
 
     function matches(c) {
       if (state.evidence && (c.evidenceType || '시공') !== state.evidence) return false;
       if (state.service && c.primaryService !== state.service &&
         (c.relatedServices || []).indexOf(state.service) < 0) return false;
       if (state.customer && c.customerType !== state.customer) return false;
-      if (state.region && c.region !== state.region) return false;
       if (state.work && (c.workType || []).indexOf(state.work) < 0) return false;
       if (state.q) {
         var hay = [c.title, c.facilityType, c.excerpt, (c.tags || []).join(' '),

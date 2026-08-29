@@ -345,9 +345,6 @@ const PAGES = [
       <div class="filter-group" data-filter="work" data-values='${JSON.stringify(['설치', '교체', '보수', '개선'])}'>
         <span>작업 유형</span><div class="chips"></div>
       </div>
-      <div class="filter-group" data-filter="region" data-values='${JSON.stringify(['제주시', '서귀포시'])}'>
-        <span>지역</span><div class="chips"></div>
-      </div>
     </div>
 
     <p class="result-count" id="caseCount" role="status"></p>
