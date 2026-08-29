@@ -336,9 +336,6 @@ const PAGES = [
       <div class="filter-group" data-filter="evidence" data-values='${JSON.stringify(EVIDENCE_FILTER)}'>
         <span>기록 유형</span><div class="chips"></div>
       </div>
-      <div class="filter-group" data-filter="customer" data-values='${JSON.stringify(['관공서', '공공기관', '공기업', '학교', '교육기관', '공공주차장', '공원·체육시설', '공동주택', '사업장'])}'>
-        <span>발주처 유형</span><div class="chips"></div>
-      </div>
       <div class="filter-group" data-filter="service" data-values='${JSON.stringify(SERVICES.map((s) => ({ value: s.slug, label: s.name })))}'>
         <span>분야</span><div class="chips"></div>
       </div>
